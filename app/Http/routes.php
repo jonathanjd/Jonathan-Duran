@@ -16,7 +16,20 @@ Route::get('/', [
     'uses' => 'WebController@index'
 ]);
 
+Route::group(['prefix' => 'admin'], function () {
+
+  Route::get('index', [
+    'as' => 'admin-index',
+    'uses' => 'AdminController@index'
+  ]);
+    
+});
+
 Route::post('enviar/correo',[
   'as' => 'enviar',
   'uses' => 'WebController@enviar'
 ]);
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
