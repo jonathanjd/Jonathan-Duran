@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta id="token"name="token" value="{{ csrf_token() }}">
     <title>Administrador | @yield('title')</title>
 
     <!-- Bootstrap -->
@@ -50,6 +50,14 @@
               <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
+
+                  <li><a><i class="fa fa-bookmark"></i> Category <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{ route('admin.category.index') }}">Inicio</a></li>
+                      <li><a href="{{ route('admin.category.create') }}">Crear</a></li>
+                    </ul>
+                  </li>
+
                   <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="index.html">Dashboard</a></li>
@@ -141,7 +149,7 @@
                         <li><a href="#level1_2">Level One</a>
                         </li>
                     </ul>
-                  </li>                  
+                  </li>
                   <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
                 </ul>
               </div>
@@ -179,7 +187,7 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="images/img.jpg" alt="">{{ Auth::user()->name }}
+                    <img src="{{ asset('template-admin/img/jonathan-duran.jpg') }}" alt="">{{ Auth::user()->name }}
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -298,9 +306,9 @@
                       <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
                         <ul class="dropdown-menu" role="menu">
-                          <li><a href="#">Settings 1</a>
+                          <li><a href="#">Opción 1</a>
                           </li>
-                          <li><a href="#">Settings 2</a>
+                          <li><a href="#">Opción 2</a>
                           </li>
                         </ul>
                       </li>
@@ -338,8 +346,13 @@
     <script src="{{ asset('template-admin/vendors/fastclick/lib/fastclick.js') }}"></script>
     <!-- NProgress -->
     <script src="{{ asset('template-admin/vendors/nprogress/nprogress.js') }} "></script>
-    
+
     <!-- Custom Theme Scripts -->
     <script src="{{ asset('template-admin/build/js/custom.min.js') }}"></script>
+
+    <script src="{{ asset('js/vendor.js') }}"></script>
+    
+    @yield('script')
+  
   </body>
 </html>

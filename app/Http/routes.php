@@ -22,7 +22,9 @@ Route::group(['prefix' => 'admin'], function () {
     'as' => 'admin-index',
     'uses' => 'AdminController@index'
   ]);
-    
+
+  Route::resource('category', 'CategoryController');
+
 });
 
 Route::post('enviar/correo',[
