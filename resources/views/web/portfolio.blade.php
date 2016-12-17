@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <h2>Diseños</h2>
         <hr class="sep">
-        <p>Nos enfocamos en diseños de paginas web limpias, bien estructuradas y de fácil navegación</p>
+        <p>Nos enfocamos en diseños de páginas web limpias, bien estructuradas y de fácil navegación.</p>
         <div class="row">
             <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
                 <a class="portfolio-box" href="{{ asset('template-web/img/portfolio/Clean-Blog.png') }}" data-lightbox="image-1" data-title="Blog">
