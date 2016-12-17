@@ -19,7 +19,6 @@ class CategoryController extends Controller
     {
         //
         $categories = Category::orderBy('id','asc')->get();
-
         return view('admin.category.index')->with('categories',$categories);
     }
 
@@ -44,21 +43,13 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         //
-
-        /*
-        ==============
-        Validation
-        ==============
-        */
         $this->validate($request, [
-            'name' => 'required|max:25',
+            'name' => 'unique:categories|required|max:25',
         ]);
-
         $category = new Category($request->all());
         $category->save();
-        flash('Category Saved!', 'success');
+        flash('Registro Guardado', 'success');
         return redirect()->route('admin.category.show',[$category]);
-    
     }
 
     /**
@@ -71,7 +62,12 @@ class CategoryController extends Controller
     {
         //
         $category = Category::find($id);
-        return view('admin.category.show')->with('category',$category);
+        if($category === null){
+          return redirect()->route('admin-404');
+        }else{
+          return view('admin.category.show')->with('category',$category);
+        }
+
     }
 
     /**
@@ -83,6 +79,13 @@ class CategoryController extends Controller
     public function edit($id)
     {
         //
+        $category = Category::find($id);
+        if($category === null){
+          return redirect()->route('admin-404');
+        }else{
+          return view('admin.category.edit')->with('category',$category);
+        }
+
     }
 
     /**
@@ -95,6 +98,11 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $category = Category::find($id);
+        $category->fill($request->all());
+        $category->save();
+        flash('Registro Actualizado','success');
+        return redirect()->route('admin.category.show',[$category]);
     }
 
     /**
@@ -106,5 +114,23 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         //
+        $category = Category::find($id);
+        if($category === null){
+          return redirect()->route('admin-404');
+        }
+        $category->delete();
+        flash('Registro Eliminado','success');
+        return redirect()->route('admin.category.index');
+    }
+
+    public function delete($id)
+    {
+      # code...
+      $category = Category::find($id);
+      if($category === null){
+        return redirect()->route('admin-404');
+      }else{
+        return view('admin.category.delete')->with('category',$category);
+      }
     }
 }

@@ -15,4 +15,10 @@ class AdminController extends Controller
         # code...
         return view('admin.index');
     }
+
+    public function error404()
+    {
+      # code...
+      return view('admin.404');
+    }
 }

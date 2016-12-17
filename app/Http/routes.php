@@ -18,11 +18,19 @@ Route::get('/', [
 
 Route::group(['prefix' => 'admin'], function () {
 
+
+  Route::get('404', [
+    'as' => 'admin-404',
+    'uses' => 'AdminController@error404'
+  ]);
+
   Route::get('index', [
     'as' => 'admin-index',
     'uses' => 'AdminController@index'
   ]);
 
+
+  Route::get('category/{category}/delete',['as' => 'admin.category.delete','uses'=>'CategoryController@delete']);
   Route::resource('category', 'CategoryController');
 
 });
