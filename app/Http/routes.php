@@ -11,9 +11,16 @@
 |
 */
 
+Route::auth();
+
 Route::get('/', [
     'as' => 'index',
     'uses' => 'WebController@index'
+]);
+
+Route::get('diseño',[
+  'as' => 'diseño',
+  'uses' => 'WebController@diseño'
 ]);
 
 Route::group(['prefix' => 'admin'], function () {
@@ -31,7 +38,10 @@ Route::group(['prefix' => 'admin'], function () {
 
 
   Route::get('category/{category}/delete',['as' => 'admin.category.delete','uses'=>'CategoryController@delete']);
+
   Route::resource('category', 'CategoryController');
+
+  Route::resource('design','DesignController');
 
 });
 
@@ -39,6 +49,7 @@ Route::post('enviar/correo',[
   'as' => 'enviar',
   'uses' => 'WebController@enviar'
 ]);
+
 
 Route::auth();
 

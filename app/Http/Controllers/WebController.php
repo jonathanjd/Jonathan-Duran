@@ -10,6 +10,8 @@ use App\Http\Requests\SendEmailRequest;
 
 use App\Http\Requests;
 
+use App\Design;
+
 class WebController extends Controller
 {
     //
@@ -17,6 +19,15 @@ class WebController extends Controller
     {
         # code...
         return view('web.index');
+    }
+
+    public function diseño()
+    {
+      # code...
+      //Consulta
+      $diseños = Design::orderBy('id','desc')->paginate(7);
+      //Vista
+      return view('web.page.design.index')->with('diseños', $diseños);
     }
 
     public function enviar(SendEmailRequest $request)
