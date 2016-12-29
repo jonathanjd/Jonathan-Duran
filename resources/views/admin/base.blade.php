@@ -103,8 +103,8 @@
 
                   <li><a><i class="fa fa-briefcase"></i> Servicios <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="{{ route('admin.design.index') }}">Inicio</a></li>
-                      <li><a href="{{ route('admin.design.create') }}">Crear</a></li>
+                      <li><a href="{{ route('admin.service.index') }}">Inicio</a></li>
+                      <li><a href="{{ route('admin.service.create') }}">Crear</a></li>
                     </ul>
                   </li>
 
