@@ -1,10 +1,10 @@
 @extends('admin.base')
 
-@section('title','Create-Category')
+@section('title','Editar-Category')
 
-@section('title-content-1','Create-Category | Admin')
+@section('title-content-1','Editar-Category | Admin')
 
-@section('title-content-2','Create-Category | Admin')
+@section('title-content-2','Editar-Category | Admin')
 
 @section('content')
 
@@ -14,16 +14,16 @@
   <div class="col-md-6 col-xs-12">
     <div class="x_panel">
   <div class="x_title">
-    <h2>Form Category <small>Crear</small></h2>
+    <h2>Form Category <small>Editar</small></h2>
     <ul class="nav navbar-right panel_toolbox">
       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
       </li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
         <ul class="dropdown-menu" role="menu">
-          <li><a href="#">#</a>
+          <li><a href="#">Opción 1</a>
           </li>
-          <li><a href="#">#</a>
+          <li><a href="#">Opción 2</a>
           </li>
         </ul>
       </li>
@@ -32,7 +32,6 @@
     </ul>
     <div class="clearfix"></div>
   </div>
-  
   <div class="x_content">
     <br />
 
@@ -50,17 +49,17 @@
     @endif
 
 
-    {!! Form::open(['route' => 'admin.category.store','method' => 'POST','class' => 'form-horizontal form-label-left input_mask']) !!}
+    {!! Form::open(['route' => ['admin.category.update',$category->id],'method' => 'PUT','class' => 'form-horizontal form-label-left input_mask']) !!}
 
       <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-        {!! Form::text('name',null,['class' => 'form-control has-feedback-left','placeholder' => 'Name Category','required']); !!}
+        {!! Form::text('name',$category->name,['class' => 'form-control has-feedback-left','placeholder' => 'Name Category','required']); !!}
         <span class="fa fa-bookmark form-control-feedback left" aria-hidden="true"></span>
       </div>
 
       <div class="form-group">
         <div class="col-md-9 col-sm-9 col-xs-12">
           <a href="{{ route('admin.category.index') }}" class="btn btn-primary">Regresar</a>
-          <button type="submit" class="btn btn-success">Crear</button>
+          <button type="submit" class="btn btn-success">Editar</button>
         </div>
       </div>
 

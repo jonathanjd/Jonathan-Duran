@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta id="token"name="token" value="{{ csrf_token() }}">
     <title>Administrador | @yield('title')</title>
-
+    <link rel="icon" type="image/png" href="{{ asset('template-web/img/logo/favicon.png') }}" />
     <!-- Bootstrap -->
     <link href="{{ asset('template-admin/vendors/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Font Awesome -->
@@ -18,6 +18,7 @@
 
     <!-- Custom Theme Style -->
     <link href="{{ asset('template-admin/build/css/custom.min.css') }}" rel="stylesheet">
+    @yield('stylesheet')
   </head>
 
   <body class="nav-md">
@@ -53,7 +54,7 @@
 
                   <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="index.html">Escritorio</a></li>
+                      <li><a href="{{ route('admin-index') }}">Escritorio</a></li>
                     </ul>
                   </li>
 
@@ -64,25 +65,49 @@
                     </ul>
                   </li>
 
-                  <li><a><i class="fa fa-home"></i> Publicaciones <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-pencil"></i> Publicaciones <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="index.html">Inicio</a></li>
                       <li><a href="index.html">Crear</a></li>
                     </ul>
+                  </li>
+
+                  <li><a><i class="fa fa-tag"></i> Tags <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="index.html">Inicio</a></li>
+                      <li><a href="index.html">Crear</a></li>
+                    </ul>
+                  </li>
+
                 </ul>
               </div>
               <div class="menu_section">
                 <h3>WEB</h3>
                 <ul class="nav side-menu">
-                  <li><a><i class="fa fa-bug"></i> Páginas <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-globe"></i> Páginas <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="e_commerce.html">E-commerce</a></li>
-                      <li><a href="projects.html">Projects</a></li>
-                      <li><a href="project_detail.html">Project Detail</a></li>
-                      <li><a href="contacts.html">Contacts</a></li>
-                      <li><a href="profile.html">Profile</a></li>
+                      <li><a href="{{ route('index') }}">Blog Clon</a></li>
+                      <li><a href="{{ route('index') }}">Usuarios</a></li>
+                      <li><a href="projects.html">Cursos</a></li>
+                      <li><a href="contacts.html">Presupuesto</a></li>
+                      <li><a href="profile.html">Contacto</a></li>
                     </ul>
                   </li>
+
+                  <li><a><i class="fa fa-paint-brush"></i> Diseño <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{ route('admin.design.index') }}">Inicio</a></li>
+                      <li><a href="{{ route('admin.design.create') }}">Crear</a></li>
+                    </ul>
+                  </li>
+
+                  <li><a><i class="fa fa-briefcase"></i> Servicios <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{ route('admin.design.index') }}">Inicio</a></li>
+                      <li><a href="{{ route('admin.design.create') }}">Crear</a></li>
+                    </ul>
+                  </li>
+
                   <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="page_403.html">403 Error</a></li>
@@ -94,8 +119,11 @@
                     </ul>
                   </li>
 
-                  <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
+                  
                 </ul>
+
+                
+
               </div>
 
             </div>
@@ -143,7 +171,7 @@
                       </a>
                     </li>
                     <li><a href="">Ayuda</a></li>
-                    <li><a href="{{ url('/login') }}"><i class="fa fa-sign-out pull-right"></i> Salir</a></li>
+                    <li><a href="{{ url('/logout') }}"><i class="fa fa-sign-out pull-right"></i> Salir</a></li>
                   </ul>
                 </li>
 

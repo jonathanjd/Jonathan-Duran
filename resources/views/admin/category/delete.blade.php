@@ -1,10 +1,10 @@
 @extends('admin.base')
 
-@section('title','Create-Category')
+@section('title','Eliminar-Category')
 
-@section('title-content-1','Create-Category | Admin')
+@section('title-content-1','Eliminar-Category | Admin')
 
-@section('title-content-2','Create-Category | Admin')
+@section('title-content-2','Eliminar-Category | Admin')
 
 @section('content')
 
@@ -14,7 +14,7 @@
   <div class="col-md-6 col-xs-12">
     <div class="x_panel">
   <div class="x_title">
-    <h2>Form Category <small>Crear</small></h2>
+    <h2>Form Category <small>Eliminar</small></h2>
     <ul class="nav navbar-right panel_toolbox">
       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
       </li>
@@ -32,7 +32,6 @@
     </ul>
     <div class="clearfix"></div>
   </div>
-  
   <div class="x_content">
     <br />
 
@@ -50,17 +49,16 @@
     @endif
 
 
-    {!! Form::open(['route' => 'admin.category.store','method' => 'POST','class' => 'form-horizontal form-label-left input_mask']) !!}
+    {!! Form::open(['route' => ['admin.category.destroy',$category->id],'method' => 'DELETE','class' => 'form-horizontal form-label-left input_mask']) !!}
 
       <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-        {!! Form::text('name',null,['class' => 'form-control has-feedback-left','placeholder' => 'Name Category','required']); !!}
-        <span class="fa fa-bookmark form-control-feedback left" aria-hidden="true"></span>
+        <p><strong>Deseas Eliminar Name:</strong>{{ $category->name }}?</p>
       </div>
 
       <div class="form-group">
         <div class="col-md-9 col-sm-9 col-xs-12">
           <a href="{{ route('admin.category.index') }}" class="btn btn-primary">Regresar</a>
-          <button type="submit" class="btn btn-success">Crear</button>
+          <button type="submit" class="btn btn-success">Eliminar</button>
         </div>
       </div>
 
