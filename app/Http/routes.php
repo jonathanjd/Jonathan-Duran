@@ -41,7 +41,9 @@ Route::group(['prefix' => 'admin'], function () {
 
   Route::resource('category', 'CategoryController');
 
-  Route::resource('design','DesignController');
+  Route::resource('design', 'DesignController');
+
+  Route::resource('service', 'ServiceController');
 
 });
 

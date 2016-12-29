@@ -23,7 +23,7 @@ class WebController extends Controller
 
     public function diseño()
     {
-      # code...
+      
       //Consulta
       $diseños = Design::orderBy('id','desc')->paginate(7);
       //Vista
