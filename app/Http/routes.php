@@ -11,17 +11,41 @@
 |
 */
 
-Route::auth();
-
 Route::get('/', [
     'as' => 'index',
     'uses' => 'WebController@index'
 ]);
 
+Route::get('/api/services','PresupuestoController@servicios_ajax');
+
 Route::get('diseño',[
   'as' => 'diseño',
   'uses' => 'WebController@diseño'
 ]);
+
+Route::get('cursos',[
+  'as' => 'cursos',
+  'uses' => 'WebController@cursos'
+]);
+
+Route::group(['prefix' => 'presupuesto'], function() {
+
+  Route::get('index',[
+    'as' => 'presupuesto.index',
+    'uses' => 'PresupuestoController@index'
+    ]);
+
+  Route::get('diseño/{id}/servicio/crear',[
+    'as' => 'presupuesto.diseño.servicios',
+    'uses' => 'PresupuestoController@crear'
+    ]);
+
+  Route::post('diseño/{id}/store',[
+    'as' => 'presupuesto.diseño.servicios.datos.create',
+    'uses' => 'PresupuestoController@store'
+    ]);
+
+});
 
 Route::group(['prefix' => 'admin'], function () {
 
@@ -36,7 +60,6 @@ Route::group(['prefix' => 'admin'], function () {
     'uses' => 'AdminController@index'
   ]);
 
-
   Route::get('category/{category}/delete',['as' => 'admin.category.delete','uses'=>'CategoryController@delete']);
 
   Route::resource('category', 'CategoryController');
@@ -45,6 +68,18 @@ Route::group(['prefix' => 'admin'], function () {
 
   Route::resource('service', 'ServiceController');
 
+  Route::get('course',[
+    'as' => 'course-index',
+    'uses' => 'CourseController@index'
+  ]);
+
+  Route::get('/api/course','CourseController@list_course');
+
+  Route::get('video',[
+    'as' => 'video-index',
+    'uses' => 'VideoController@index'
+  ]);
+
 });
 
 Route::post('enviar/correo',[
@@ -52,7 +87,6 @@ Route::post('enviar/correo',[
   'uses' => 'WebController@enviar'
 ]);
 
-
-Route::auth();
-
-Route::get('/home', 'HomeController@index');
+Route::get('login', 'Auth\AuthController@showLoginForm');
+Route::post('login', 'Auth\AuthController@login');
+Route::get('logout', 'Auth\AuthController@logout');

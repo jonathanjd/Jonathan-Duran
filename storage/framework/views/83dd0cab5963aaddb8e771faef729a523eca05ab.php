@@ -18,7 +18,7 @@
                         <li><a href="#portfolio" class="page-scroll">Diseños</a></li>
                         <li><a href="#team" class="page-scroll">Nosotros</a></li>
                         <li><a href="#" class="">Blog</a></li>
-                        <li><a href="#" class="">Cursos</a></li>
+                        <li><a href="<?php echo e(route('cursos')); ?>" class="">Cursos</a></li>
                         <li><a href="#contact" class="page-scroll">Contactanos</a></li>
                     </ul>
                 </div>
@@ -37,21 +37,21 @@
             <div class="caption">
                 <h6>Diseño / Creatividad / Marca</h6>
                 <h1>Página <span>Web</span></h1>
-                <a class="btn btn-transparent page-scroll" href="#services">Más Información</a><a class="btn btn-light page-scroll" href="#contact">Contratar</a>
+                <a class="btn btn-transparent page-scroll" href="#services">Más Información</a><a class="btn btn-light page-scroll" href="<?php echo e(route('presupuesto.index')); ?>">Presupuesto</a>
             </div>
         </div>
         <div class="item" style="background-image: url(<?php echo e(asset('template-web/img/sliders/diseno-creativo-blog-clon.jpg')); ?>)">
             <div class="caption">
                 <h6>Diseño / Creatividad / Marca</h6>
                 <h1>Diseño <span>Creativo</span></h1>
-                <a class="btn btn-transparent page-scroll" href="#services">Más Información</a><a class="btn btn-light page-scroll" href="#contact">Contratar</a>
+                <a class="btn btn-transparent page-scroll" href="#services">Más Información</a><a class="btn btn-light page-scroll" href="<?php echo e(route('presupuesto.index')); ?>">Presupuesto</a>
             </div>
         </div>
         <div class="item" style="background-image: url(<?php echo e(asset('template-web/img/sliders/codigo-limpio-blog-clon.jpg')); ?>)">
             <div class="caption">
                 <h6>Diseño / Creatividad / Marca</h6>
                 <h1>Código <span>Limpio</span></h1>
-                <a class="btn btn-transparent page-scroll" href="#services">Más Información</a><a class="btn btn-light page-scroll" href="#contact">Contratar</a>
+                <a class="btn btn-transparent page-scroll" href="#services">Más Información</a><a class="btn btn-light page-scroll" href="<?php echo e(route('presupuesto.index')); ?>">Presupuesto</a>
             </div>
         </div>
     </div>

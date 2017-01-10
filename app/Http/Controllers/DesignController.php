@@ -15,7 +15,7 @@ class DesignController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -63,7 +63,7 @@ class DesignController extends Controller
      */
     public function store(Request $request)
     {
-        
+
         //***********
         //Validation
         //***********
@@ -196,7 +196,7 @@ class DesignController extends Controller
            //Redirect
            return redirect()->route('admin.design.index');
         }
-        
+
 
     }
 

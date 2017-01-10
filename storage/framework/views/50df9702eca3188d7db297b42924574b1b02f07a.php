@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Blog Clon">
-
+    <meta id="token" name="token" value="<?php echo e(csrf_token()); ?>">
     <title><?php echo $__env->yieldContent('title'); ?> | Blog Clon</title>
     <link rel="icon" type="image/png" href="<?php echo e(asset('template-web/img/logo/favicon.png')); ?>" />
     <!-- Bootstrap Core CSS -->
@@ -16,7 +16,9 @@
 
     <!-- Custom CSS -->
     <link href="<?php echo e(asset('css/4-col-portfolio.css')); ?>" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin|Lobster" rel="stylesheet">
 
+    <link href="<?php echo e(asset('css/base.css')); ?>" rel="stylesheet">
     <?php echo $__env->yieldContent('stylesheet'); ?>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -33,7 +35,7 @@
     <?php echo $__env->make('web.page.design.navigation', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
     <!-- Page Content -->
-    <div class="container">
+    <div class="container" id="main-vue">
 
         <?php echo $__env->yieldContent('content'); ?>
 

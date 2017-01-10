@@ -21,14 +21,22 @@ class WebController extends Controller
         return view('web.index');
     }
 
+    public function cursos()
+    {
+      # code...
+      return view('web.page.cursos.index');
+    }
+
     public function diseño()
     {
-      
+
       //Consulta
       $diseños = Design::orderBy('id','desc')->paginate(7);
       //Vista
       return view('web.page.design.index')->with('diseños', $diseños);
     }
+
+
 
     public function enviar(SendEmailRequest $request)
     {

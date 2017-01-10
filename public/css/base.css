@@ -1,0 +1,31 @@
+nav{
+  font-family: 'Cabin', sans-serif;
+}
+
+h1{
+  font-family: 'Lobster', cursive;
+}
+h3{
+  font-family: 'Lobster', cursive;
+}
+
+p{
+  font-family: 'Cabin', sans-serif;
+}
+
+.imagen-diseño img{
+  height: 300px;
+  width: 300px;
+}
+
+a{
+  font-family: 'Cabin', sans-serif;
+}
+
+form{
+  font-family: 'Cabin', sans-serif;
+}
+
+footer{
+  font-family: 'Cabin', sans-serif;
+}

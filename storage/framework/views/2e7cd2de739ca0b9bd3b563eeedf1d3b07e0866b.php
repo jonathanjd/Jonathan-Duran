@@ -15,13 +15,13 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a href="#">Diseños</a>
+                        <a href="<?php echo e(route('diseño')); ?>">Diseños</a>
                     </li>
                     <li>
-                        <a href="#">Cursos</a>
+                        <a href="<?php echo e(route('cursos')); ?>">Cursos</a>
                     </li>
                     <li>
-                        <a href="#">Presupuesto</a>
+                        <a href="<?php echo e(route('presupuesto.index')); ?>">Presupuesto</a>
                     </li>
                     <li>
                         <a href="#">Blog</a>
