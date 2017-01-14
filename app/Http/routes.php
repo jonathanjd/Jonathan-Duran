@@ -60,7 +60,9 @@ Route::group(['prefix' => 'admin'], function () {
     'uses' => 'AdminController@index'
   ]);
 
-  Route::get('category/{category}/delete',['as' => 'admin.category.delete','uses'=>'CategoryController@delete']);
+  Route::get('category/{category}/delete',
+    ['as' => 'admin.category.delete',
+    'uses'=>'CategoryController@delete']);
 
   Route::resource('category', 'CategoryController');
 
@@ -68,17 +70,19 @@ Route::group(['prefix' => 'admin'], function () {
 
   Route::resource('service', 'ServiceController');
 
-  Route::get('course',[
-    'as' => 'course-index',
-    'uses' => 'CourseController@index'
+  Route::get('course/{id}/delete',[
+    'as' => 'admin.course.delete',
+    'uses' => 'CourseController@delete'
   ]);
 
-  Route::get('/api/course','CourseController@list_course');
+  Route::resource('course', 'CourseController');
 
-  Route::get('video',[
-    'as' => 'video-index',
-    'uses' => 'VideoController@index'
+  Route::get('video/{id}/delete',[
+    'as' => 'admin.video.delete',
+    'uses' => 'VideoController@delete'
   ]);
+
+  Route::resource('video', 'VideoController');
 
 });
 
@@ -87,6 +91,7 @@ Route::post('enviar/correo',[
   'uses' => 'WebController@enviar'
 ]);
 
+//Route::auth();
 Route::get('login', 'Auth\AuthController@showLoginForm');
 Route::post('login', 'Auth\AuthController@login');
 Route::get('logout', 'Auth\AuthController@logout');

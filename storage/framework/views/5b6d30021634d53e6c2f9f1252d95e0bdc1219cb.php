@@ -38,10 +38,6 @@
       <li><a><i class="fa fa-globe"></i> Páginas <span class="fa fa-chevron-down"></span></a>
         <ul class="nav child_menu">
           <li><a href="<?php echo e(route('index')); ?>">Blog Clon</a></li>
-          <li><a href="<?php echo e(route('index')); ?>">Usuarios</a></li>
-          <li><a href="projects.html">Cursos</a></li>
-          <li><a href="contacts.html">Presupuesto</a></li>
-          <li><a href="profile.html">Contacto</a></li>
         </ul>
       </li>
 
@@ -61,13 +57,15 @@
 
       <li><a><i class="fa fa-cubes"></i> Cursos <span class="fa fa-chevron-down"></span></a>
         <ul class="nav child_menu">
-          <li><a href="<?php echo e(route('course-index')); ?>">Inicio</a></li>
+          <li><a href="<?php echo e(route('admin.course.index')); ?>">Inicio</a></li>
+          <li><a href="<?php echo e(route('admin.course.create')); ?>">Crear</a></li>
         </ul>
       </li>
 
       <li><a><i class="fa fa-youtube-play"></i> Videos <span class="fa fa-chevron-down"></span></a>
         <ul class="nav child_menu">
-          <li><a href="<?php echo e(route('video-index')); ?>">Inicio</a></li>
+          <li><a href="<?php echo e(route('admin.video.index')); ?>">Inicio</a></li>
+          <li><a href="<?php echo e(route('admin.video.create')); ?>">Crear</a></li>
         </ul>
       </li>
 

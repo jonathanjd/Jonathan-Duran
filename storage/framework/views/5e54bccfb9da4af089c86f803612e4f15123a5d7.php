@@ -1,6 +1,6 @@
 <div class="profile">
   <div class="profile_pic">
-    <img src="<?php echo e(asset('template-admin/img/jonathan-duran.jpg')); ?>" alt="..." class="img-circle profile_img">
+    <img src="<?php echo e(asset('template-admin/img/admin.jpg')); ?>" alt="..." class="img-circle profile_img">
   </div>
   <div class="profile_info">
     <span>Bienvenido,</span>

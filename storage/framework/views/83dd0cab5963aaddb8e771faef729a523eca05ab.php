@@ -18,7 +18,6 @@
                         <li><a href="#portfolio" class="page-scroll">Diseños</a></li>
                         <li><a href="#team" class="page-scroll">Nosotros</a></li>
                         <li><a href="#" class="">Blog</a></li>
-                        <li><a href="<?php echo e(route('cursos')); ?>" class="">Cursos</a></li>
                         <li><a href="#contact" class="page-scroll">Contactanos</a></li>
                     </ul>
                 </div>

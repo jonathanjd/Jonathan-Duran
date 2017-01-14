@@ -75,8 +75,6 @@
 
             <div class="clearfix"></div>
 
-              <?php echo $__env->yieldContent('main_content'); ?>
-
             <div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">

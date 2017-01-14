@@ -8,7 +8,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li class="">
           <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-            <img src="<?php echo e(asset('template-admin/img/jonathan-duran.jpg')); ?>" alt=""><?php echo e(Auth::user()->name); ?>
+            <img src="<?php echo e(asset('template-admin/img/admin.jpg')); ?>" alt=""><?php echo e(Auth::user()->name); ?>
 
             <span class=" fa fa-angle-down"></span>
           </a>
