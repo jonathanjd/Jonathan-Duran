@@ -5,7 +5,7 @@
   <link rel="stylesheet" href="<?php echo e(asset('css/parsley.css')); ?>">
 <?php $__env->stopSection(); ?>
 
-<?php $__env->startSection('title-content-1','Cursos'); ?>
+<?php $__env->startSection('title-content-1','Editar Cursos'); ?>
 
 <?php $__env->startSection('main_content'); ?>
 

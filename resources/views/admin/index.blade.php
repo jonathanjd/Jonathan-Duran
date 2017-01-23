@@ -1,11 +1,9 @@
-@extends('admin.base')
+@extends('admin.base-main')
 
 @section('title','Index')
 
 @section('title-content-1','Inicio Admin')
 
-@section('title-content-2','Inicio Admin')
-
-@section('content')
+@section('main_content')
 
 @endsection

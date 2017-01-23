@@ -4,9 +4,22 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+use Cviebrock\EloquentSluggable\Sluggable;
+
 class Post extends Model
 {
     //
+      use Sluggable;
+
+      public function sluggable()
+      {
+        return [
+            'slug' => [
+                'source' => 'title'
+            ]
+        ];
+      }
+
    	protected $fillable = ['title','content','user_id','category_id'];
 
    	public function category()
@@ -30,6 +43,6 @@ class Post extends Model
    	public function tags()
    	{
    		# code...
-   		return $this->belongsToMany('App\Tag');
+   		return $this->belongsToMany('App\Tag')->withTimestamps();;
    	}
 }

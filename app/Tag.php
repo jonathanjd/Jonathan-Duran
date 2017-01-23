@@ -13,5 +13,6 @@ class Tag extends Model
    	 {
    	 	# code...
    	 	return $this->belongsToMany('App\Post')->withTimestamps();
+   	 	
    	 }
 }

@@ -14,9 +14,7 @@ class AddDesignIdToPresupuestosTable extends Migration
     {
         Schema::table('presupuestos', function (Blueprint $table) {
             //
-            $table->integer('design_id')->after('message')->unsigned();
 
-            $table->foreign('design_id')->references('id')->on('designs')->onDelete('cascade');
         });
     }
 
@@ -29,8 +27,7 @@ class AddDesignIdToPresupuestosTable extends Migration
     {
         Schema::table('presupuestos', function (Blueprint $table) {
             //
-            $table->dropForeign(['design_id']);
-            $table->dropColumn('design_id');
+          
         });
     }
 }

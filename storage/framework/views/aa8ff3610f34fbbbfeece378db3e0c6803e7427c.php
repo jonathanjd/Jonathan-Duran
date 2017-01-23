@@ -18,7 +18,7 @@
       <a href="<?php echo e(route('admin.video.index')); ?>" class="btn btn-primary btn-block" data-toggle="tooltip" data-placement="bottom" title="Regresar"><i class="fa fa-arrow-left"></i></a>
   </div>
 
-    <?php echo $__env->make('admin.message', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    
 
     <div class="x_panel">
         <div class="x_title">
@@ -41,8 +41,12 @@
             <div class="clearfix"></div>
         </div>
         <div class="x_content">
+          <?php echo $__env->make('admin.error', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
           <h3><?php echo e($video->name); ?><small><?php echo e($video->course->name); ?></small></h3>
+
           <p><?php echo e($video->content); ?></p>
+          
           <img class="img-responsive img-thumbnail center-block" src="<?php echo e(asset('video/'.$video->image)); ?>" alt="">
           <br>
           

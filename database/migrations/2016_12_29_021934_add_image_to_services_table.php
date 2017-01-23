@@ -14,7 +14,7 @@ class AddImageToServicesTable extends Migration
     {
         Schema::table('services', function (Blueprint $table) {
             //
-            $table->string('image')->after('price');
+
         });
     }
 
@@ -27,7 +27,7 @@ class AddImageToServicesTable extends Migration
     {
         Schema::table('services', function (Blueprint $table) {
             //
-            $table->dropColumn('image');
+          
         });
     }
 }

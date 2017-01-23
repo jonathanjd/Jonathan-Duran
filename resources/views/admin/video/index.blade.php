@@ -19,7 +19,11 @@
   @include('admin.message')
 
   <div>
+
       <a href="{{ route('admin.video.create') }}" class="btn btn-primary btn-block" data-toggle="tooltip" data-placement="bottom" title="Crear Video"><i class="fa fa-plus-circle"></i></a>
+
+      {{ $videos->links() }}
+
   </div>
 
     <div class="x_panel">
@@ -60,7 +64,7 @@
                     @foreach ($videos as $video)
                     <tr>
                         <th scope="row">{{ $video->id }}</th>
-                        <td> <img src="{{ asset('video/'.$video->image) }}" alt="" class="img-responsive img-thumbnail"></td>
+                        <td> <img src="{{ asset('video/'.$video->image) }}" alt="" class="img-responsive img-thumbnail" height="150" width="150"></td>
                         <td>{{ $video->name }}</td>
                         <td>{{ $video->course->name }}</td>
                         <td><a href="{{ route('admin.video.show',$video) }}" data-toggle="tooltip" data-placement="bottom" title="Ver" class="btn btn-info"><i class="fa fa-eye"></i></a></td>
@@ -77,11 +81,15 @@
 
     <div>
       <!-- Pagination -->
-      {{ $videos->links() }}
+      
     </div>
 
     <div>
+
+        {{ $videos->links() }}
+        
         <a href="{{ route('admin.video.create') }}" class="btn btn-primary btn-block" data-toggle="tooltip" data-placement="bottom" title="Crear Video"><i class="fa fa-plus-circle"></i></a>
+
     </div>
 
 </div>

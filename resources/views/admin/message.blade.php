@@ -1,7 +1,26 @@
-@if (session()->has('flash_notification.message'))
-    <div class="alert alert-{{ session('flash_notification.level') }}">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+<!-- jQuery -->
+<script src="{{ asset('template-admin/vendors/jquery/dist/jquery.min.js') }}"></script>
+<!-- PNotify -->
+<script src="{{ asset('template-admin/vendors/pnotify/dist/pnotify.js') }}"></script>
+<script src="{{ asset('template-admin/vendors/pnotify/dist/pnotify.buttons.js') }}"></script>
+<script src="{{ asset('template-admin/vendors/pnotify/dist/pnotify.nonblock.js') }}"></script>
 
-        {!! session('flash_notification.message') !!}
-    </div>
+@if (session()->has('flash_notification.message'))
+	
+	<script type="text/javascript">
+
+		$(document).ready(function(){
+
+			new PNotify({
+				title: 'Excelente!',
+	            text: '{!! session('flash_notification.message') !!}',
+	            type: 'success',
+	            styling: 'bootstrap3'
+			});
+
+		});
+
+	</script>
+
 @endif
+

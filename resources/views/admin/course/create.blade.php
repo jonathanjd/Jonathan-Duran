@@ -20,7 +20,6 @@
       <a href="{{ route('admin.course.index') }}" class="btn btn-primary btn-block" data-toggle="tooltip" data-placement="bottom" title="Regresar"><i class="fa fa-arrow-left"></i></a>
     </div>
 
-    @include('admin.error')
 
     <div class="x_panel">
         <div class="x_title">
@@ -43,7 +42,8 @@
             <div class="clearfix"></div>
         </div>
         <div class="x_content">
-            <br />
+            
+            @include('admin.error')
 
              {!! Form::open(['route' => 'admin.course.store','method' => 'POST','class' => 'form-horizontal form-label-left input_mask','files' => true,'data-parsley-validate' => '']) !!}
               <div class="form-group">

@@ -18,15 +18,15 @@
 
       <li><a><i class="fa fa-pencil"></i> Publicaciones <span class="fa fa-chevron-down"></span></a>
         <ul class="nav child_menu">
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="index.html">Crear</a></li>
+          <li><a href="<?php echo e(route('admin.post.index')); ?>">Inicio</a></li>
+          <li><a href="<?php echo e(route('admin.post.create')); ?>">Crear</a></li>
         </ul>
       </li>
 
       <li><a><i class="fa fa-tag"></i> Tags <span class="fa fa-chevron-down"></span></a>
         <ul class="nav child_menu">
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="index.html">Crear</a></li>
+          <li><a href="<?php echo e(route('admin.tag.index')); ?>">Inicio</a></li>
+          <li><a href="<?php echo e(route('admin.tag.create')); ?>">Crear</a></li>
         </ul>
       </li>
 
@@ -41,7 +41,7 @@
         </ul>
       </li>
 
-      <li><a><i class="fa fa-paint-brush"></i> Diseño <span class="fa fa-chevron-down"></span></a>
+      <li><a><i class="fa fa-paint-brush"></i> Diseños <span class="fa fa-chevron-down"></span></a>
         <ul class="nav child_menu">
           <li><a href="<?php echo e(route('admin.design.index')); ?>">Inicio</a></li>
           <li><a href="<?php echo e(route('admin.design.create')); ?>">Crear</a></li>
@@ -52,6 +52,13 @@
         <ul class="nav child_menu">
           <li><a href="<?php echo e(route('admin.service.index')); ?>">Inicio</a></li>
           <li><a href="<?php echo e(route('admin.service.create')); ?>">Crear</a></li>
+        </ul>
+      </li>
+
+      <li><a><i class="fa fa-folder"></i> Planes <span class="fa fa-chevron-down"></span></a>
+        <ul class="nav child_menu">
+          <li><a href="<?php echo e(route('admin.plan.index')); ?>">Inicio</a></li>
+          <li><a href="<?php echo e(route('admin.plan.create')); ?>">Crear</a></li>
         </ul>
       </li>
 

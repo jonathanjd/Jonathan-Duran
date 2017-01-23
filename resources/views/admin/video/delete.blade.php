@@ -20,7 +20,7 @@
       <a href="{{ route('admin.video.index') }}" class="btn btn-primary btn-block" data-toggle="tooltip" data-placement="bottom" title="Regresar"><i class="fa fa-arrow-left"></i></a>
   </div>
 
-    @include('admin.message')
+    
 
     <div class="x_panel">
         <div class="x_title">
@@ -43,8 +43,12 @@
             <div class="clearfix"></div>
         </div>
         <div class="x_content">
+          @include('admin.error')
+
           <h3>{{ $video->name }}<small>{{ $video->course->name }}</small></h3>
+
           <p>{{ $video->content }}</p>
+          
           <img class="img-responsive img-thumbnail center-block" src="{{ asset('video/'.$video->image) }}" alt="">
           <br>
           

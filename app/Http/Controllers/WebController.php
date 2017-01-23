@@ -12,9 +12,22 @@ use App\Http\Requests;
 
 use App\Design;
 
+use App\Service;
+
+use App\Plan;
+
+use Carbon\Carbon;
+
 class WebController extends Controller
 {
     //
+    public function __construct()
+    {
+        # code...
+        Carbon::setlocale('es');
+
+    }
+
     public function index()
     {
         # code...
@@ -29,7 +42,6 @@ class WebController extends Controller
 
     public function diseño()
     {
-
       //Consulta
       $diseños = Design::orderBy('id','desc')->paginate(7);
       //Vista
@@ -52,6 +64,36 @@ class WebController extends Controller
           $msj->to($request->correo);
         });
 
+    }
+
+    public function index_polo()
+    {
+      # code...
+      $services = Service::orderBy('id','ASC')->get();
+      $plans = Plan::orderBy('id','ASC')->take(3)->get();
+      $designs = Design::orderBy('id','DESC')->take('8')->get();
+
+      return view('polo.page.index')
+              ->with('designs',$designs)
+              ->with('services',$services)
+              ->with('plans',$plans);
+    }
+
+    public function designs_polo()
+    {
+      # code...
+      $services = Service::orderBy('id','ASC')->get();
+      $designs = Design::orderBy('id','DESC')->paginate(7);
+      return view('polo.page.designs')->with('designs',$designs)->with('services',$services);
+    }
+
+    public function service_show_polo($id)
+    {
+      # code...
+      $services = Service::orderBy('id','ASC')->get();
+      $plan = Plan::find($id);
+      $plans = Plan::orderBy('id','ASC')->get();
+      return view('polo.page.servicio_show')->with('plan',$plan)->with('services',$services)->with('plans',$plans);
     }
 
 }

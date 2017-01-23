@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="shortcut icon" href="{{ asset('template-polo/images/favicon.png')}}">
+    <title>@yield('title') | Blog Clon</title>
+
+    @include('polo.part.stylesheet')
+
+    @yield('stylesheet')
+
+</head>
+
+<body class="wide">
+
+    <!-- WRAPPER -->
+    <div class="wrapper">
+
+
+        <!-- HEADER -->
+        @include('polo.part.header')
+        <!-- END: HEADER -->
+
+        @yield('content_part')
+
+        <!-- REVOLUTION SLIDER -->
+
+        <!-- END REVOLUTION SLIDER -->
+
+        <!-- FOOTER -->
+        @include('polo.part.footer')
+        <!-- END: FOOTER -->
+
+    </div>
+    <!-- END: WRAPPER -->
+
+    <!-- GO TOP BUTTON -->
+    <a class="gototop gototop-button" href="#"><i class="fa fa-chevron-up"></i></a>
+
+    @include('polo.part.script')
+
+    @yield('script')
+
+</body>
+
+</html>

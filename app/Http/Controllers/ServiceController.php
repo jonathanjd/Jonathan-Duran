@@ -53,25 +53,12 @@ class ServiceController extends Controller
         $this->validate($request,[
 
             'name' => 'required|max:50',
-            'description' => 'required',
-            'price' => 'required|integer',
-            'image' => 'required|mimes:jpeg,jpg,png',
-            'available' => 'required'
 
         ]);
 
-        //File
-        if ($request->file('image')) {
-            # code...
-            $file = $request->file('image');
-            $name = 'service-' . time() . '.' . $file->getClientOriginalExtension();
-            $path = public_path() . '/service/';
-            $file->move($path,$name);
-        }
-
         //Save
         $service = new Service($request->all());
-        $service->image = $name;
+
         $service->save();
 
         //Message
@@ -119,42 +106,17 @@ class ServiceController extends Controller
         $this->validate($request,[
 
             'name' => 'required|max:50',
-            'description' => 'required',
-            'price' => 'required|integer',
-            'image' => 'mimes:jpeg,jpg,png',
-            'available' => 'required'
 
         ]);
+        //Update
+        $service = Service::find($id);
+        $service->fill($request->all());
+        $service->save();
+        //Message
+        flash('Datos Editados','success');
+        //Redirect
+        return redirect()->route('admin.service.index');
 
-        //File Si Tiene Imagen
-        if ($request->file('image')) {
-            //File
-            $file = $request->file('image');
-            $name = 'service-' . time() . '.' . $file->getClientOriginalExtension();
-            $path = public_path() . '/service/';
-            $file->move($path,$name);
-            //Update
-            $service = Service::find($id);
-            $service->fill($request->all());
-            $service->image = $name;
-            $service->save();
-            //Message
-            flash('Datos Editados','success');
-            //Redirect
-            return redirect()->route('admin.service.index');
-        }else{//File No Tiene Imagen
-            //Update
-            $service = Service::find($id);
-            $service->name = $request->name;
-            $service->description = $request->description;
-            $service->price = $request->price;
-            $service->available = $request->available;
-            $service->save();
-            //Message
-            flash('Datos Editados','success');
-            //Redirect
-            return redirect()->route('admin.service.index');
-        }
     }
 
     /**

@@ -12,9 +12,5 @@ class Design extends Model
         'name', 'image', 'content','url'
     ];
 
-    public function presupuesto()
-    {
-      # code...
-      return $this->belongsTo('App\Presupuesto');
-    }
+  
 }

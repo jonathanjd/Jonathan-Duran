@@ -25,7 +25,8 @@ class CategoryController extends Controller
     public function index()
     {
         //
-        $categories = Category::orderBy('id','asc')->get();
+        
+        $categories = Category::orderBy('id','asc')->paginate(5);
         return view('admin.category.index')->with('categories',$categories);
     }
 
@@ -108,7 +109,7 @@ class CategoryController extends Controller
         $category = Category::find($id);
         $category->fill($request->all());
         $category->save();
-        flash('Registro Actualizado','success');
+        flash('Registro Editado','success');
         return redirect()->route('admin.category.show',[$category]);
     }
 

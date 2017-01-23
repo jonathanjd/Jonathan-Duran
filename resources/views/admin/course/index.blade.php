@@ -20,6 +20,8 @@
 
   <div>
       <a href="{{ route('admin.course.create') }}" class="btn btn-primary btn-block" data-toggle="tooltip" data-placement="bottom" title="Crear Curso"><i class="fa fa-plus-circle"></i></a>
+
+      {{ $courses->links() }}
   </div>
 
     <div class="x_panel">
@@ -49,7 +51,6 @@
                         <th>#</th>
                         <th>Image</th>
                         <th>Name</th>
-                        <th>Content</th>
                         <th>Mostrar</th>
                         <th>Editar</th>
                         <th>Eliminar</th>
@@ -62,7 +63,6 @@
                         <th scope="row">{{ $course->id }}</th>
                         <td> <img src="{{ asset('course/'.$course->image) }}" alt="" class="img-responsive img-thumbnail"></td>
                         <td>{{ $course->name }}</td>
-                        <td>{{ $course->content }}</td>
                         <td><a href="{{ route('admin.course.show',$course) }}" data-toggle="tooltip" data-placement="bottom" title="Ver" class="btn btn-info"><i class="fa fa-eye"></i></a></td>
                         <td><a href="{{ route('admin.course.edit',$course) }}" data-toggle="tooltip" data-placement="bottom" title="Editar" class="btn btn-warning"><i class="fa fa-pencil-square-o"></i></a></td>
                         <td><a href="{{ route('admin.course.delete',$course) }}" data-toggle="tooltip" data-placement="bottom" title="Eliminar" class="btn btn-danger"><i class="fa fa-eraser"></i></a></td>

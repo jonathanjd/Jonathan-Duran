@@ -15,6 +15,12 @@
     <link href="{{ asset('template-admin/vendors/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
     <!-- NProgress -->
     <link href="{{ asset('template-admin/vendors/nprogress/nprogress.css') }}" rel="stylesheet">
+    <!-- PNotify -->
+    <link href="{{ asset('template-admin/vendors/pnotify/dist/pnotify.css') }}" rel="stylesheet">
+    <link href="{{ asset('template-admin/vendors/pnotify/dist/pnotify.buttons.css') }}" rel="stylesheet">
+    <link href="{{ asset('template-admin/vendors/pnotify/dist/pnotify.nonblock.css') }}" rel="stylesheet">
+    <!-- Select2 -->
+    <link href="{{ asset('template-admin/vendors/select2/dist/css/select2.min.css') }}" rel="stylesheet">
 
     <!-- Custom Theme Style -->
     <link href="{{ asset('template-admin/build/css/custom.min.css') }}" rel="stylesheet">
@@ -95,7 +101,8 @@
     <script src="{{ asset('template-admin/vendors/fastclick/lib/fastclick.js') }}"></script>
     <!-- NProgress -->
     <script src="{{ asset('template-admin/vendors/nprogress/nprogress.js') }} "></script>
-
+    <!-- Select2 -->
+    <script src="{{ asset('template-admin/vendors/select2/dist/js/select2.full.min.js') }}"></script>
     <!-- Custom Theme Scripts -->
     <script src="{{ asset('template-admin/build/js/custom.min.js') }}"></script>
 

@@ -17,7 +17,12 @@
   <?php echo $__env->make('admin.message', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
   <div>
+
       <a href="<?php echo e(route('admin.video.create')); ?>" class="btn btn-primary btn-block" data-toggle="tooltip" data-placement="bottom" title="Crear Video"><i class="fa fa-plus-circle"></i></a>
+
+      <?php echo e($videos->links()); ?>
+
+
   </div>
 
     <div class="x_panel">
@@ -58,7 +63,7 @@
                     <?php foreach($videos as $video): ?>
                     <tr>
                         <th scope="row"><?php echo e($video->id); ?></th>
-                        <td> <img src="<?php echo e(asset('video/'.$video->image)); ?>" alt="" class="img-responsive img-thumbnail"></td>
+                        <td> <img src="<?php echo e(asset('video/'.$video->image)); ?>" alt="" class="img-responsive img-thumbnail" height="150" width="150"></td>
                         <td><?php echo e($video->name); ?></td>
                         <td><?php echo e($video->course->name); ?></td>
                         <td><a href="<?php echo e(route('admin.video.show',$video)); ?>" data-toggle="tooltip" data-placement="bottom" title="Ver" class="btn btn-info"><i class="fa fa-eye"></i></a></td>
@@ -75,12 +80,16 @@
 
     <div>
       <!-- Pagination -->
-      <?php echo e($videos->links()); ?>
-
+      
     </div>
 
     <div>
+
+        <?php echo e($videos->links()); ?>
+
+        
         <a href="<?php echo e(route('admin.video.create')); ?>" class="btn btn-primary btn-block" data-toggle="tooltip" data-placement="bottom" title="Crear Video"><i class="fa fa-plus-circle"></i></a>
+
     </div>
 
 </div>

@@ -9,6 +9,12 @@ class Service extends Model
     //
 
     protected $fillable = [
-        'name', 'description', 'price', 'image', 'available'
+        'name',
     ];
+
+    public function plans()
+    {
+      # code...
+      return $this->hasMany('App\Plan');
+    }
 }

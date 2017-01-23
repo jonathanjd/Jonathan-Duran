@@ -11,10 +11,32 @@
 |
 */
 
+/*
+|-------------------------------------------------------
+|Route Web
+|-------------------------------------------------------
+|
+ */
+
 Route::get('/', [
     'as' => 'index',
     'uses' => 'WebController@index'
 ]);
+
+Route::get('polo', [
+    'as' => 'index',
+    'uses' => 'WebController@index_polo'
+]);
+
+Route::get('diseños',[
+  'as' => 'diseños',
+  'uses' => 'WebController@designs_polo'
+]);
+
+Route::get('servicio/{id}',[
+  'as' => 'servicio',
+  'uses' => 'WebController@service_show_polo'
+  ]);
 
 Route::get('/api/services','PresupuestoController@servicios_ajax');
 
@@ -47,6 +69,17 @@ Route::group(['prefix' => 'presupuesto'], function() {
 
 });
 
+Route::post('enviar/correo',[
+  'as' => 'enviar',
+  'uses' => 'WebController@enviar'
+]);
+
+/*
+|-----------------------------------------
+|Route Admin
+|-----------------------------------------
+ */
+
 Route::group(['prefix' => 'admin'], function () {
 
 
@@ -70,6 +103,12 @@ Route::group(['prefix' => 'admin'], function () {
 
   Route::resource('service', 'ServiceController');
 
+  Route::resource('plan', 'PlanController');
+
+  Route::resource('feature', 'FeatureController',[
+    'only' => ['store','destroy']
+  ]);
+
   Route::get('course/{id}/delete',[
     'as' => 'admin.course.delete',
     'uses' => 'CourseController@delete'
@@ -84,13 +123,28 @@ Route::group(['prefix' => 'admin'], function () {
 
   Route::resource('video', 'VideoController');
 
+  Route::get('tag/{id}/delete',[
+      'as' => 'admin.tag.delete',
+      'uses' => 'TagController@delete'
+    ]);
+
+  Route::resource('tag', 'TagController');
+
+  Route::get('post/{id}/delete',[
+    'as' => 'admin.post.delete',
+    'uses' => 'PostController@delete'
+    ]);
+
+  Route::resource('post', 'PostController');
+
 });
 
-Route::post('enviar/correo',[
-  'as' => 'enviar',
-  'uses' => 'WebController@enviar'
-]);
 
+/*
+|--------------------------------------------
+|Route Auth
+|--------------------------------------------
+ */
 //Route::auth();
 Route::get('login', 'Auth\AuthController@showLoginForm');
 Route::post('login', 'Auth\AuthController@login');

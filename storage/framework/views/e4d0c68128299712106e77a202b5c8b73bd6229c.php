@@ -18,6 +18,9 @@
 
   <div>
       <a href="<?php echo e(route('admin.course.create')); ?>" class="btn btn-primary btn-block" data-toggle="tooltip" data-placement="bottom" title="Crear Curso"><i class="fa fa-plus-circle"></i></a>
+
+      <?php echo e($courses->links()); ?>
+
   </div>
 
     <div class="x_panel">
@@ -47,7 +50,6 @@
                         <th>#</th>
                         <th>Image</th>
                         <th>Name</th>
-                        <th>Content</th>
                         <th>Mostrar</th>
                         <th>Editar</th>
                         <th>Eliminar</th>
@@ -60,7 +62,6 @@
                         <th scope="row"><?php echo e($course->id); ?></th>
                         <td> <img src="<?php echo e(asset('course/'.$course->image)); ?>" alt="" class="img-responsive img-thumbnail"></td>
                         <td><?php echo e($course->name); ?></td>
-                        <td><?php echo e($course->content); ?></td>
                         <td><a href="<?php echo e(route('admin.course.show',$course)); ?>" data-toggle="tooltip" data-placement="bottom" title="Ver" class="btn btn-info"><i class="fa fa-eye"></i></a></td>
                         <td><a href="<?php echo e(route('admin.course.edit',$course)); ?>" data-toggle="tooltip" data-placement="bottom" title="Editar" class="btn btn-warning"><i class="fa fa-pencil-square-o"></i></a></td>
                         <td><a href="<?php echo e(route('admin.course.delete',$course)); ?>" data-toggle="tooltip" data-placement="bottom" title="Eliminar" class="btn btn-danger"><i class="fa fa-eraser"></i></a></td>

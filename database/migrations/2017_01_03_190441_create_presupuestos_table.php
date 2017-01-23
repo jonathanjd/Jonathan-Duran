@@ -12,16 +12,7 @@ class CreatePresupuestosTable extends Migration
      */
     public function up()
     {
-        Schema::create('presupuestos', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('customer');
-            $table->string('email');
-            $table->text('message');
-            $table->enum('blog', ['si', 'no'])->default('no');
-            $table->enum('car', ['si', 'no'])->default('no');
-            $table->integer('total');
-            $table->timestamps();
-        });
+       
     }
 
     /**
@@ -31,6 +22,6 @@ class CreatePresupuestosTable extends Migration
      */
     public function down()
     {
-        Schema::drop('presupuestos');
+        
     }
 }

@@ -1,8 +1,26 @@
+<!-- jQuery -->
+<script src="<?php echo e(asset('template-admin/vendors/jquery/dist/jquery.min.js')); ?>"></script>
+<!-- PNotify -->
+<script src="<?php echo e(asset('template-admin/vendors/pnotify/dist/pnotify.js')); ?>"></script>
+<script src="<?php echo e(asset('template-admin/vendors/pnotify/dist/pnotify.buttons.js')); ?>"></script>
+<script src="<?php echo e(asset('template-admin/vendors/pnotify/dist/pnotify.nonblock.js')); ?>"></script>
+
 <?php if(session()->has('flash_notification.message')): ?>
-    <div class="alert alert-<?php echo e(session('flash_notification.level')); ?>">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+	
+	<script type="text/javascript">
 
-        <?php echo session('flash_notification.message'); ?>
+		$(document).ready(function(){
 
-    </div>
+			new PNotify({
+				title: 'Excelente!',
+	            text: '<?php echo session('flash_notification.message'); ?>',
+	            type: 'success',
+	            styling: 'bootstrap3'
+			});
+
+		});
+
+	</script>
+
 <?php endif; ?>
+
