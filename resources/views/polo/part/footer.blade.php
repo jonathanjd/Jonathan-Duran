@@ -2,7 +2,7 @@
     <div class="footer-content">
         <div class="container">
             <div class="row text-center">
-                <img alt="" src="{{ asset('template-polo/images/logo-sm-dark.png') }}">
+                <img alt="" src="{{ asset('template-polo/images/logo-sm-dark-blog-clon.png') }}">
                 <div class="copyright-text text-center"> &copy; 2015 POLO - Best HTML5 Template Ever. All Rights Reserved. <a target="_blank" href="http://www.inspiro-media.com">INSPIRO</a>
                 </div>
                 <div class="social-icons center">

@@ -31,7 +31,7 @@
                     </div>
 
                     <div class="portfolio-details">
-                        <p><?php echo e($design->content); ?></p>
+                        <p class="text-justify"><?php echo e($design->content); ?></p>
                         <br />
                         <a href="#" class="button color rounded button-3d effect icon-top"><span><i class="fa fa-external-link"></i>Más Detalles</span></a>
                     </div>

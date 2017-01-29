@@ -4,8 +4,8 @@
 
                     <!--LOGO-->
                     <div id="logo">
-                        <a href="index.html" class="logo" data-dark-logo="images/logo-dark.png">
-                            <img src="{{ asset('template-polo/images/logo.png') }}" alt="Polo Logo">
+                        <a href="index.html" class="logo" data-dark-logo="{{ asset('template-polo/images/logo-dark.png') }}">
+                            <img src="{{ asset('template-polo/images/blog-clon-logo.png') }}" alt="Polo Logo">
                         </a>
                     </div>
                     <!--END: LOGO-->

@@ -33,6 +33,21 @@ Route::get('diseños',[
   'uses' => 'WebController@designs_polo'
 ]);
 
+Route::get('servicio/{id}/contratar',[
+  'as' => 'servicio_contratar',
+  'uses' => 'WebController@service_hire_polo'
+]);
+
+Route::post('enviar/call',[
+  'as' => 'call',
+  'uses' => 'WebController@call_hire_service'
+]);
+
+Route::post('enviar/email',[
+  'as' => 'email',
+  'uses' => 'WebController@email_hire_service'
+]);
+
 Route::get('servicio/{id}',[
   'as' => 'servicio',
   'uses' => 'WebController@service_show_polo'

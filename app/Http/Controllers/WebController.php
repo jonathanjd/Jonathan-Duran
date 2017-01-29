@@ -66,6 +66,34 @@ class WebController extends Controller
 
     }
 
+    public function call_hire_service(Request $request)
+    {
+      # code...
+      Mail::send('web.mensajeCorreo',$request->all(), function($msj) {
+          $msj->subject('Mensaje desde Blog Clon');
+          $msj->to('headjd@gmail.com');
+        });
+
+        Mail::send('web.mensajeCorreoRecibido',$request->all(), function($msj) use($request){
+          $msj->subject('Blog Clon - Gracias');
+          $msj->to($request->correo);
+        });
+    }
+
+    public function email_hire_service(Request $request)
+    {
+      # code...
+      Mail::send('web.mensajeCorreo',$request->all(), function($msj) {
+          $msj->subject('Mensaje desde Blog Clon');
+          $msj->to('headjd@gmail.com');
+        });
+
+        Mail::send('web.mensajeCorreoRecibido',$request->all(), function($msj) use($request){
+          $msj->subject('Blog Clon - Gracias');
+          $msj->to($request->correo);
+        });
+    }
+
     public function index_polo()
     {
       # code...
@@ -94,6 +122,15 @@ class WebController extends Controller
       $plan = Plan::find($id);
       $plans = Plan::orderBy('id','ASC')->get();
       return view('polo.page.servicio_show')->with('plan',$plan)->with('services',$services)->with('plans',$plans);
+    }
+
+    public function service_hire_polo($id)
+    {
+      # code...
+      $services = Service::orderby('id','ASC')->get();
+      $plan = Plan::find($id);
+      $plans = Plan::orderBy('id','ASC')->get();
+      return view('polo.page.servicio_hire')->with('plan',$plan)->with('services',$services)->with('plans',$plans);
     }
 
 }
