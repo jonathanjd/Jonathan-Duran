@@ -5,7 +5,7 @@
 @section('stylesheet')
 <link rel="stylesheet" href="{{ asset('css/bootstrap_file_field.css') }}">
 <link rel="stylesheet" href="{{ asset('css/parsley.css') }}">
-<link rel="stylesheet" href="{{ asset('js/trumbowyg/dist/ui/trumbowyg.css') }}">
+
 @endsection
 
 @section('title-content-1','Post')
@@ -55,7 +55,7 @@
 		            </div>
 
 		            <div class="form-group">
-                        
+
                         {!! Form::label('Seleccione Tags') !!}
                         {!! Form::select('tags[]', $tags, null, ['class' => 'select2_multiple form-control','multiple','required']) !!}
 
@@ -64,27 +64,27 @@
 		            <div class="form-group">
 		              {!! Form::label('content','Content:') !!}
 		              {!! Form::textarea('content',null,['class' => 'form-control textarea-content', 'placeholder' => 'Ingrese Content', 'required' => '','minlength' => '10']) !!}
-		              
+
 		            </div>
-		            
+
 		            <div class="form-group">
 		              {!! Form::label('Image','Image:') !!}
 		              {!! Form::file('image',['data-field-type' => 'bootstrap-file-filed','data-preview' => 'on','data-file-types' => 'image/jpeg,image/png,image/gif','data-btn-class' => 'btn-primary','required' => '']) !!}
 		            </div>
-		          
+
 		            <div class="form-group">
-		              
+
 		                <button type="submit" class="btn btn-success btn-block" data-toggle="tooltip" data-placement="bottom" title="Guardar"><i class="fa fa-save"></i></button>
-		              
+
 		            </div>
-		         
+
 		          {!! Form::close() !!}
-					
+
 				</div>
 			</div>
 
 			<a href="{{ route('admin.post.index') }}" class="btn btn-primary btn-block" data-toggle="tooltip" data-placement="bottom" title="Regresar"><i class="fa fa-arrow-left"></i></a>
-			
+
 		</div>
 	</div>
 </div>
@@ -113,11 +113,11 @@
 
     <script src="{{ asset('js/bootstrap_file_field.js') }}"></script>
 	<script src="{{ asset('js/parsley.js') }}"></script>
-	<script src="{{ asset('js/trumbowyg/dist/trumbowyg.js') }}"></script>
 
-	<script>	
-		$('.textarea-content').trumbowyg();
+
+	<script src="http://cloud.tinymce.com/stable/tinymce.min.js?apiKey=55t6ildkigxrvqaf9lti3kmza3gh1j6iarkp51kpikf3snrn"></script>
+	<script type="text/javascript">
+	  tinymce.init({ selector:'textarea' });
 	</script>
 
 @endsection
-

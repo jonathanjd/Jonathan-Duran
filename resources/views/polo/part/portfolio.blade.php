@@ -23,6 +23,6 @@
                         </div>
 
                     @endforeach
-                    
+
                 </div>
             </section>

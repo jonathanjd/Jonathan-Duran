@@ -20,17 +20,32 @@
 
 Route::get('/', [
     'as' => 'index',
-    'uses' => 'WebController@index'
+    'uses' => 'WebController@index_polo'
 ]);
 
-Route::get('polo', [
-    'as' => 'index',
-    'uses' => 'WebController@index_polo'
+Route::get('blog', [
+    'as' => 'blog',
+    'uses' => 'WebController@blog_polo'
+]);
+
+Route::get('post/{id}', [
+	'uses' => 'WebController@post_polo',
+	'as' => 'blog_post'
 ]);
 
 Route::get('diseños',[
   'as' => 'diseños',
   'uses' => 'WebController@designs_polo'
+]);
+
+Route::get('diseño/{id}',[
+  'as' => 'diseño_details',
+  'uses' => 'WebController@design_polo_details'
+]);
+
+Route::get('servicios',[
+  'as' => 'servicios',
+  'uses' => 'WebController@services_polo'
 ]);
 
 Route::get('servicio/{id}/contratar',[
@@ -54,16 +69,6 @@ Route::get('servicio/{id}',[
   ]);
 
 Route::get('/api/services','PresupuestoController@servicios_ajax');
-
-Route::get('diseño',[
-  'as' => 'diseño',
-  'uses' => 'WebController@diseño'
-]);
-
-Route::get('cursos',[
-  'as' => 'cursos',
-  'uses' => 'WebController@cursos'
-]);
 
 Route::group(['prefix' => 'presupuesto'], function() {
 

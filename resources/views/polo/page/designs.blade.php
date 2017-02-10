@@ -34,7 +34,7 @@
                     <div class="portfolio-details">
                         <p class="text-justify">{{ $design->content }}</p>
                         <br />
-                        <a href="#" class="button color rounded button-3d effect icon-top"><span><i class="fa fa-external-link"></i>Más Detalles</span></a>
+                        <a href="{{ route('diseño_details',$design) }}" class="button color rounded button-3d effect icon-top"><span><i class="fa fa-external-link"></i>Más Detalles</span></a>
                     </div>
                 </div>
               @endforeach
@@ -53,5 +53,7 @@
   </section>
 
 
-
+  <!-- Social -->
+  @include('polo.part.socialrrssb')
+  <!-- END: SOCIAL -->
 @endsection

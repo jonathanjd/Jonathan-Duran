@@ -33,7 +33,7 @@
                     <div class="portfolio-details">
                         <p class="text-justify"><?php echo e($design->content); ?></p>
                         <br />
-                        <a href="#" class="button color rounded button-3d effect icon-top"><span><i class="fa fa-external-link"></i>Más Detalles</span></a>
+                        <a href="<?php echo e(route('diseño_details',$design)); ?>" class="button color rounded button-3d effect icon-top"><span><i class="fa fa-external-link"></i>Más Detalles</span></a>
                     </div>
                 </div>
               <?php endforeach; ?>
@@ -53,7 +53,9 @@
   </section>
 
 
-
+  <!-- Social -->
+  <?php echo $__env->make('polo.part.socialrrssb', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+  <!-- END: SOCIAL -->
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('polo.main.base', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

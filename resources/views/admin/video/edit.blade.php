@@ -44,7 +44,7 @@
         </div>
         <div class="x_content">
             <br />
-            
+
             {!! Form::open(['route' => ['admin.video.update',$video],'method' => 'PUT','class' => 'form-horizontal form-label-left input_mask','files' => true,'data-parsley-validate' => '']) !!}
 
             <div class="form-group">
@@ -71,8 +71,8 @@
                 <div class="col-md-9">
                   {!! Form::text('url', $video->url ,['class' => 'form-control','data-parsley-required' => '']) !!}
                 </div>
-              </div>      
-        
+              </div>
+
 
               <div class="form-group">
                 {!! Form::label('name','Name:',['class' => 'control-label col-md-3']) !!}
@@ -101,7 +101,7 @@
                 </div>
 
             {{ Form::close() }}
-          
+
 
         </div>
     </div>
@@ -124,5 +124,9 @@
   $(function () {
     $('[data-toggle="tooltip"]').tooltip()
   })
+</script>
+<script src="http://cloud.tinymce.com/stable/tinymce.min.js?apiKey=55t6ildkigxrvqaf9lti3kmza3gh1j6iarkp51kpikf3snrn"></script>
+<script type="text/javascript">
+  tinymce.init({ selector:'textarea' });
 </script>
 @endsection

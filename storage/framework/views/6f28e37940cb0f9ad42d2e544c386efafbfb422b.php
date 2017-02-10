@@ -4,7 +4,7 @@
 
                     <!--LOGO-->
                     <div id="logo">
-                        <a href="index.html" class="logo" data-dark-logo="<?php echo e(asset('template-polo/images/logo-dark.png')); ?>">
+                        <a href="<?php echo e(route('index')); ?>" class="logo" data-dark-logo="<?php echo e(asset('template-polo/images/logo-dark.png')); ?>">
                             <img src="<?php echo e(asset('template-polo/images/blog-clon-logo.png')); ?>" alt="Polo Logo">
                         </a>
                     </div>
@@ -66,11 +66,7 @@
                   									</li>
                                     <li><a href="<?php echo e(route('diseños')); ?>"><i class="fa fa-pencil"></i> Diseños</a></li>
 
-                                    <li > <a href="#"><i class="fa fa-book"></i> Cursos</a>
-
-                                    <li > <a href="#"><i class="fa fa-reorder"></i> Blog</a>
-
-                                    <li > <a href="#"><i class="fa fa-gamepad"></i> Juegos</a>
+                                    <li > <a href="<?php echo e(route('blog')); ?>"><i class="fa fa-reorder"></i> Blog</a>
 
                                     </li>
 

@@ -58,11 +58,10 @@
         </div>
 
         <!-- Google map sensor -->
-        <script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=false"></script>
-        <div class="map m-t-30" data-map-address="Melburne, Australia" data-map-zoom="10" data-map-icon="/template-polo/images/markers/marker2.png"
-            data-map-type="ROADMAP"></div>
+        <div class="">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125691.18612768209!2d-64.73367311222145!3d10.11139720087256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c2d723eff71306f%3A0x22feb43cef889e75!2sBarcelona%2C+Anzo%C3%A1tegui!5e0!3m2!1ses-419!2sve!4v1485956841380" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
         <!-- Google map sensor -->
 
     </div>
 </div>
-

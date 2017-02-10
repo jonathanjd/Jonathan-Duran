@@ -34,17 +34,16 @@
                         </ul>
                     <div class="clearfix"></div>
 				</div>
-				<div class="x_content">	
+				<div class="x_content">
 
 					<div>
 						<img class="img-responsive img-thumbnail center-block" src="{{ asset('post/'.$post->images[0]->name) }}" alt="" height="250" width="250">
 					</div>
-					
+
 					<h3 class="text-center">{{ $post->title }} <small>Category: {{ $post->category->name }}</small></h3>
 
-					<p class="text-justify">
-						{{ $post->content }}
-					</p>
+							{!! $post->content !!}
+
 					<hr>
 					<p>
 						<strong>Tags:</strong> |
@@ -52,17 +51,17 @@
 							{{ $tag->name }} |
 						@endforeach
 					</p>
-					
+
 
 					<p>
 						<strong>Creado Por:</strong>{{ $post->user->name }}
 					</p>
-					
+
 				</div>
 			</div>
 
 			<a href="{{ route('admin.post.index') }}" class="btn btn-primary btn-block" data-toggle="tooltip" data-placement="bottom" title="Regresar"><i class="fa fa-arrow-left"></i></a>
-			
+
 		</div>
 	</div>
 </div>

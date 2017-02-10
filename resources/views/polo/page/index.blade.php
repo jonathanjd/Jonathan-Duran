@@ -27,4 +27,7 @@
   @include('polo.part.blog')
   <!-- END: BLOG -->
 
+  <!-- Social -->
+  @include('polo.part.socialrrssb')
+  <!-- END: SOCIAL -->
 @endsection

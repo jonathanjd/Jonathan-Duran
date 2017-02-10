@@ -4,7 +4,7 @@
 
                     <!--LOGO-->
                     <div id="logo">
-                        <a href="index.html" class="logo" data-dark-logo="{{ asset('template-polo/images/logo-dark.png') }}">
+                        <a href="{{ route('index') }}" class="logo" data-dark-logo="{{ asset('template-polo/images/logo-dark.png') }}">
                             <img src="{{ asset('template-polo/images/blog-clon-logo.png') }}" alt="Polo Logo">
                         </a>
                     </div>
@@ -66,11 +66,7 @@
                   									</li>
                                     <li><a href="{{ route('diseños') }}"><i class="fa fa-pencil"></i> Diseños</a></li>
 
-                                    <li > <a href="#"><i class="fa fa-book"></i> Cursos</a>
-
-                                    <li > <a href="#"><i class="fa fa-reorder"></i> Blog</a>
-
-                                    <li > <a href="#"><i class="fa fa-gamepad"></i> Juegos</a>
+                                    <li > <a href="{{ route('blog') }}"><i class="fa fa-reorder"></i> Blog</a>
 
                                     </li>
 

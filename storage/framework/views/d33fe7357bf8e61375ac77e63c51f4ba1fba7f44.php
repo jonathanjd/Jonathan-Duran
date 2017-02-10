@@ -1,7 +1,7 @@
-<?php $__env->startSection('title','Servicio'); ?>
+<?php $__env->startSection('title','Servicio - '.$plan->name); ?>
 <?php $__env->startSection('content_part'); ?>
 
-<section id="page-title" style="background: url('/template-polo/images/parallax/18.jpg')" data-stellar-background-ratio="0.6" class="page-title-center page-title-animate page-title-parallax text-light">
+<section id="page-title" style="background: url('/template-polo/images/parallax/codigo-servicio-blog-clon.jpg')" data-stellar-background-ratio="0.6" class="page-title-center page-title-animate page-title-parallax text-light">
   <div class="background-overlay"></div>
   <div class="container">
     <div class="page-title col-md-8 text-shadow-dark">
@@ -28,7 +28,7 @@
 
     <div class="row m-b-60">
       <div class="col-md-6">
-        <h3><?php echo e($plan->name); ?></h3>
+        <h3><?php echo e($plan->name); ?> <small><strong>Costo: <?php echo e($plan->price); ?> BsF</strong></small></h3>
         <ul class="list-group">
 
           <?php foreach($plan->features as $feature): ?>
@@ -40,14 +40,14 @@
         <div class="text-center">
           <a class="button color button-3d rounded effect fill-vertical" href="<?php echo e(route('servicio_contratar',$plan)); ?>"><span>CONTRATAR</span></a>
         </div>
-        
+
       </div>
       <div class="col-md-6">
         <h3>Accesos Rápidos:</h3>
         <div class="list-group">
           <?php foreach($plans as $plan): ?>
 
-          <a href="#" class="list-group-item">
+          <a href="<?php echo e(route('servicio', $plan)); ?>" class="list-group-item">
             <span class="glyphicon glyphicon-star"></span> <?php echo e($plan->name); ?>
 
           </a>
@@ -66,7 +66,9 @@
 
 </section>
 
-
+<!-- Social -->
+<?php echo $__env->make('polo.part.socialrrssb', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<!-- END: SOCIAL -->
 
 <?php $__env->stopSection(); ?>
 

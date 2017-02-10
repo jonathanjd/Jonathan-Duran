@@ -6,11 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 use Cviebrock\EloquentSluggable\Sluggable;
 
+use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
+
 class Post extends Model
 {
     //
       use Sluggable;
 
+      use SluggableScopeHelpers;
+      
       public function sluggable()
       {
         return [

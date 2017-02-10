@@ -33,11 +33,15 @@
 
     <!-- CSS CUSTOM STYLE -->
     <link rel="stylesheet" type="text/css" href="<?php echo e(asset('template-polo/css/custom.css')); ?>" media="screen" />
-
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('css/my-style.css')); ?>"/>
     <!--VENDOR SCRIPT-->
     <script src="<?php echo e(asset('template-polo/vendor/jquery/jquery-1.11.2.min.js')); ?>"></script>
     <script src="<?php echo e(asset('template-polo/vendor/plugins-compressed.js')); ?>"></script>
-    
+
+    <!--REDES SOCIALES-->
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('css/rrssb.scss')); ?>"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('css/rrssb.css')); ?>"/>
+
     <!-- SLIDER REVOLUTION 5.x SCRIPTS  -->
     <script type="text/javascript" src="<?php echo e(asset('template-polo/vendor/rs-plugin/js/jquery.themepunch.tools.min.js')); ?>"></script>
     <script type="text/javascript" src="<?php echo e(asset('template-polo/vendor/rs-plugin/js/jquery.themepunch.revolution.min.js')); ?>"></script>

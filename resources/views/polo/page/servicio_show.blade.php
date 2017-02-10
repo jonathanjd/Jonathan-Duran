@@ -1,8 +1,8 @@
 @extends('polo.main.base')
-@section('title','Servicio')
+@section('title','Servicio - '.$plan->name)
 @section('content_part')
 
-<section id="page-title" style="background: url('/template-polo/images/parallax/18.jpg')" data-stellar-background-ratio="0.6" class="page-title-center page-title-animate page-title-parallax text-light">
+<section id="page-title" style="background: url('/template-polo/images/parallax/codigo-servicio-blog-clon.jpg')" data-stellar-background-ratio="0.6" class="page-title-center page-title-animate page-title-parallax text-light">
   <div class="background-overlay"></div>
   <div class="container">
     <div class="page-title col-md-8 text-shadow-dark">
@@ -29,7 +29,7 @@
 
     <div class="row m-b-60">
       <div class="col-md-6">
-        <h3>{{ $plan->name }}</h3>
+        <h3>{{ $plan->name }} <small><strong>Costo: {{ $plan->price }} BsF</strong></small></h3>
         <ul class="list-group">
 
           @foreach($plan->features as $feature)
@@ -41,14 +41,14 @@
         <div class="text-center">
           <a class="button color button-3d rounded effect fill-vertical" href="{{ route('servicio_contratar',$plan) }}"><span>CONTRATAR</span></a>
         </div>
-        
+
       </div>
       <div class="col-md-6">
         <h3>Accesos Rápidos:</h3>
         <div class="list-group">
           @foreach($plans as $plan)
 
-          <a href="#" class="list-group-item">
+          <a href="{{ route('servicio', $plan) }}" class="list-group-item">
             <span class="glyphicon glyphicon-star"></span> {{ $plan->name }}
           </a>
 
@@ -66,6 +66,8 @@
 
 </section>
 
-
+<!-- Social -->
+@include('polo.part.socialrrssb')
+<!-- END: SOCIAL -->
 
 @endsection

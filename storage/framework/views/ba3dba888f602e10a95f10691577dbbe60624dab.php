@@ -26,6 +26,9 @@
   <?php echo $__env->make('polo.part.blog', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
   <!-- END: BLOG -->
 
+  <!-- Social -->
+  <?php echo $__env->make('polo.part.socialrrssb', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+  <!-- END: SOCIAL -->
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('polo.main.base', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

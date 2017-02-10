@@ -1,6 +1,6 @@
 @extends('admin.base-main')
 
-@section('title','Videos | Inicio')
+@section('title','Videos - Crear')
 
 @section('stylesheet')
   <link rel="stylesheet" href="{{ asset('css/bootstrap_file_field.css') }}">
@@ -20,7 +20,7 @@
       <a href="{{ route('admin.video.index') }}" class="btn btn-primary btn-block" data-toggle="tooltip" data-placement="bottom" title="Regresar"><i class="fa fa-arrow-left"></i></a>
     </div>
 
-   
+
 
     <div class="x_panel">
         <div class="x_title">
@@ -43,7 +43,7 @@
             <div class="clearfix"></div>
         </div>
         <div class="x_content">
-              
+
              @include('admin.error')
 
              {!! Form::open(['route' => 'admin.video.store','method' => 'POST','class' => 'form-horizontal form-label-left input_mask','files' => true,'data-parsley-validate' => '']) !!}
@@ -64,8 +64,8 @@
                 <div class="col-md-9">
                   {!! Form::text('url', null,['class' => 'form-control','data-parsley-required' => '']) !!}
                 </div>
-              </div>      
-        
+              </div>
+
 
               <div class="form-group">
                 {!! Form::label('name','Name:',['class' => 'control-label col-md-3']) !!}
@@ -111,4 +111,10 @@
 @section('script')
 <script src="{{ asset('js/bootstrap_file_field.js') }}"></script>
 <script src="{{ asset('js/parsley.js') }}"></script>
+
+<script src="http://cloud.tinymce.com/stable/tinymce.min.js?apiKey=55t6ildkigxrvqaf9lti3kmza3gh1j6iarkp51kpikf3snrn"></script>
+<script type="text/javascript">
+  tinymce.init({ selector:'textarea' });
+</script>
+
 @endsection

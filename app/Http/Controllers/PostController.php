@@ -154,6 +154,7 @@ class PostController extends Controller
             $file->move($path,$name);
 
             $post = Post::find($id);
+            $post->slug = null;
             $post->fill($request->all());
             $post->save();
 
@@ -175,6 +176,7 @@ class PostController extends Controller
                 'category_id' => 'required',]);
 
             $post = Post::find($id);
+            $post->slug = null;
             $post->fill($request->all());
             $post->save();
 

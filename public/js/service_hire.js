@@ -13,7 +13,7 @@ new Vue({
         phone: '',
       },
 
-      email: {
+      correo: {
         plan: '',
         design: '',
         name: '',
@@ -40,7 +40,7 @@ new Vue({
     },
 
     mostrarSubmitEmail: function(){
-      return this.email.plan && this.email.design && emailRE.test(this.email.email) && this.email.name;
+      return this.correo.plan && this.correo.design && emailRE.test(this.correo.email) && this.correo.name;
     },
 
   },
@@ -58,8 +58,8 @@ new Vue({
     onSubmitFormEmail: function(e){
       e.preventDefault();
       this.mSuccessEmail = true;
-      var email = this.email;
-      this.email = {plan:'', design:'', email:'', name:''};
+      var email = this.correo;
+      this.correo = {plan:'', design:'', email:'', name:''};
       this.$http.post('/enviar/email', email);
     },
 

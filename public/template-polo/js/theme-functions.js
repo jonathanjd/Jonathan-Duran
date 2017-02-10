@@ -208,7 +208,7 @@ var INSPIRO = {};
                 loadingClass: 'animsition-loading',
                 loadingInner: '<img src="/template-polo/images/svg-loaders/' + pageLoaderStyle + '">', // e.g '<img src="loading.svg" />'
                 timeout: false,
-                
+
                 timeoutCountdown: 5000,
                 onLoadEvent: true,
                 browser: ['animation-duration', '-webkit-animation-duration'],
@@ -221,7 +221,7 @@ var INSPIRO = {};
                     window.location.href = url;
                 }
             });
-            
+
         }
     };
 
@@ -342,7 +342,8 @@ var INSPIRO = {};
 
                 owl.on('changed.owl.carousel', function (event) {
 
-                    $('.owl-item:not(.active)').siblings().find(".slider-content").removeClass("animated fadeIn");
+                    $('.owl-item:not(.active)').siblings().find(".slider-content").removeClass("animated fadeOut");
+
                     setTimeout(function () {
                         $('.owl-item.active .slider-content').addClass("animated fadeIn");
                     }, 300);
@@ -550,7 +551,7 @@ var INSPIRO = {};
 
     INSPIRO.topBar = function () {
         if ($topbar.exists()) {
-            $("#topbar .topbar-dropdown .topbar-form").each(function (index, element) {                
+            $("#topbar .topbar-dropdown .topbar-form").each(function (index, element) {
                 if ($window.width() - ($(element).width() + $(element).offset().left) < 0) {
                     $(element).addClass('dropdown-invert');
                 }
@@ -946,7 +947,7 @@ var INSPIRO = {};
             $map.each(function () {
 
                 var $elem = $(this),
-                    mapAddress = $elem.attr('data-map-address') ? $elem.attr('data-map-address') : "Melbourne, Australia",
+                    mapAddress = $elem.attr('data-map-address') ? $elem.attr('data-map-address') : "Barcelona, Simón Bolívar, Anzoátegui",
                     mapType = $elem.attr('data-map-type') ? $elem.attr('data-map-type') : "ROADMAP",
                     mapZoom = $elem.attr('data-map-zoom') ? $elem.attr('data-map-zoom') : "14",
                     mapIcon = $elem.attr('data-map-icon') ? $elem.attr('data-map-icon') : "images/markers/marker2.png";
