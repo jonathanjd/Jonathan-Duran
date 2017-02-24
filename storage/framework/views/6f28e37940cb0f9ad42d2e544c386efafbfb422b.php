@@ -44,7 +44,7 @@
                       												<ul class="dropdown-menu">
 
                                                   <?php foreach($service->plans as $plan): ?>
-                                                    <li><a href="<?php echo e(route('servicio',$plan->id)); ?>"><?php echo e($plan->name); ?></a></li>
+                                                    <li><a href="<?php echo e(route('servicio',$plan->slug)); ?>"><?php echo e($plan->name); ?></a></li>
                                                   <?php endforeach; ?>
 
                                             </ul>
@@ -67,6 +67,8 @@
                                     <li><a href="<?php echo e(route('diseños')); ?>"><i class="fa fa-pencil"></i> Diseños</a></li>
 
                                     <li > <a href="<?php echo e(route('blog')); ?>"><i class="fa fa-reorder"></i> Blog</a>
+
+                                    <li > <a href="<?php echo e(route('cursos')); ?>"><i class="fa fa-book"></i> Cursos</a>
 
                                     </li>
 

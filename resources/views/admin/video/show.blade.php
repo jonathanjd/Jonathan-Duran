@@ -44,9 +44,9 @@
         </div>
         <div class="x_content">
 
-          <h3>{{ $video->name }} <small>{{ $video->course->name }}</small></h3>
+          <h3>{{ $video->name }} <small>Categoría: {{ $video->course->name }}</small></h3>
 
-          <p>{{ $video->content }}</p>
+          <p>{!! $video->content !!}</p>
 
           <img class="img-responsive img-thumbnail center-block" src="{{ asset('video/'.$video->image) }}" alt="">
 
@@ -56,7 +56,7 @@
           <div class="embed-responsive embed-responsive-16by9">
             <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ substr($video->url, 32) }}" frameborder="0" allowfullscreen></iframe>
           </div>
-          
+
         </div>
     </div>
 

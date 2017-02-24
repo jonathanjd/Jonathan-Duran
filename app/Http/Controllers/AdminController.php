@@ -21,6 +21,18 @@ class AdminController extends Controller
         return view('admin.index');
     }
 
+    public function option()
+    {
+        # code...
+        return view('admin.option');
+    }
+
+    public function galeria()
+    {
+        # code...
+        return view('admin.galeria');
+    }
+
     public function error404()
     {
       # code...

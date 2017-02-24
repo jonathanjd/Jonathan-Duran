@@ -44,7 +44,7 @@
                       												<ul class="dropdown-menu">
 
                                                   @foreach ($service->plans as $plan)
-                                                    <li><a href="{{ route('servicio',$plan->id) }}">{{ $plan->name }}</a></li>
+                                                    <li><a href="{{ route('servicio',$plan->slug) }}">{{ $plan->name }}</a></li>
                                                   @endforeach
 
                                             </ul>
@@ -67,6 +67,8 @@
                                     <li><a href="{{ route('diseños') }}"><i class="fa fa-pencil"></i> Diseños</a></li>
 
                                     <li > <a href="{{ route('blog') }}"><i class="fa fa-reorder"></i> Blog</a>
+
+                                    <li > <a href="{{ route('cursos') }}"><i class="fa fa-book"></i> Cursos</a>
 
                                     </li>
 

@@ -61,7 +61,8 @@ class CourseController extends Controller
             # code...
             $file = $request->file('image');
             $name = 'course-' . time() . '.' . $file->getClientOriginalExtension();
-            $path = public_path() . '/course/';
+            //$path = public_path() . '/course/';
+            $path = '/home/blogclon/public_html/course/';
             $file->move($path,$name);
         }
 
@@ -84,6 +85,7 @@ class CourseController extends Controller
     {
         //
         $course = Course::find($id);
+        $this->notFound($course);
         return view('admin.course.show')->with('course',$course);
     }
 
@@ -97,6 +99,7 @@ class CourseController extends Controller
     {
         //
         $course = Course::find($id);
+        $this->notFound($course);
         return view('admin.course.edit')->with('course',$course);
     }
 
@@ -122,9 +125,12 @@ class CourseController extends Controller
             # code...
             $file = $request->file('image');
             $name = 'course-' . time() . '.' . $file->getClientOriginalExtension();
-            $path = public_path() . '/course/';
+            //$path = public_path() . '/course/';
+            $path = '/home/blogclon/public_html/course/';
             $file->move($path,$name);
             $course = Course::find($id);
+            $this->notFound($course);
+            $course->slug = null;
             $course->fill($request->all());
             $course->image = $name;
             $course->save();
@@ -132,6 +138,8 @@ class CourseController extends Controller
             return redirect()->route('admin.course.show',$course->id);
         }else{
           $course = Course::find($id);
+          $this->notFound($course);
+          $course->slug = null;
           $course->name = $request->name;
           $course->content = $request->content;
           $course->save();
@@ -144,6 +152,7 @@ class CourseController extends Controller
     {
       # code...
       $course = Course::find($id);
+      $this->notFound($course);
       return view('admin.course.delete')->with('course',$course);
     }
 
@@ -157,6 +166,7 @@ class CourseController extends Controller
     {
         //
         $course = Course::find($id);
+        $this->notFound($course);
         $course->delete();
         flash('Datos Eliminados','success');
         return redirect()->route('admin.course.index');

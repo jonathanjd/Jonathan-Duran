@@ -10,6 +10,12 @@ use App\Feature;
 
 class FeatureController extends Controller
 {
+
+    public function __construct()
+    {
+      # code...
+      $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -96,6 +102,7 @@ class FeatureController extends Controller
     {
         //
         $feature = Feature::find($id);
+        $this->notFound($feature);
         $plan_id = $feature->type_service_id;
         $feature->delete();
         flash('Datos Eliminados','success');

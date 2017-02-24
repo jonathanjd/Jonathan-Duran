@@ -67,7 +67,8 @@ class VideoController extends Controller
             # code...
             $file = $request->file('image');
             $name = 'video-' . time() . '.' . $file->getClientOriginalExtension();
-            $path = public_path() . '/video/';
+            //$path = public_path() . '/video/';
+            $path = '/home/blogclon/public_html/video/';
             $file->move($path,$name);
         }
 
@@ -90,6 +91,7 @@ class VideoController extends Controller
     {
         //
         $video = Video::find($id);
+        $this->notFound($video);
         return view('admin.video.show')->with('video',$video);
     }
 
@@ -104,6 +106,7 @@ class VideoController extends Controller
         //
         $courses = Course::all();
         $video = Video::find($id);
+        $this->notFound($video);
         return view('admin.video.edit')->with('video',$video)->with('courses',$courses);
     }
 
@@ -131,16 +134,21 @@ class VideoController extends Controller
             # code...
             $file = $request->file('image');
             $name = 'video-' . time() . '.' . $file->getClientOriginalExtension();
-            $path = public_path() . '/video/';
+            //$path = public_path() . '/video/';
+            $path = '/home/blogclon/public_html/video/';
             $file->move($path,$name);
             $video = Video::find($id);
+            $this->notFound($video);
+            $video->slug = null;
             $video->fill($request->all());
             $video->image = $name;
             $video->save();
             flash('Datos Editados','success');
-            return redirect()->route('admin.video.show',$course->id);
+            return redirect()->route('admin.video.show',$video->id);
         }else{
             $video = Video::find($id);
+            $this->notFound($video);
+            $video->slug = null;
             $video->name = $request->name;
             $video->content = $request->content;
             $video->url = $request->url;
@@ -155,6 +163,7 @@ class VideoController extends Controller
     {
         # code...
         $video = Video::find($id);
+        $this->notFound($video);
         return view('admin.video.delete')->with('video',$video);
     }
 
@@ -168,6 +177,7 @@ class VideoController extends Controller
     {
         //
         $video = Video::find($id);
+        $this->notFound($video);
         $video->delete();
         flash('Datos Eliminados','success');
         return redirect()->route('admin.video.index');

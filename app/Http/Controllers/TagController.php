@@ -67,6 +67,7 @@ class TagController extends Controller
     {
         //
         $tag = Tag::find($id);
+        $this->notFound($tag);
         return view('admin.tag.show')->with('tag',$tag);
     }
 
@@ -80,6 +81,7 @@ class TagController extends Controller
     {
         //
         $tag = Tag::find($id);
+        $this->notFound($tag);
         return view('admin.tag.edit')->with('tag',$tag);
     }
 
@@ -98,6 +100,7 @@ class TagController extends Controller
         ]);
 
         $tag = Tag::find($id);
+        $this->notFound($tag);
         $tag->fill($request->all());
         $tag->save();
         flash('Datos Editados','success');
@@ -109,6 +112,7 @@ class TagController extends Controller
     {
         # code...
         $tag = Tag::find($id);
+        $this->notFound($tag);
         return view('admin.tag.delete')->with('tag',$tag);
     }
 
@@ -122,6 +126,7 @@ class TagController extends Controller
     {
         //
         $tag = Tag::find($id);
+        $this->notFound($tag);
         $tag->delete();
         flash('Datos Eliminados','success');
         return redirect()->route('admin.tag.index');

@@ -89,6 +89,7 @@ class ServiceController extends Controller
     {
         //Buscar Service
         $service = Service::find($id);
+        $this->notFound($service);
         //Vista
         return view('admin.service.edit')->with('service', $service);
     }
@@ -110,6 +111,7 @@ class ServiceController extends Controller
         ]);
         //Update
         $service = Service::find($id);
+        $this->notFound($service);
         $service->fill($request->all());
         $service->save();
         //Message
@@ -129,6 +131,7 @@ class ServiceController extends Controller
     {
         //Buscar Service
         $service = Service::find($id);
+        $this->notFound($service);
         //Eliminar Diseño
         $service->delete();
         //Mensaje

@@ -76,6 +76,13 @@
         </ul>
       </li>
 
+      <li><a><i class="fa fa-square"></i> Widget <span class="fa fa-chevron-down"></span></a>
+        <ul class="nav child_menu">
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Crear</a></li>
+        </ul>
+      </li>
+
     </ul>
 
   </div>

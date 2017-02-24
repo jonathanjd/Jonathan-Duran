@@ -5,6 +5,7 @@
 @section('stylesheet')
   <link rel="stylesheet" href="{{ asset('css/bootstrap_file_field.css') }}">
   <link rel="stylesheet" href="{{ asset('css/parsley.css') }}">
+  <link rel="stylesheet" href="{{ asset('trumbowyg/dist/ui/trumbowyg.min.css') }}">
 @endsection
 
 @section('title-content-1','Editar Cursos')
@@ -65,7 +66,7 @@
               <div class="form-group">
                 {!! Form::label('content','Content:',['class' => 'control-label col-md-3']) !!}
                 <div class="col-md-9">
-                  {!! Form::textarea('content', $course->content, ['class' => 'form-control','data-parsley-required' => '']) !!}
+                  {!! Form::textarea('content', $course->content, ['class' => 'form-control trumbowyg-text','data-parsley-required' => '']) !!}
                 </div>
               </div>
 
@@ -103,5 +104,10 @@
   $(function () {
     $('[data-toggle="tooltip"]').tooltip()
   })
+</script>
+<script src="{{ asset('trumbowyg/dist/trumbowyg.min.js') }}"></script>
+
+<script type="text/javascript">
+  $('.trumbowyg-text').trumbowyg();
 </script>
 @endsection

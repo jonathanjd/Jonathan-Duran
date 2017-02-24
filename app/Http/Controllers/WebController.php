@@ -18,6 +18,10 @@ use App\Plan;
 
 use App\Post;
 
+use App\Course;
+
+use App\Video;
+
 use Carbon\Carbon;
 
 class WebController extends Controller
@@ -28,12 +32,6 @@ class WebController extends Controller
         # code...
         Carbon::setlocale('es');
 
-    }
-
-    public function index()
-    {
-        # code...
-        return view('web.index');
     }
 
 
@@ -106,9 +104,40 @@ class WebController extends Controller
     {
       # code...
       $post = Post::findBySlug($id);
+      $this->notFound($post);
       $services = Service::orderBy('id','ASC')->get();
       return view('polo.page.blog_post')->with('services', $services)
         ->with('post', $post);
+    }
+
+    public function cursos_polo()
+    {
+      # code...
+      $services = Service::orderBy('id','ASC')->get();
+      $cursos = Course::paginate(5);
+      return view('polo.page.course')->with('services', $services)
+        ->with('cursos', $cursos);
+    }
+
+    public function curso_mostrar_polo($id)
+    {
+      # code...
+      $services = Service::orderBy('id','ASC')->get();
+      $curso = Course::findBySlug($id);
+      $this->notFound($curso);
+      $videos = Video::where('course_id',$curso->id)->orderBy('id','DESC')->paginate(6);
+      return view('polo.page.course_show')->with('services', $services)
+        ->with('curso', $curso)->with('videos', $videos);
+    }
+
+    public function curso_video_polo($id)
+    {
+      # code...
+      $services = Service::orderBy('id','ASC')->get();
+      $video = Video::findBySlug($id);
+      $this->notFound($video);
+      return view('polo.page.course_video')->with('services',$services)
+        ->with('video',$video);
     }
 
     public function designs_polo()
@@ -130,7 +159,8 @@ class WebController extends Controller
     public function design_polo_details($id)
     {
       # code...
-      $design = Design::find($id);
+      $design = Design::findBySlug($id);
+      $this->notFound($design);
       $designs = Design::all()->random(4);
       $plans = Plan::all();
       $services = Service::orderBy('id','ASC')->get();
@@ -144,7 +174,8 @@ class WebController extends Controller
     {
       # code...
       $services = Service::orderBy('id','ASC')->get();
-      $plan = Plan::find($id);
+      $plan = Plan::findBySlug($id);
+      $this->notFound($plan);
       $plans = Plan::orderBy('id','ASC')->get();
       return view('polo.page.servicio_show')->with('plan',$plan)
         ->with('services',$services)
@@ -155,7 +186,8 @@ class WebController extends Controller
     {
       # code...
       $services = Service::orderby('id','ASC')->get();
-      $plan = Plan::find($id);
+      $plan = Plan::findBySlug($id);
+      $this->notFound($plan);
       $plans = Plan::orderBy('id','ASC')->get();
       $designs = Design::orderBy('id','Desc')->get();
       return view('polo.page.servicio_hire')->with('plan',$plan)

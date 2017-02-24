@@ -5,6 +5,7 @@
 @section('stylesheet')
   <link rel="stylesheet" href="{{ asset('css/bootstrap_file_field.css') }}">
   <link rel="stylesheet" href="{{ asset('css/parsley.css') }}">
+  <link rel="stylesheet" href="{{ asset('trumbowyg/dist/ui/trumbowyg.min.css') }}">
 @endsection
 
 @section('title-content-1','Cursos')
@@ -42,7 +43,7 @@
             <div class="clearfix"></div>
         </div>
         <div class="x_content">
-            
+
             @include('admin.error')
 
              {!! Form::open(['route' => 'admin.course.store','method' => 'POST','class' => 'form-horizontal form-label-left input_mask','files' => true,'data-parsley-validate' => '']) !!}
@@ -56,7 +57,7 @@
               <div class="form-group">
                 {!! Form::label('content','Content:',['class' => 'control-label col-md-3']) !!}
                 <div class="col-md-9">
-                  {!! Form::textarea('content', null, ['class' => 'form-control','data-parsley-required' => '']) !!}
+                  {!! Form::textarea('content', null, ['class' => 'form-control trumbowyg-text','data-parsley-required' => '']) !!}
                 </div>
               </div>
 
@@ -90,4 +91,9 @@
 @section('script')
 <script src="{{ asset('js/bootstrap_file_field.js') }}"></script>
 <script src="{{ asset('js/parsley.js') }}"></script>
+<script src="{{ asset('trumbowyg/dist/trumbowyg.min.js') }}"></script>
+
+<script type="text/javascript">
+  $('.trumbowyg-text').trumbowyg();
+</script>
 @endsection

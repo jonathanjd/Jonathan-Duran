@@ -5,6 +5,7 @@
 @section('stylesheet')
   <link rel="stylesheet" href="{{ asset('css/bootstrap_file_field.css') }}">
   <link rel="stylesheet" href="{{ asset('css/parsley.css') }}">
+  <link rel="stylesheet" href="{{ asset('trumbowyg/dist/ui/trumbowyg.min.css') }}">
 @endsection
 
 @section('title-content-1','Videos')
@@ -77,7 +78,7 @@
               <div class="form-group">
                 {!! Form::label('content','Content:',['class' => 'control-label col-md-3']) !!}
                 <div class="col-md-9">
-                  {!! Form::textarea('content', null, ['class' => 'form-control','data-parsley-required' => '']) !!}
+                  {!! Form::textarea('content', null, ['class' => 'form-control trumbowyg-text','data-parsley-required' => '']) !!}
                 </div>
               </div>
 
@@ -111,10 +112,10 @@
 @section('script')
 <script src="{{ asset('js/bootstrap_file_field.js') }}"></script>
 <script src="{{ asset('js/parsley.js') }}"></script>
+<script src="{{ asset('trumbowyg/dist/trumbowyg.min.js') }}"></script>
 
-<script src="http://cloud.tinymce.com/stable/tinymce.min.js?apiKey=55t6ildkigxrvqaf9lti3kmza3gh1j6iarkp51kpikf3snrn"></script>
 <script type="text/javascript">
-  tinymce.init({ selector:'textarea' });
+  $('.trumbowyg-text').trumbowyg();
 </script>
 
 @endsection

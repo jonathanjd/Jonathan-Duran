@@ -21,7 +21,6 @@
     <link href="<?php echo e(asset('template-admin/vendors/pnotify/dist/pnotify.nonblock.css')); ?>" rel="stylesheet">
     <!-- Select2 -->
     <link href="<?php echo e(asset('template-admin/vendors/select2/dist/css/select2.min.css')); ?>" rel="stylesheet">
-
     <!-- Custom Theme Style -->
     <link href="<?php echo e(asset('template-admin/build/css/custom.min.css')); ?>" rel="stylesheet">
     <?php echo $__env->yieldContent('stylesheet'); ?>
@@ -72,7 +71,7 @@
                   <div class="input-group">
                     <input type="text" class="form-control" placeholder="Buscar...">
                     <span class="input-group-btn">
-                      <button class="btn btn-default" type="button"><i class="fa fa-check-square"></i></button>
+                      <button class="btn btn-default" type="button">Go!</button>
                     </span>
                   </div>
                 </div>

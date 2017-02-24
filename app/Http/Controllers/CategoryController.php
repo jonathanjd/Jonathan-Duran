@@ -25,7 +25,7 @@ class CategoryController extends Controller
     public function index()
     {
         //
-        
+
         $categories = Category::orderBy('id','asc')->paginate(5);
         return view('admin.category.index')->with('categories',$categories);
     }
@@ -70,12 +70,8 @@ class CategoryController extends Controller
     {
         //
         $category = Category::find($id);
-        if($category === null){
-          return redirect()->route('admin-404');
-        }else{
-          return view('admin.category.show')->with('category',$category);
-        }
-
+        $this->notFound($category);
+        return view('admin.category.show')->with('category',$category);
     }
 
     /**
@@ -88,11 +84,8 @@ class CategoryController extends Controller
     {
         //
         $category = Category::find($id);
-        if($category === null){
-          return redirect()->route('admin-404');
-        }else{
-          return view('admin.category.edit')->with('category',$category);
-        }
+        $this->notFound($category);
+        return view('admin.category.edit')->with('category',$category);
 
     }
 
@@ -107,6 +100,7 @@ class CategoryController extends Controller
     {
         //
         $category = Category::find($id);
+        $this->notFound($category);
         $category->fill($request->all());
         $category->save();
         flash('Registro Editado','success');
@@ -123,9 +117,7 @@ class CategoryController extends Controller
     {
         //
         $category = Category::find($id);
-        if($category === null){
-          return redirect()->route('admin-404');
-        }
+        $this->notFound($category);
         $category->delete();
         flash('Registro Eliminado','success');
         return redirect()->route('admin.category.index');
@@ -135,10 +127,7 @@ class CategoryController extends Controller
     {
       # code...
       $category = Category::find($id);
-      if($category === null){
-        return redirect()->route('admin-404');
-      }else{
-        return view('admin.category.delete')->with('category',$category);
-      }
+      $this->notFound($category);
+      return view('admin.category.delete')->with('category',$category);
     }
 }

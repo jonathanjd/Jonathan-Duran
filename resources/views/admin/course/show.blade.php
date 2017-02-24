@@ -43,8 +43,8 @@
             <div class="clearfix"></div>
         </div>
         <div class="x_content">
-          <h3>{{ $course->name }}</h3>
-          <p>{{ $course->content }}</p>
+          <h3 class="text-center">{{ $course->name }}</h3>
+          <p>{!! $course->content !!}</p>
           <img class="img-responsive img-thumbnail" src="{{ asset('course/'.$course->image) }}" alt="">
         </div>
     </div>

@@ -80,6 +80,7 @@ class PlanController extends Controller
     {
         //
         $plan = Plan::find($id);
+        $this->notFound($plan);
         $features = Feature::orderBy('id','ASC')->where('type_service_id',$plan->id)->get();
         return view('admin.plan.show')->with('plan',$plan)->with('features',$features);
     }
@@ -95,6 +96,7 @@ class PlanController extends Controller
         //
         $services = Service::orderby('id','ASC')->lists('name','id');
         $plan = Plan::find($id);
+        $this->notFound($plan);
         return view('admin.plan.edit')->with('plan',$plan)->with('services',$services);
     }
 
@@ -117,6 +119,8 @@ class PlanController extends Controller
         ]);
 
         $plan = Plan::find($id);
+        $this->notFound($plan);
+        $plan->slug = null;
         $plan->fill($request->all());
         $plan->save();
         flash('Datos Editados','success');
@@ -133,6 +137,7 @@ class PlanController extends Controller
     {
         //
         $plan = Plan::find($id);
+        $this->notFound($plan);
         $plan->delete();
         flash('Datos Eliminados','success');
         return redirect()->route('admin.plan.index');

@@ -1,14 +1,15 @@
 <div class="sidebar-footer hidden-small">
-  <a data-toggle="tooltip" data-placement="top" title="Opciones">
+  <a  href="{{ route('admin-option') }}" data-toggle="tooltip" data-placement="top" title="Opciones">
     <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
   </a>
-  <a data-toggle="tooltip" data-placement="top" title="FullScreen">
-    <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+  <a data-toggle="tooltip" data-placement="top" title="Redes Sociales">
+    <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
   </a>
-  <a data-toggle="tooltip" data-placement="top" title="Lock">
-    <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+  <a href="{{ route('admin-galeria') }}" data-toggle="tooltip" data-placement="top" title="Galería">
+    <span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
   </a>
-  <a data-toggle="tooltip" data-placement="top" title="Salir">
+  <a href="{{ url('/logout') }}" data-toggle="tooltip" data-placement="top" title="Salir">
     <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
   </a>
+
 </div>

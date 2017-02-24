@@ -88,7 +88,8 @@ class DesignController extends Controller
             # code...
             $file = $request->file('image');
             $name = 'design-' . time() . '.' . $file->getClientOriginalExtension();
-            $path = public_path() . '/design/';
+            //$path = public_path() . '/design/';
+            $path = '/home/blogclon/public_html/design/';
             $file->move($path,$name);
         }
         //End
@@ -144,6 +145,7 @@ class DesignController extends Controller
     {
         //Buscar Diseño
         $design = Design::find($id);
+        $this->notFound($design);
         //Vista
         return view('admin.design.edit')->with('design',$design);
     }
@@ -172,10 +174,13 @@ class DesignController extends Controller
             //File
             $file = $request->file('image');
             $name = 'design-' . time() . '.' . $file->getClientOriginalExtension();
-            $path = public_path() . '/design/';
+            //$path = public_path() . '/design/';
+            $path = '/home/blogclon/public_html/design/';
             $file->move($path,$name);
             //Update
             $design = Design::find($id);
+            $this->notFound($design);
+            $design->slug = null;
             $design->fill($request->all());
             $design->image = $name;
             $design->save();
@@ -187,6 +192,8 @@ class DesignController extends Controller
         }else{//File No Tiene Image
             //Update
            $design = Design::find($id);
+           $this->notFound($design);
+           $design->slug = null;
            $design->name = $request->name;
            $design->content = $request->content;
            $design->url = $request->url;
@@ -210,6 +217,7 @@ class DesignController extends Controller
     {
         //Buscar Diseño
         $design = Design::find($id);
+        $this->notFound($design);
         //Eliminar Diseño
         $design->delete();
         //Mensaje

@@ -18,6 +18,7 @@
 |
  */
 
+
 Route::get('/', [
     'as' => 'index',
     'uses' => 'WebController@index_polo'
@@ -27,6 +28,22 @@ Route::get('blog', [
     'as' => 'blog',
     'uses' => 'WebController@blog_polo'
 ]);
+
+Route::get('cursos', [
+    'as' => 'cursos',
+    'uses' => 'WebController@cursos_polo'
+]);
+
+Route::get('curso/{id}', [
+    'as' => 'curso_mostrar',
+    'uses' => 'WebController@curso_mostrar_polo'
+]);
+
+Route::get('video/{id}', [
+    'as' => 'curso_video',
+    'uses' => 'WebController@curso_video_polo'
+]);
+
 
 Route::get('post/{id}', [
 	'uses' => 'WebController@post_polo',
@@ -108,9 +125,19 @@ Route::group(['prefix' => 'admin'], function () {
     'uses' => 'AdminController@error404'
   ]);
 
-  Route::get('index', [
+  Route::get('/', [
     'as' => 'admin-index',
     'uses' => 'AdminController@index'
+  ]);
+
+  Route::get('option', [
+    'as' => 'admin-option',
+    'uses' => 'AdminController@option'
+  ]);
+
+  Route::get('galeria', [
+    'as' => 'admin-galeria',
+    'uses' => 'AdminController@galeria'
   ]);
 
   Route::get('category/{category}/delete',

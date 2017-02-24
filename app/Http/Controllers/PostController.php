@@ -75,7 +75,8 @@ class PostController extends Controller
             # code...
             $file = $request->file('image');
             $name = $request->title . '-' . time() . '.' . $file->getClientOriginalExtension();
-            $path = public_path() . '/post/';
+            //$path = public_path() . '/post/';
+            $path = '/home/blogclon/public_html/post/';
             $file->move($path,$name);
         }
 
@@ -106,6 +107,7 @@ class PostController extends Controller
     {
         //
         $post = Post::find($id);
+        $this->notFound($post);
         return view('admin.post.show')->with('post',$post);
     }
 
@@ -121,6 +123,7 @@ class PostController extends Controller
         $categories = Category::orderby('id','ASC')->lists('name','id');
         $tags = Tag::orderBy('id','ASC')->lists('name','id');
         $post = Post::find($id);
+        $this->notFound($post);
         $my_tags = $post->tags->lists('id')->ToArray();
         return view('admin.post.edit')
             ->with('post',$post)
@@ -150,10 +153,12 @@ class PostController extends Controller
 
             $file = $request->file('image');
             $name = $request->title . '-' . time() . '.' . $file->getClientOriginalExtension();
-            $path = public_path() . '/post/';
+            //$path = public_path() . '/post/';
+            $path = '/home/blogclon/public_html/post/';
             $file->move($path,$name);
 
             $post = Post::find($id);
+            $this->notFound($post);
             $post->slug = null;
             $post->fill($request->all());
             $post->save();
@@ -176,6 +181,7 @@ class PostController extends Controller
                 'category_id' => 'required',]);
 
             $post = Post::find($id);
+            $this->notFound($post);
             $post->slug = null;
             $post->fill($request->all());
             $post->save();
@@ -193,6 +199,7 @@ class PostController extends Controller
     {
         # code...
         $post = Post::find($id);
+        $this->notFound($post);
         return view('admin.post.delete')->with('post',$post);
     }
 
@@ -206,6 +213,7 @@ class PostController extends Controller
     {
         //
         $post = Post::find($id);
+        $this->notFound($post);
         $post->delete();
         flash('Datos Eliminados','success');
         return redirect()->route('admin.post.index');

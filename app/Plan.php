@@ -4,8 +4,27 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+use Cviebrock\EloquentSluggable\Sluggable;
+
+use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
+
 class Plan extends Model
 {
+
+    use Sluggable;
+
+    use SluggableScopeHelpers;
+
+    public function sluggable()
+    {
+      return [
+          'slug' => [
+              'source' => 'name'
+          ]
+      ];
+    }
+
+
     //
     protected $table = 'type_services';
 

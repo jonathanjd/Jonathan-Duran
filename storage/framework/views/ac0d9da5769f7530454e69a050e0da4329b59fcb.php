@@ -17,7 +17,7 @@
 		                            <h4><?php echo e($plan->name); ?></h4><p class="text-muted">Plan short description</p>
 		                            <p class="plan-price"><sup>BsF</sup><?php echo e($plan->price); ?><span>/año</span>
 		                            </p>
-		                            <a href="<?php echo e(route('servicio',$plan)); ?>" class="button red button-3d rounded effect icon-bottom"><span><i class="fa fa-plus-circle"></i>Más Información</span></a>
+		                            <a href="<?php echo e(route('servicio',$plan->slug)); ?>" class="button red button-3d rounded effect icon-bottom"><span><i class="fa fa-plus-circle"></i>Más Información</span></a>
 		                        </div>
 		                        <div class="plan-list">
 		                            <ul>
@@ -39,7 +39,7 @@
 		                            <h4><?php echo e($plan->name); ?></h4><p class="text-muted">Plan short description</p>
 		                            <p class="plan-price"><sup>BsF</sup><?php echo e($plan->price); ?><span>/año</span>
 		                            </p>
-		                            <a href="<?php echo e(route('servicio',$plan)); ?>" class="button black-light button-3d rounded effect icon-bottom"><span><i class="fa fa-plus-circle"></i>Más Información</span></a>
+		                            <a href="<?php echo e(route('servicio',$plan->slug)); ?>" class="button black-light button-3d rounded effect icon-bottom"><span><i class="fa fa-plus-circle"></i>Más Información</span></a>
 		                        </div>
 		                        <div class="plan-list">
 
