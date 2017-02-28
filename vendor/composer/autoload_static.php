@@ -289,6 +289,7 @@ class ComposerStaticInit0b990ed5f3c0e5b44010cd63e4c95854
 
     public static $classMap = array (
         'AddDesignIdToPresupuestosTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_06_025245_add_design_id_to_presupuestos_table.php',
+        'AddIdshareToVideosTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_28_040449_add_idshare_to_videos_table.php',
         'AddImageToServicesTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_29_021934_add_image_to_services_table.php',
         'AddSlugToCoursesTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_19_125005_add_slug_to_courses_table.php',
         'AddSlugToDesigns' => __DIR__ . '/../..' . '/database/migrations/2017_02_19_151057_add_slug_to_designs.php',
@@ -307,6 +308,7 @@ class ComposerStaticInit0b990ed5f3c0e5b44010cd63e4c95854
         'CreatePostsTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_17_150935_create_posts_table.php',
         'CreatePresupuestosTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_03_190441_create_presupuestos_table.php',
         'CreateServicesTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_29_020300_create_services_table.php',
+        'CreateSharesTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_26_224154_create_shares_table.php',
         'CreateSocialsTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_10_135755_create_socials_table.php',
         'CreateTagsTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_17_151845_create_tags_table.php',
         'CreateTypeServicesTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_19_124749_create_type_services_table.php',

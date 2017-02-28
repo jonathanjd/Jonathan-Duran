@@ -33,4 +33,8 @@ class Video extends Model
       # code...
       return $this->belongsTo('App\Course');
     }
+    public function share()
+    {
+        return $this->belongsTo('App\Share');
+    }
 }

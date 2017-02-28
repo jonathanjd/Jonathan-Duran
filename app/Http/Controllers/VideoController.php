@@ -67,8 +67,13 @@ class VideoController extends Controller
             # code...
             $file = $request->file('image');
             $name = 'video-' . time() . '.' . $file->getClientOriginalExtension();
-            //$path = public_path() . '/video/';
-            $path = '/home/blogclon/public_html/video/';
+            if (app()->environment() == 'local') {
+              # code...
+              $path = public_path() . '/video/';
+            }else {
+              # code...
+              $path = '/home/blogclon/public_html/video/';
+            }
             $file->move($path,$name);
         }
 
@@ -131,11 +136,17 @@ class VideoController extends Controller
         ]);
 
         if ($request->file('image')) {
+            //En caso de Actualizar Image de Video
             # code...
             $file = $request->file('image');
             $name = 'video-' . time() . '.' . $file->getClientOriginalExtension();
-            //$path = public_path() . '/video/';
-            $path = '/home/blogclon/public_html/video/';
+            if (app()->environment() == 'local') {
+              # code...
+              $path = public_path() . '/video/';
+            }else {
+              # code...
+              $path = '/home/blogclon/public_html/video/';
+            }
             $file->move($path,$name);
             $video = Video::find($id);
             $this->notFound($video);
@@ -146,6 +157,7 @@ class VideoController extends Controller
             flash('Datos Editados','success');
             return redirect()->route('admin.video.show',$video->id);
         }else{
+            //En caso de NO Actualizar Image de Video
             $video = Video::find($id);
             $this->notFound($video);
             $video->slug = null;
@@ -154,6 +166,7 @@ class VideoController extends Controller
             $video->url = $request->url;
             $video->course_id = $request->course_id;
             $video->save();
+
             flash('Datos Editados','success');
             return redirect()->route('admin.video.show',$video->id);
         }

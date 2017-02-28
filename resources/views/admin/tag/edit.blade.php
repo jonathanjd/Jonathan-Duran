@@ -33,9 +33,9 @@
                     <div class="clearfix"></div>
 				</div>
 				<div class="x_content">
-					
-                    @include('admin.error')
 
+                    @include('admin.error')
+										@can('edit-admin')
                     {!! Form::open(['route' => ['admin.tag.update',$tag],'method' => 'PUT','class' => 'form-horizontal form-label-left input_mask','files' => true,'data-parsley-validate' => '']) !!}
 
                     <div class="form-group">
@@ -49,10 +49,10 @@
 
                     <div class="form-group">
                             <button type="submit" class="btn btn-success btn-block" data-toggle="tooltip" data-placement="bottom" title="Editar"><i class="fa fa-save"></i></button>
-                    </div>      
-        
-                    {!! Form::close() !!}
+                    </div>
 
+                    {!! Form::close() !!}
+									@endcan
 				</div>
 			</div>
 

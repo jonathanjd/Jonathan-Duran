@@ -30,12 +30,12 @@
               <li><a class="close-link"><i class="fa fa-close"></i></a>
               </li>
             </ul>
-          <div class="clearfix"></div>  
+          <div class="clearfix"></div>
         </div>
         <div class="x_content">
 
           @include('admin.error')
-          
+          @can('edit-admin')
           {!! Form::open(['route' => ['admin.category.update',$category->id],'method' => 'PUT','class' => 'form-horizontal form-label-left input_mask']) !!}
 
             <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
@@ -44,16 +44,16 @@
             </div>
 
             <div class="form-group">
-            
+
                 <button type="submit" class="btn btn-success btn-block" data-toggle="tooltip" data-placement="bottom" title="Editar"><i class="fa fa-save"></i></button>
-              
+
             </div>
 
           {!! Form::close() !!}
-          
+        @endcan
         </div>
       </div>
-      
+
       <a href="{{ route('admin.category.index') }}" class="btn btn-primary btn-block" data-toggle="tooltip" data-placement="bottom" title="Regresar"><i class="fa fa-arrow-left"></i></a>
 
     </div>

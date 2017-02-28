@@ -61,8 +61,14 @@ class CourseController extends Controller
             # code...
             $file = $request->file('image');
             $name = 'course-' . time() . '.' . $file->getClientOriginalExtension();
-            //$path = public_path() . '/course/';
-            $path = '/home/blogclon/public_html/course/';
+
+            if (app()->environment() == 'local') {
+              # code...
+              $path = public_path() . '/course/';
+            }else {
+              # code...
+              $path = '/home/blogclon/public_html/course/';
+            }
             $file->move($path,$name);
         }
 
@@ -125,8 +131,14 @@ class CourseController extends Controller
             # code...
             $file = $request->file('image');
             $name = 'course-' . time() . '.' . $file->getClientOriginalExtension();
-            //$path = public_path() . '/course/';
-            $path = '/home/blogclon/public_html/course/';
+          
+            if (app()->environment() == 'local') {
+              # code...
+              $path = public_path() . '/course/';
+            }else {
+              # code...
+              $path = '/home/blogclon/public_html/course/';
+            }
             $file->move($path,$name);
             $course = Course::find($id);
             $this->notFound($course);

@@ -14,7 +14,7 @@ class Post extends Model
       use Sluggable;
 
       use SluggableScopeHelpers;
-      
+
       public function sluggable()
       {
         return [
@@ -49,4 +49,9 @@ class Post extends Model
    		# code...
    		return $this->belongsToMany('App\Tag')->withTimestamps();;
    	}
+
+    public function share()
+    {
+        return $this->belongsTo('App\Share');
+    }
 }

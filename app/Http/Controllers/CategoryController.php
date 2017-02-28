@@ -8,13 +8,17 @@ use App\Http\Requests;
 
 use App\Category;
 
+use App\Repositories\Category\CategoryRepository;
+
 class CategoryController extends Controller
 {
 
+    protected $categories;
 
-    public function __construct()
+    public function __construct(CategoryRepository $categories)
     {
         $this->middleware('auth');
+        $this->categories = $categories;
     }
 
     /**
@@ -25,9 +29,8 @@ class CategoryController extends Controller
     public function index()
     {
         //
-
-        $categories = Category::orderBy('id','asc')->paginate(5);
-        return view('admin.category.index')->with('categories',$categories);
+        return view('admin.category.index')
+                ->with('categories',$this->categories->categoryList());
     }
 
 

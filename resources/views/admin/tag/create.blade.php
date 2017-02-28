@@ -10,9 +10,9 @@
 	<div class="row">
 		<div class="col-md-6 col-sm-6 col-xs-12">
 
-            
+
             <a href="{{ route('admin.tag.index') }}" class="btn btn-primary btn-block" data-toggle="tooltip" data-placement="bottom" title="Regresar"><i class="fa fa-arrow-left"></i></a>
-  
+
 
 			<div class="x_panel">
 				<div class="x_title">
@@ -37,7 +37,7 @@
 				<div class="x_content">
 
                     @include('admin.error')
-
+										@can('create-admin')
                     {!! Form::open(['route' => 'admin.tag.store','method' => 'POST','class' => 'form-horizontal form-label-left input_mask','files' => true,'data-parsley-validate' => '']) !!}
 
                     <div class="form-group">
@@ -51,11 +51,11 @@
 
                     <div class="form-group">
                             <button type="submit" class="btn btn-success btn-block" data-toggle="tooltip" data-placement="bottom" title="Guardar"><i class="fa fa-save"></i></button>
-                    </div>      
-        
+                    </div>
+
 
                     {!! Form::close() !!}
-					
+									@endcan
 				</div>
 			</div>
 

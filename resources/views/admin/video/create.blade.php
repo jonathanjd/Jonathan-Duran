@@ -15,7 +15,7 @@
 <div id="app">
 <div class="row">
 
-<div class="col-md-6 col-xs-12">
+<div class="col-md-8 col-xs-12">
 
     <div>
       <a href="{{ route('admin.video.index') }}" class="btn btn-primary btn-block" data-toggle="tooltip" data-placement="bottom" title="Regresar"><i class="fa fa-arrow-left"></i></a>
@@ -46,7 +46,7 @@
         <div class="x_content">
 
              @include('admin.error')
-
+             @can('create-admin')
              {!! Form::open(['route' => 'admin.video.store','method' => 'POST','class' => 'form-horizontal form-label-left input_mask','files' => true,'data-parsley-validate' => '']) !!}
 
              <div class="form-group">
@@ -95,6 +95,7 @@
                 </div>
 
             {{ Form::close() }}
+          @endcan
         </div>
     </div>
 
@@ -112,6 +113,7 @@
 @section('script')
 <script src="{{ asset('js/bootstrap_file_field.js') }}"></script>
 <script src="{{ asset('js/parsley.js') }}"></script>
+<script src="{{ asset('js/laravel-parsley.min.js') }}"></script>
 <script src="{{ asset('trumbowyg/dist/trumbowyg.min.js') }}"></script>
 
 <script type="text/javascript">

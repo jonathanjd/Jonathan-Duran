@@ -45,7 +45,7 @@
         <div class="x_content">
 
             @include('admin.error')
-
+            @can('create-admin')
              {!! Form::open(['route' => 'admin.course.store','method' => 'POST','class' => 'form-horizontal form-label-left input_mask','files' => true,'data-parsley-validate' => '']) !!}
               <div class="form-group">
                 {!! Form::label('name','Name:',['class' => 'control-label col-md-3']) !!}
@@ -74,6 +74,7 @@
                 </div>
 
             {{ Form::close() }}
+          @endcan
         </div>
     </div>
 

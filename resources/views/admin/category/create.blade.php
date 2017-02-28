@@ -36,6 +36,7 @@
 
           @include('admin.error')
 
+          @can('create-admin')
           {!! Form::open(['route' => 'admin.category.store','method' => 'POST','class' => 'form-horizontal form-label-left input_mask']) !!}
 
             <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
@@ -44,13 +45,13 @@
             </div>
 
             <div class="form-group">
-      
+
                 <button type="submit" class="btn btn-success btn-block" data-toggle="tooltip" data-placement="bottom" title="Guardar"><i class="fa fa-save"></i></button>
-             
+
             </div>
 
           {!! Form::close() !!}
-          
+        @endcan
         </div>
       </div>
 

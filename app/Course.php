@@ -33,4 +33,9 @@ class Course extends Model
       # code...
       return $this->hasMany('App\Video');
     }
+
+    public function share()
+    {
+        return $this->belongsTo('App\Share');
+    }
 }

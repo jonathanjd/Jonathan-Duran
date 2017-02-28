@@ -2,7 +2,7 @@
   <a  href="{{ route('admin-option') }}" data-toggle="tooltip" data-placement="top" title="Opciones">
     <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
   </a>
-  <a data-toggle="tooltip" data-placement="top" title="Redes Sociales">
+  <a href="{{ route('admin-social') }}" data-toggle="tooltip" data-placement="top" title="Redes Sociales">
     <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
   </a>
   <a href="{{ route('admin-galeria') }}" data-toggle="tooltip" data-placement="top" title="Galería">

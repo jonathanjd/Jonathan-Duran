@@ -30,5 +30,8 @@ class Design extends Model
         'name', 'image', 'content','url'
     ];
 
-
+    public function share()
+    {
+        return $this->belongsTo('App\Share');
+    }
 }

@@ -37,12 +37,13 @@
                     @include('admin.error')
 
                     <h3>{{ $tag->name }} <small>Deseas Eliminar este Registro?</small></h3>
-					
+										@can('delete-admin')
                     {!! Form::open(['route'=> ['admin.tag.destroy',$tag],'method' => 'DELETE','class' => 'form-horizontal form-label-left input_mask']) !!}
-                
+
                         <button type="submit" name="dalete" class="btn btn-danger btn-block" data-toggle="tooltip" data-placement="bottom" title="Eliminar"><i class="fa fa-eraser"></i></button>
-                 
+
                     {!! Form::close() !!}
+									@endcan
 				</div>
 			</div>
 

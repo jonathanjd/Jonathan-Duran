@@ -135,10 +135,69 @@ Route::group(['prefix' => 'admin'], function () {
     'uses' => 'AdminController@option'
   ]);
 
-  Route::get('galeria', [
-    'as' => 'admin-galeria',
-    'uses' => 'AdminController@galeria'
+  Route::get('social', [
+    'as' => 'admin-social',
+    'uses' => 'AdminController@social'
   ]);
+
+  Route::post('social/save/ajax',[
+    'as' => 'social-save-ajax',
+    'uses' => 'AdminController@socialSaveAjax'
+  ]);
+
+  Route::get('social/show/ajax',[
+    'as' => 'social-show-ajax',
+    'uses' => 'AdminController@socialShowAjax'
+  ]);
+
+
+  /*
+  |-----------------------------------------
+  |Route Galleria
+  |-----------------------------------------
+   */
+
+  Route::group(['prefix' => 'galeria'], function(){
+
+    Route::get('/', [
+      'as' => 'admin-galeria',
+      'uses' => 'AdminController@galeria'
+    ]);
+
+    Route::get('video', [
+      'as' => 'admin-galeria-video',
+      'uses' => 'AdminController@galeriaVideo'
+    ]);
+
+    Route::get('video/{nameFile}/delete', [
+      'as' => 'admin-galeria-video-delete',
+      'uses' => 'AdminController@galeriaVideoDelete'
+    ]);
+
+    Route::get('share/{id}/image/video', [
+      'as' => 'admin-galeria-share-image-video',
+      'uses' => 'AdminController@galeriaShareVideo'
+    ]);
+
+    Route::post('share/store/image/video', [
+      'as' => 'admin-galeria-share-image-video-store',
+      'uses' => 'AdminController@galeriaShareVideoStore'
+    ]);
+
+    Route::put('share/update/image/video/{id}/', [
+      'as' => 'admin-galeria-share-image-video-update',
+      'uses' => 'AdminController@galeriaShareVideoUpdate'
+    ]);
+
+
+
+  });
+
+  /*
+  |-----------------------------------------
+  |Route Galeria Fin
+  |-----------------------------------------
+   */
 
   Route::get('category/{category}/delete',
     ['as' => 'admin.category.delete',

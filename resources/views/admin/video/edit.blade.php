@@ -15,7 +15,7 @@
 <div id="app">
 <div class="row">
 
-<div class="col-md-6 col-xs-12">
+<div class="col-md-8 col-xs-12">
 
     <div>
       <a href="{{ route('admin.video.index') }}" class="btn btn-primary btn-block" data-toggle="tooltip" data-placement="bottom" title="Regresar"><i class="fa fa-arrow-left"></i></a>
@@ -45,7 +45,7 @@
         </div>
         <div class="x_content">
             <br />
-
+            @can('edit-admin')
             {!! Form::open(['route' => ['admin.video.update',$video],'method' => 'PUT','class' => 'form-horizontal form-label-left input_mask','files' => true,'data-parsley-validate' => '']) !!}
 
             <div class="form-group">
@@ -102,8 +102,7 @@
                 </div>
 
             {{ Form::close() }}
-
-
+          @endcan
         </div>
     </div>
 

@@ -40,7 +40,7 @@
         <div class="x_content">
 
           @include('admin.message-error')
-
+          @can('edit-admin')
           {!! Form::open(['route' => ['admin.plan.update',$plan],'method' => 'PUT','class' => 'form-horizontal form-label-left input_mask','data-parsley-validate' => '']) !!}
 
           <div class="form-group">
@@ -77,7 +77,7 @@
           </div>
 
           {!! Form::close() !!}
-
+        @endcan
         </div>
       </div>
 

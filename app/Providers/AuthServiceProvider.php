@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Policies\CategoryPolicy;
 use Illuminate\Contracts\Auth\Access\Gate as GateContract;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
@@ -26,6 +27,17 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies($gate);
 
-        //
+        $gate->define('create-admin',function($user){
+          return $user->email === "headjd@gmail.com";
+        });
+
+        $gate->define('edit-admin',function($user){
+          return $user->email === "headjd@gmail.com";
+        });
+
+        $gate->define('delete-admin',function($user){
+          return $user->email === "headjd@gmail.com";
+        });
+
     }
 }

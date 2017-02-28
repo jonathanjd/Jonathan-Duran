@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'AddDesignIdToPresupuestosTable' => $baseDir . '/database/migrations/2017_01_06_025245_add_design_id_to_presupuestos_table.php',
+    'AddIdshareToVideosTable' => $baseDir . '/database/migrations/2017_02_28_040449_add_idshare_to_videos_table.php',
     'AddImageToServicesTable' => $baseDir . '/database/migrations/2016_12_29_021934_add_image_to_services_table.php',
     'AddSlugToCoursesTable' => $baseDir . '/database/migrations/2017_02_19_125005_add_slug_to_courses_table.php',
     'AddSlugToDesigns' => $baseDir . '/database/migrations/2017_02_19_151057_add_slug_to_designs.php',
@@ -25,6 +26,7 @@ return array(
     'CreatePostsTable' => $baseDir . '/database/migrations/2016_12_17_150935_create_posts_table.php',
     'CreatePresupuestosTable' => $baseDir . '/database/migrations/2017_01_03_190441_create_presupuestos_table.php',
     'CreateServicesTable' => $baseDir . '/database/migrations/2016_12_29_020300_create_services_table.php',
+    'CreateSharesTable' => $baseDir . '/database/migrations/2017_02_26_224154_create_shares_table.php',
     'CreateSocialsTable' => $baseDir . '/database/migrations/2017_02_10_135755_create_socials_table.php',
     'CreateTagsTable' => $baseDir . '/database/migrations/2016_12_17_151845_create_tags_table.php',
     'CreateTypeServicesTable' => $baseDir . '/database/migrations/2017_01_19_124749_create_type_services_table.php',

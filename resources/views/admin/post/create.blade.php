@@ -41,7 +41,7 @@
 				<div class="x_content">
 
 					@include('admin.message-error')
-
+							@can('create-admin')
 		          {!! Form::open(['route' => 'admin.post.store','method' => 'POST','class' => 'form-horizontal form-label-left input_mask','files' => true,'data-parsley-validate' => '']) !!}
 
 		            <div class="form-group">
@@ -79,7 +79,7 @@
 		            </div>
 
 		          {!! Form::close() !!}
-
+						@endcan
 				</div>
 			</div>
 

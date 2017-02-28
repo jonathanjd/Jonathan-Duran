@@ -75,11 +75,15 @@ class PostController extends Controller
             # code...
             $file = $request->file('image');
             $name = $request->title . '-' . time() . '.' . $file->getClientOriginalExtension();
-            //$path = public_path() . '/post/';
-            $path = '/home/blogclon/public_html/post/';
+            if (app()->environment() == 'local') {
+              # code...
+              $path = public_path() . '/post/';
+            }else {
+              # code...
+              $path = '/home/blogclon/public_html/post/';
+            }
             $file->move($path,$name);
         }
-
 
         $post = new Post($request->all());
         $post->user_id = \Auth::user()->id;
@@ -153,8 +157,15 @@ class PostController extends Controller
 
             $file = $request->file('image');
             $name = $request->title . '-' . time() . '.' . $file->getClientOriginalExtension();
-            //$path = public_path() . '/post/';
-            $path = '/home/blogclon/public_html/post/';
+
+            if (app()->environment() == 'local') {
+              # code...
+              $path = public_path() . '/post/';
+            }else {
+              # code...
+              $path = '/home/blogclon/public_html/post/';
+            }
+
             $file->move($path,$name);
 
             $post = Post::find($id);

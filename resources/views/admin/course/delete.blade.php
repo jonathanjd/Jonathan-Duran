@@ -47,9 +47,11 @@
           <p>{{ $course->content }}</p>
           <img class="img-responsive img-thumbnail center-block" src="{{ asset('course/'.$course->image) }}" alt="">
           <br>
+          @can('delete-admin')
           {!! Form::open(['route'=> ['admin.course.destroy',$course->id],'method' => 'DELETE']) !!}
           <button type="submit" name="dalete" class="btn btn-danger btn-block" data-toggle="tooltip" data-placement="bottom" title="Eliminar"><i class="fa fa-eraser"></i></button>
           {!! Form::close() !!}
+        @endcan
         </div>
     </div>
 

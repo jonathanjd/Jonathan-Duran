@@ -88,8 +88,14 @@ class DesignController extends Controller
             # code...
             $file = $request->file('image');
             $name = 'design-' . time() . '.' . $file->getClientOriginalExtension();
-            //$path = public_path() . '/design/';
-            $path = '/home/blogclon/public_html/design/';
+
+            if (app()->environment() == 'local') {
+              # code...
+              $path = public_path() . '/design/';
+            }else {
+              # code...
+              $path = '/home/blogclon/public_html/design/';
+            }
             $file->move($path,$name);
         }
         //End
@@ -174,8 +180,15 @@ class DesignController extends Controller
             //File
             $file = $request->file('image');
             $name = 'design-' . time() . '.' . $file->getClientOriginalExtension();
-            //$path = public_path() . '/design/';
-            $path = '/home/blogclon/public_html/design/';
+            
+            if (app()->environment() == 'local') {
+              # code...
+              $path = public_path() . '/design/';
+            }else {
+              # code...
+              $path = '/home/blogclon/public_html/design/';
+            }
+
             $file->move($path,$name);
             //Update
             $design = Design::find($id);

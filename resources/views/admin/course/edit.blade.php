@@ -45,7 +45,7 @@
         </div>
         <div class="x_content">
             <br />
-
+              @can('edit-admin')
              {!! Form::open(['route' => ['admin.course.update',$course->id],'method' => 'PUT','class' => 'form-horizontal form-label-left input_mask','files' => true,'data-parsley-validate' => '']) !!}
 
              <div class="form-group">
@@ -83,6 +83,7 @@
                 </div>
 
             {{ Form::close() }}
+          @endcan
         </div>
     </div>
 

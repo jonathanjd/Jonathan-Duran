@@ -20,7 +20,7 @@
       <a href="{{ route('admin.video.index') }}" class="btn btn-primary btn-block" data-toggle="tooltip" data-placement="bottom" title="Regresar"><i class="fa fa-arrow-left"></i></a>
   </div>
 
-    
+
 
     <div class="x_panel">
         <div class="x_title">
@@ -48,19 +48,20 @@
           <h3>{{ $video->name }}<small>{{ $video->course->name }}</small></h3>
 
           <p>{{ $video->content }}</p>
-          
+
           <img class="img-responsive img-thumbnail center-block" src="{{ asset('video/'.$video->image) }}" alt="">
           <br>
-          
+
           <div class="embed-responsive embed-responsive-16by9">
             <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ substr($video->url, 32) }}" frameborder="0" allowfullscreen></iframe>
           </div>
 
           <br>
-
+          @can('delete-admin')
           {!! Form::open(['route'=> ['admin.video.destroy',$video->id],'method' => 'DELETE']) !!}
           <button type="submit" name="dalete" class="btn btn-danger btn-block" data-toggle="tooltip" data-placement="bottom" title="Eliminar"><i class="fa fa-eraser"></i></button>
           {!! Form::close() !!}
+        @endcan
         </div>
     </div>
 

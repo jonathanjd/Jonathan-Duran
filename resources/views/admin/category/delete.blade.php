@@ -33,21 +33,22 @@
           <div class="clearfix"></div>
         </div>
         <div class="x_content">
+          @can('delete-admin')
           {!! Form::open(['route' => ['admin.category.destroy',$category->id],'method' => 'DELETE','class' => 'form-horizontal form-label-left input_mask']) !!}
 
             <h3>{{ $category->name }} <small>Deseas Eliminar?</small></h3>
 
             <div class="form-group">
-              
+
                 <button type="submit" class="btn btn-danger btn-block" data-toggle="tooltip" data-placement="bottom" title="Eliminar"><i class="fa fa-save"></i></button>
-             
+
             </div>
 
-          
           {!! Form::close() !!}
+        @endcan
         </div>
       </div>
-      
+
       <a href="{{ route('admin.category.index') }}" class="btn btn-primary btn-block" data-toggle="tooltip" data-placement="bottom" title="Regresar"><i class="fa fa-arrow-left"></i></a>
 
     </div>
