@@ -164,6 +164,10 @@ Route::group(['prefix' => 'admin'], function () {
       'uses' => 'AdminController@galeria'
     ]);
 
+    /**************
+     VIDEO GALERIA
+    **************/
+    //START
     Route::get('video', [
       'as' => 'admin-galeria-video',
       'uses' => 'AdminController@galeriaVideo'
@@ -188,8 +192,22 @@ Route::group(['prefix' => 'admin'], function () {
       'as' => 'admin-galeria-share-image-video-update',
       'uses' => 'AdminController@galeriaShareVideoUpdate'
     ]);
+    //END
 
+    /**************
+    CURSO GALERIA
+    **************/
+    //START
+    Route::get('curso', [
+      'as' => 'admin-galeria-curso',
+      'uses' => 'AdminController@galeriaCurso'
+    ]);
 
+    Route::get('share/{id}/image/course', [
+      'as' => 'admin-galeria-share-image-course',
+      'uses' => 'AdminController@galeriaShareCourse'
+    ]);
+    //END
 
   });
 

@@ -97,7 +97,61 @@ class AdminController extends Controller
                 ->with('videos', $this->galleries->allVideo());
     }
 
+    /**********************************************************
+    |
+    |                S   E   C   C   I   Ó   N
+    |                G   A   L   E   R   I   A
+    |                    C   U   R   S   O
+    |
+    ***********************************************************/
 
+    public function galeriaCurso()
+    {
+      # code...
+      # code...
+      if (app()->environment() == 'local') {
+        # code...
+        $path_course = public_path() . '/course/';
+
+      }else {
+        # code...
+        $path_course = '/home/blogclon/public_html/course/';
+
+      }
+      $file_courses = File::allFiles($path_course);
+
+      $courses = $this->galleries->allCourse();
+
+      $arrayCourses = array();
+
+      foreach ($file_courses as $key => $value) {
+        # code...
+        $arrayCourses[$key]['nameFile'] = $value->getFilename();
+
+        foreach ($courses as $course) {
+          # code...
+          $arrayCourses[$key]['id'] = $course->id;
+
+          $arrayCourses[$key]['share'] = $course->share_id;
+
+          if ($course->image == $value->getFilename()) {
+            # code...
+            $arrayCourses[$key]['used'] = true;
+
+            break;
+
+          }else{
+
+            $arrayCourses[$key]['used'] = false;
+
+          }
+        }
+
+      }
+
+      return view('admin.gallery.course.course')
+              ->with('arrayCourses',$arrayCourses);
+    }
 
 
     /**********************************************************
