@@ -289,6 +289,9 @@ class ComposerStaticInit0b990ed5f3c0e5b44010cd63e4c95854
 
     public static $classMap = array (
         'AddDesignIdToPresupuestosTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_06_025245_add_design_id_to_presupuestos_table.php',
+        'AddIdshareToCoursesTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_28_231116_add_idshare_to_courses_table.php',
+        'AddIdshareToDesignsTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_28_231230_add_idshare_to_designs_table.php',
+        'AddIdshareToPostsTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_28_231205_add_idshare_to_posts_table.php',
         'AddIdshareToVideosTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_28_040449_add_idshare_to_videos_table.php',
         'AddImageToServicesTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_29_021934_add_image_to_services_table.php',
         'AddSlugToCoursesTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_19_125005_add_slug_to_courses_table.php',

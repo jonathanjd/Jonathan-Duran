@@ -199,15 +199,91 @@ Route::group(['prefix' => 'admin'], function () {
     **************/
     //START
     Route::get('curso', [
-      'as' => 'admin-galeria-curso',
+      'as' => 'admin-galeria-course',
       'uses' => 'AdminController@galeriaCurso'
+    ]);
+
+    Route::get('course/{nameFile}/delete', [
+      'as' => 'admin-galeria-course-delete',
+      'uses' => 'AdminController@galeriaCourseDelete'
     ]);
 
     Route::get('share/{id}/image/course', [
       'as' => 'admin-galeria-share-image-course',
       'uses' => 'AdminController@galeriaShareCourse'
     ]);
+
+    Route::post('share/store/image/course', [
+      'as' => 'admin-galeria-share-image-course-store',
+      'uses' => 'AdminController@galeriaShareCourseStore'
+    ]);
+
+    Route::put('share/update/image/course/{id}/', [
+      'as' => 'admin-galeria-share-image-course-update',
+      'uses' => 'AdminController@galeriaShareCourseUpdate'
+    ]);
     //END
+
+    /**************
+    POST GALERIA
+    **************/
+    //START
+    Route::get('post', [
+      'as' => 'admin-galeria-post',
+      'uses' => 'AdminController@galeriaPost'
+    ]);
+
+    Route::get('post/{nameFile}/delete', [
+      'as' => 'admin-galeria-post-delete',
+      'uses' => 'AdminController@galeriaPostDelete'
+    ]);
+
+    Route::get('share/{id}/image/post', [
+      'as' => 'admin-galeria-share-image-post',
+      'uses' => 'AdminController@galeriaSharePost'
+    ]);
+
+    Route::post('share/store/image/post', [
+      'as' => 'admin-galeria-share-image-post-store',
+      'uses' => 'AdminController@galeriaSharePostStore'
+    ]);
+
+    Route::put('share/update/image/post/{id}/', [
+      'as' => 'admin-galeria-share-image-post-update',
+      'uses' => 'AdminController@galeriaSharePostUpdate'
+    ]);
+    //END
+
+    /**************
+    DESIGN GALERIA
+    **************/
+    //START
+    Route::get('design', [
+      'as' => 'admin-galeria-design',
+      'uses' => 'AdminController@galeriaDesign'
+    ]);
+
+    Route::get('design/{nameFile}/delete', [
+      'as' => 'admin-galeria-design-delete',
+      'uses' => 'AdminController@galeriaDesignDelete'
+    ]);
+
+    Route::get('share/{id}/image/design', [
+      'as' => 'admin-galeria-share-image-design',
+      'uses' => 'AdminController@galeriaShareDesign'
+    ]);
+
+    Route::post('share/store/image/design', [
+      'as' => 'admin-galeria-share-image-design-store',
+      'uses' => 'AdminController@galeriaShareDesignStore'
+    ]);
+
+    Route::put('share/update/image/design/{id}/', [
+      'as' => 'admin-galeria-share-image-design-update',
+      'uses' => 'AdminController@galeriaShareDesignUpdate'
+    ]);
+    //END
+
 
   });
 

@@ -16,7 +16,7 @@
                           </div>
                           <div class="count">{{ $posts->count() }}</div>
 
-                          <h3>Post</h3>
+                          <h3><a href="{{ route('admin-galeria-post') }}">Post</a></h3>
                           <p>Gallería Media de Post.</p>
                       </div>
                   </div>
@@ -26,7 +26,7 @@
                           </div>
                           <div class="count">{{ $designs->count() }}</div>
 
-                          <h3>Diseño</h3>
+                          <h3><a href="{{ route('admin-galeria-design') }}">Diseño</a></h3>
                           <p>Gallería Media de Diseño</p>
                       </div>
                   </div>
@@ -36,7 +36,7 @@
                           </div>
                           <div class="count">{{ $courses->count() }}</div>
 
-                          <h3><a href="{{ route('admin-galeria-curso') }}">Cursos</a></h3>
+                          <h3><a href="{{ route('admin-galeria-course') }}">Cursos</a></h3>
                           <p>Galería Media de Curso</p>
                       </div>
                   </div>

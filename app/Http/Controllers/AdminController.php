@@ -14,6 +14,12 @@ use App\Social;
 
 use App\Share;
 
+use App\Course;
+
+use App\Post;
+
+use App\Design;
+
 use App\Repositories\Gallery\GalleryRepository;
 
 class AdminController extends Controller
@@ -105,6 +111,9 @@ class AdminController extends Controller
     |
     ***********************************************************/
 
+    /*=============================
+    PROCESO START
+    ===============================*/
     public function galeriaCurso()
     {
       # code...
@@ -146,12 +155,569 @@ class AdminController extends Controller
 
           }
         }
-
       }
 
       return view('admin.gallery.course.course')
               ->with('arrayCourses',$arrayCourses);
     }
+    /*=============================
+    PROCESO END
+    ===============================*/
+
+
+    /*=============================
+    PROCESO START
+    ===============================*/
+    public function galeriaShareCourse($id)
+    {
+      # code...
+      $course = Course::find($id);
+      if ($course->share_id == null) {
+        # code...
+        return view('admin.gallery.course.share-course-create')
+                ->with('course', $course);
+      }else{
+        return view('admin.gallery.course.share-course-edit')
+                ->with('course', $course);
+      }
+
+    }
+    /*=============================
+    PROCESO END
+    ===============================*/
+
+
+
+    /*=============================
+    PROCESO START
+    ===============================*/
+    public function galeriaCourseDelete($nameFile)
+    {
+      # code...
+      $this->notFound($nameFile);
+
+      if (app()->environment() == 'local') {
+        # code...
+        $path_course = public_path() . '/course/';
+      }else {
+        # code...
+        $path_course = '/home/blogclon/public_html/course/';
+      }
+
+      File::delete($path_course . $nameFile);
+
+      flash('Imagen Eliminado con Éxito', 'success');
+
+      return redirect()->route('admin-galeria-course');
+    }
+    /*=============================
+    PROCESO END
+    ===============================*/
+
+
+
+    /*=============================
+    PROCESO START
+    ===============================*/
+    public function galeriaShareCourseStore(Request $request)
+    {
+      # code...
+
+      $this->validate($request,[
+          'title' => 'required',
+          'description' => 'required',
+          'image' => 'mimes:jpeg,jpg,png'
+      ]);
+
+      if ($request->file('image')) {
+          # code...
+          $file = $request->file('image');
+          $name = 'course-share-' . time() . '.' . $file->getClientOriginalExtension();
+          if (app()->environment() == 'local') {
+            # code...
+            $path = public_path() . '/share/';
+          }else {
+            # code...
+            $path = '/home/blogclon/public_html/share/';
+          }
+          $file->move($path,$name);
+
+          $share = new Share($request->all());
+          $share->image = $name;
+          $share->save();
+
+          $course = Course::find($request->course_id);
+          $course->share_id = $share->id;
+          $course->share()->associate($share);
+          $course->save();
+
+          flash('Datos Registrados','success');
+
+          return redirect()->route('admin-galeria-course');
+      }
+    }
+    /*=============================
+    PROCESO END
+    ===============================*/
+
+
+
+    /*=============================
+    PROCESO START
+    ===============================*/
+    public function galeriaShareCourseUpdate(Request $request, $id)
+    {
+      # code...
+
+      $this->validate($request,[
+          'title' => 'required',
+          'description' => 'required',
+          'image' => 'mimes:jpeg,jpg,png'
+      ]);
+
+
+      if ($request->file('image')) {
+        # code...
+        $file = $request->file('image');
+        $name = 'course-share-' . time() . '.' . $file->getClientOriginalExtension();
+        if (app()->environment() == 'local') {
+          # code...
+          $path = public_path() . '/share/';
+        }else {
+          # code...
+          $path = '/home/blogclon/public_html/share/';
+        }
+        $file->move($path,$name);
+
+        $share = Share::find($id);
+        $share->fill($request->all());
+        $share->image = $name;
+        $share->save();
+        flash('Datos Editados','success');
+        return redirect()->route('admin-galeria-course');
+
+      }else{
+
+        $share = Share::find($id);
+        $share->title = $request->title;
+        $share->description = $request->description;
+        $share->save();
+        flash('Datos Editados','success');
+        return redirect()->route('admin-galeria-course');
+
+      }
+    }
+    /*=============================
+    PROCESO END
+    ===============================*/
+
+    /**********************************************************
+    |
+    |                S   E   C   C   I   Ó   N
+    |                G   A   L   E   R   I   A
+    |                     P   O   S   T
+    |
+    ***********************************************************/
+
+    /*=============================
+    PROCESO START
+    ===============================*/
+    public function galeriaSharePost($id)
+    {
+      # code...
+      $post = Post::find($id);
+      if ($post->share_id == null) {
+        # code...
+        return view('admin.gallery.post.share-post-create')
+                ->with('post', $post);
+      }else{
+        return view('admin.gallery.post.share-post-edit')
+                ->with('post', $post);
+      }
+
+    }
+    /*=============================
+    PROCESO END
+    ===============================*/
+
+    /*=============================
+    PROCESO START
+    ===============================*/
+    public function galeriaPost()
+    {
+      # code...
+      if (app()->environment() == 'local') {
+        # code...
+        $path_post = public_path() . '/post/';
+
+      }else {
+        # code...
+        $path_post = '/home/blogclon/public_html/post/';
+
+      }
+      $file_posts = File::allFiles($path_post);
+
+      $posts = $this->galleries->allPost();
+
+      $arrayPosts = array();
+
+      foreach ($file_posts as $key => $value) {
+        # code...
+        $arrayPosts[$key]['nameFile'] = $value->getFilename();
+
+        foreach ($posts as $post) {
+          # code...
+          $arrayPosts[$key]['id'] = $post->id;
+
+          $arrayPosts[$key]['share'] = $post->share_id;
+
+          if ($post->images[0]->name == $value->getFilename()) {
+            # code...
+            $arrayPosts[$key]['used'] = true;
+
+            break;
+
+          }else{
+
+            $arrayPosts[$key]['used'] = false;
+
+          }
+        }
+
+      }
+
+      return view('admin.gallery.post.post')
+              ->with('arrayPosts',$arrayPosts);
+    }
+    /*=============================
+    PROCESO END
+    ===============================*/
+
+
+    /*=============================
+    PROCESO START
+    ===============================*/
+    public function galeriaSharePostStore(Request $request)
+    {
+      # code...
+
+      $this->validate($request,[
+          'title' => 'required',
+          'description' => 'required',
+          'image' => 'mimes:jpeg,jpg,png'
+      ]);
+
+      if ($request->file('image')) {
+          # code...
+          $file = $request->file('image');
+          $name = 'post-share-' . time() . '.' . $file->getClientOriginalExtension();
+          if (app()->environment() == 'local') {
+            # code...
+            $path = public_path() . '/share/';
+          }else {
+            # code...
+            $path = '/home/blogclon/public_html/share/';
+          }
+          $file->move($path,$name);
+
+          $share = new Share($request->all());
+          $share->image = $name;
+          $share->save();
+
+          $post = Post::find($request->post_id);
+          $post->share_id = $share->id;
+          $post->share()->associate($share);
+          $post->save();
+
+          flash('Datos Registrados','success');
+
+          return redirect()->route('admin-galeria-post');
+      }
+    }
+    /*=============================
+    PROCESO END
+    ===============================*/
+
+
+    /*=============================
+    PROCESO START
+    ===============================*/
+    public function galeriaSharePostUpdate(Request $request, $id)
+    {
+      # code...
+
+      $this->validate($request,[
+          'title' => 'required',
+          'description' => 'required',
+          'image' => 'mimes:jpeg,jpg,png'
+      ]);
+
+
+      if ($request->file('image')) {
+        # code...
+        $file = $request->file('image');
+        $name = 'post-share-' . time() . '.' . $file->getClientOriginalExtension();
+        if (app()->environment() == 'local') {
+          # code...
+          $path = public_path() . '/share/';
+        }else {
+          # code...
+          $path = '/home/blogclon/public_html/share/';
+        }
+        $file->move($path,$name);
+
+        $share = Share::find($id);
+        $share->fill($request->all());
+        $share->image = $name;
+        $share->save();
+        flash('Datos Editados','success');
+        return redirect()->route('admin-galeria-post');
+
+      }else{
+
+        $share = Share::find($id);
+        $share->title = $request->title;
+        $share->description = $request->description;
+        $share->save();
+        flash('Datos Editados','success');
+        return redirect()->route('admin-galeria-post');
+
+      }
+    }
+    /*=============================
+    PROCESO END
+    ===============================*/
+
+
+    /*=============================
+    PROCESO START
+    ===============================*/
+    public function galeriaPostDelete($nameFile)
+    {
+      # code...
+      $this->notFound($nameFile);
+
+      if (app()->environment() == 'local') {
+        # code...
+        $path_post = public_path() . '/post/';
+      }else {
+        # code...
+        $path_post = '/home/blogclon/public_html/post/';
+      }
+
+      File::delete($path_post . $nameFile);
+
+      flash('Imagen Eliminado con Éxito', 'success');
+
+      return redirect()->route('admin-galeria-post');
+    }
+    /*=============================
+    PROCESO END
+    ===============================*/
+
+    /**********************************************************
+    |
+    |                S   E   C   C   I   Ó   N
+    |                G   A   L   E   R   I   A
+    |                  D   E   S   I   G   N
+    |
+    ***********************************************************/
+
+    /*=============================
+    PROCESO START
+    ===============================*/
+    public function galeriaShareDesign($id)
+    {
+      # code...
+      $design = Design::find($id);
+      if ($design->share_id == null) {
+        # code...
+        return view('admin.gallery.design.share-design-create')
+                ->with('design', $design);
+      }else{
+        return view('admin.gallery.design.share-design-edit')
+                ->with('design', $design);
+      }
+
+    }
+    /*=============================
+    PROCESO END
+    ===============================*/
+
+    /*=============================
+    PROCESO START
+    ===============================*/
+    public function galeriaDesign()
+    {
+      # code...
+      if (app()->environment() == 'local') {
+        # code...
+        $path_design = public_path() . '/design/';
+
+      }else {
+        # code...
+        $path_design = '/home/blogclon/public_html/design/';
+
+      }
+      $file_designs = File::allFiles($path_design);
+
+      $designs = $this->galleries->allDesign();
+
+      $arrayDesigns = array();
+
+      foreach ($file_designs as $key => $value) {
+        # code...
+        $arrayDesigns[$key]['nameFile'] = $value->getFilename();
+
+        foreach ($designs as $design) {
+          # code...
+          $arrayDesigns[$key]['id'] = $design->id;
+
+          $arrayDesigns[$key]['share'] = $design->share_id;
+
+          if ($design->image == $value->getFilename()) {
+            # code...
+            $arrayDesigns[$key]['used'] = true;
+
+            break;
+
+          }else{
+
+            $arrayDesigns[$key]['used'] = false;
+
+          }
+        }
+
+      }
+
+      return view('admin.gallery.design.design')
+              ->with('arrayDesigns',$arrayDesigns);
+    }
+    /*=============================
+    PROCESO END
+    ===============================*/
+
+
+    /*=============================
+    PROCESO START
+    ===============================*/
+    public function galeriaShareDesignStore(Request $request)
+    {
+      # code...
+
+      $this->validate($request,[
+          'title' => 'required',
+          'description' => 'required',
+          'image' => 'mimes:jpeg,jpg,png'
+      ]);
+
+      if ($request->file('image')) {
+          # code...
+          $file = $request->file('image');
+          $name = 'design-share-' . time() . '.' . $file->getClientOriginalExtension();
+          if (app()->environment() == 'local') {
+            # code...
+            $path = public_path() . '/share/';
+          }else {
+            # code...
+            $path = '/home/blogclon/public_html/share/';
+          }
+          $file->move($path,$name);
+
+          $share = new Share($request->all());
+          $share->image = $name;
+          $share->save();
+
+          $design = Design::find($request->design_id);
+          $design->share_id = $share->id;
+          $design->share()->associate($share);
+          $design->save();
+
+          flash('Datos Registrados','success');
+
+          return redirect()->route('admin-galeria-design');
+      }
+    }
+    /*=============================
+    PROCESO END
+    ===============================*/
+
+
+    /*=============================
+    PROCESO START
+    ===============================*/
+    public function galeriaShareDesignUpdate(Request $request, $id)
+    {
+      # code...
+
+      $this->validate($request,[
+          'title' => 'required',
+          'description' => 'required',
+          'image' => 'mimes:jpeg,jpg,png'
+      ]);
+
+
+      if ($request->file('image')) {
+        # code...
+        $file = $request->file('image');
+        $name = 'design-share-' . time() . '.' . $file->getClientOriginalExtension();
+        if (app()->environment() == 'local') {
+          # code...
+          $path = public_path() . '/share/';
+        }else {
+          # code...
+          $path = '/home/blogclon/public_html/share/';
+        }
+        $file->move($path,$name);
+
+        $share = Share::find($id);
+        $share->fill($request->all());
+        $share->image = $name;
+        $share->save();
+        flash('Datos Editados','success');
+        return redirect()->route('admin-galeria-design');
+
+      }else{
+
+        $share = Share::find($id);
+        $share->title = $request->title;
+        $share->description = $request->description;
+        $share->save();
+        flash('Datos Editados','success');
+        return redirect()->route('admin-galeria-design');
+
+      }
+    }
+    /*=============================
+    PROCESO END
+    ===============================*/
+
+
+    /*=============================
+    PROCESO START
+    ===============================*/
+    public function galeriaDesignDelete($nameFile)
+    {
+      # code...
+      $this->notFound($nameFile);
+
+      if (app()->environment() == 'local') {
+        # code...
+        $path_design = public_path() . '/design/';
+      }else {
+        # code...
+        $path_design = '/home/blogclon/public_html/design/';
+      }
+
+      File::delete($path_design . $nameFile);
+
+      flash('Imagen Eliminado con Éxito', 'success');
+
+      return redirect()->route('admin-galeria-design');
+    }
+    /*=============================
+    PROCESO END
+    ===============================*/
 
 
     /**********************************************************
@@ -282,6 +848,10 @@ class AdminController extends Controller
     PROCESO END
     ===============================*/
 
+
+    /*=============================
+    PROCESO START
+    ===============================*/
     public function galeriaShareVideoUpdate(Request $request, $id)
     {
       # code...
@@ -324,6 +894,9 @@ class AdminController extends Controller
 
       }
     }
+    /*=============================
+    PROCESO END
+    ===============================*/
 
 
     /*=============================

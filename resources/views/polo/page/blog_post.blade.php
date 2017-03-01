@@ -7,19 +7,19 @@
   <meta name="Keywords" content="paginas web economicas, diseño web economico, diseño de pagina de internet, diseño de sitios web economicos, diseño web, paginas web, sitios web, paginas web en venezuela, diseño web profesional, diseño de pagina de internet economica, diseñadores web, posicionamiento, diseño de paginas web, desarrollo web, paginas de internet, diseño web profesional, posicionamiento web, diseño web venezuela, diseño web anzoategui, tiendas virtuales, blog, noticias de tecnología, cursos web" />
 
   <!-- sample fb meta -->
-  <meta property="og:title" content="Blog - {{ $post->title }}" />
+  <meta property="og:title" content="Blog - {{ $post->share->title }}" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="{{ route('blog_post', $post->slug) }}" />
-  <meta property="og:image" content="{{ asset('post/'. $post->images[0]->name) }}" />
-  <meta property="og:description" content="{{ $post->title }} - Creamos sitios web de alta calidad, Diseño web, Aplicaciones Web, Blog Clon ofrece páginas web accesibles, posicionamiento en buscadores, servicios profesionales en sitios web, paginas web dinamicas. Diseño de paginas web económicas."/>
+  <meta property="og:image" content="{{ asset('share/'. $post->share->image) }}" />
+  <meta property="og:description" content="{{ $post->share->description }}"/>
 
   <!-- sample twitter meta -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@nytimes">
   <meta name="twitter:creator" content="@ClonBlog">
-  <meta name="twitter:title" content="Blog - {{ $post->title }}">
-  <meta name="twitter:description" content="{{ $post->title }} - Creamos sitios web de alta calidad, Diseño web, Aplicaciones Web, Blog Clon ofrece páginas web accesibles, posicionamiento en buscadores, servicios profesionales en sitios web, paginas web dinamicas. Diseño de paginas web económicas.">
-  <meta name="twitter:image" content="{{ asset('post/'. $post->images[0]->name) }}">
+  <meta name="twitter:title" content="Blog - {{ $post->share->title }}">
+  <meta name="twitter:description" content="{{ $post->share->description }}">
+  <meta name="twitter:image" content="{{ asset('share/'. $post->share->image) }}">
 @endsection
 @section('content_part')
 

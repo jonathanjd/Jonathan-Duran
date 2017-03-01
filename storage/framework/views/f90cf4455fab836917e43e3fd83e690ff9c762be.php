@@ -14,7 +14,7 @@
                           </div>
                           <div class="count"><?php echo e($posts->count()); ?></div>
 
-                          <h3>Post</h3>
+                          <h3><a href="<?php echo e(route('admin-galeria-post')); ?>">Post</a></h3>
                           <p>Gallería Media de Post.</p>
                       </div>
                   </div>
@@ -24,7 +24,7 @@
                           </div>
                           <div class="count"><?php echo e($designs->count()); ?></div>
 
-                          <h3>Diseño</h3>
+                          <h3><a href="<?php echo e(route('admin-galeria-design')); ?>">Diseño</a></h3>
                           <p>Gallería Media de Diseño</p>
                       </div>
                   </div>
@@ -34,7 +34,7 @@
                           </div>
                           <div class="count"><?php echo e($courses->count()); ?></div>
 
-                          <h3><a href="<?php echo e(route('admin-galeria-curso')); ?>">Cursos</a></h3>
+                          <h3><a href="<?php echo e(route('admin-galeria-course')); ?>">Cursos</a></h3>
                           <p>Galería Media de Curso</p>
                       </div>
                   </div>
