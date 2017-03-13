@@ -1,7 +1,7 @@
 <section>
 	<div class="heading heading-center">
 			<h2>Planes más vendidos</h2>
-			<p>Planes para Sitios Web.</p>
+			<p>Planes para páginas Web.</p>
 		</div>
 	<div class="container">
 

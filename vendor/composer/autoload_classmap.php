@@ -7,6 +7,8 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'AddDesignIdToPresupuestosTable' => $baseDir . '/database/migrations/2017_01_06_025245_add_design_id_to_presupuestos_table.php',
+    'AddEnableToDesignsTable' => $baseDir . '/database/migrations/2017_03_09_194416_add_enable_to_designs_table.php',
+    'AddEnableToPostsTable' => $baseDir . '/database/migrations/2017_03_09_192728_add_enable_to_posts_table.php',
     'AddIdshareToCoursesTable' => $baseDir . '/database/migrations/2017_02_28_231116_add_idshare_to_courses_table.php',
     'AddIdshareToDesignsTable' => $baseDir . '/database/migrations/2017_02_28_231230_add_idshare_to_designs_table.php',
     'AddIdshareToPostsTable' => $baseDir . '/database/migrations/2017_02_28_231205_add_idshare_to_posts_table.php',

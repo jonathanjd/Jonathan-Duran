@@ -13,7 +13,7 @@
         <div class="col-md-6 col-sm-6 col-xs-12">
 
             <a class="btn btn-success btn-block" href="{{ route('admin.design.create') }}" data-toggle="tooltip" data-placement="bottom" title="Crear Diseño"><i class="fa fa-plus-circle"></i></a>
-           
+
             {{ $designs->links() }}
 
             <div class="x_panel">
@@ -37,7 +37,7 @@
                     <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
-                    
+
                 @include('admin.message')
 
                 <table class="table table-hover">
@@ -48,6 +48,7 @@
                             <th>NAME</th>
                             <th>URL</th>
                             <th>Editar</th>
+                            <th class="text-center">CEO / Redes Sociales</th>
                             <th>Eliminar</th>
                         </tr>
                     </thead>
@@ -63,9 +64,10 @@
                             <a href="{{ $design->url }}" target="_blank">Ver Demo</a>
                             </td>
                             <td><a class="btn btn-warning" href="{{ route('admin.design.edit', $design) }}" data-toggle="tooltip" data-placement="bottom" title="Editar Diseño"><i class="fa fa-pencil"></i></a></td>
+                            <td class="text-center"><a class="btn btn-primary" href="{{ route('admin-galeria-share-image-design', $design) }}" data-toggle="tooltip" data-placement="bottom" title="CEO / Redes Sociales"><i class="fa fa-facebook-square"></i></a></td>
                             <td>
                             {!! Form::open(['route' => ['admin.design.destroy',$design],'method' => 'DELETE']) !!}
-                            
+
                             <button type="submit" class="btn btn-danger" data-toggle="tooltip" data-placement="bottom" title="Eliminar Diseño"><i class="fa fa-eraser"></i></button>
                             {!! Form::close() !!}
                             </td>
@@ -78,7 +80,7 @@
             </div>
 
             {{ $designs->links() }}
-            
+
             <a class="btn btn-success btn-block" href="{{ route('admin.design.create') }}" data-toggle="tooltip" data-placement="bottom" title="Crear Diseño"><i class="fa fa-plus-circle"></i></a>
 
         </div>
@@ -86,7 +88,7 @@
 </div>
 
 
-        
+
 @endsection
 
 @section('script')

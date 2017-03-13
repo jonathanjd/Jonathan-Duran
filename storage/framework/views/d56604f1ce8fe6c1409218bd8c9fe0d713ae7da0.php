@@ -8,7 +8,7 @@
                         <div class="text-middle">
                             <div class="container">
                                 <div class="text-center slider-content">
-                                    <h2 class="text-large m-b-0">SITIOS WEB ATRACTIVOS</h2>
+                                    <h1 class="text-large m-b-0">CREAMOS PÁGINAS WEB ATRACTIVOS</h2>
                                     <h2 class="text-medium">ÚNICOS Y SEGUROS</h2>
 
                                     <a class="button border rounded" href="<?php echo e(route('servicios')); ?>">Servicios</a>

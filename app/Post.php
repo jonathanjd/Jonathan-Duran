@@ -24,7 +24,7 @@ class Post extends Model
         ];
       }
 
-   	protected $fillable = ['title','content','user_id','category_id'];
+   	protected $fillable = ['title','content','user_id','category_id','share_id','enable'];
 
    	public function category()
    	{

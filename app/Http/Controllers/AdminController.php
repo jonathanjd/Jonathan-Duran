@@ -55,44 +55,6 @@ class AdminController extends Controller
     public function galeria()
     {
         # code...
-        /*******************************************************
-                            P   O   S   T
-        ********************************************************/
-        if (app()->environment() == 'local') {
-          # code...
-          $path_post = public_path() . '/post/';
-        }else {
-          # code...
-          $path_post = '/home/blogclon/public_html/post/';
-        }
-        $file_posts = File::allFiles($path_post);
-
-        /*******************************************************
-                          D   E    S   I   G   N
-        ********************************************************/
-        if (app()->environment() == 'local') {
-          # code...
-          $path_design = public_path() . '/design/';
-        }else {
-          # code...
-          $path_design = '/home/blogclon/public_html/design/';
-        }
-        $file_designs = File::allFiles($path_design);
-
-        /*******************************************************
-                          C   O   U   R   S   E
-        ********************************************************/
-
-        if (app()->environment() == 'local') {
-          # code...
-          $path_course = public_path() . '/course/';
-        }else {
-          # code...
-          $path_course = '/home/blogclon/public_html/course/';
-        }
-        $file_courses = File::allFiles($path_course);
-
-
         /*============================================
                         V   I   S   T   A
         ==============================================*/
@@ -426,6 +388,7 @@ class AdminController extends Controller
 
           $post = Post::find($request->post_id);
           $post->share_id = $share->id;
+          $post->enable = true;
           $post->share()->associate($share);
           $post->save();
 
@@ -630,6 +593,7 @@ class AdminController extends Controller
 
           $design = Design::find($request->design_id);
           $design->share_id = $share->id;
+          $design->enable = true;
           $design->share()->associate($share);
           $design->save();
 

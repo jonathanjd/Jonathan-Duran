@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="utf-8">
@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta id="token"name="token" value="<?php echo e(csrf_token()); ?>">
     <link rel="shortcut icon" href="<?php echo e(asset('template-polo/images/favicon.png')); ?>">
-
-    <title><?php echo $__env->yieldContent('title'); ?> | Blog Clon</title>
-
+    <title>Blog Clon - <?php echo $__env->yieldContent('title'); ?></title>
+    <meta name="Author" content="BlogClon.com.ve" />
+    <meta name="owner" content="Jonathan David Duran Segovia" />
     <?php echo $__env->yieldContent('meta'); ?>
 
     <?php echo $__env->make('polo.part.stylesheet', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

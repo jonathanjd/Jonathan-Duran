@@ -27,7 +27,7 @@ class Design extends Model
     //
 
     protected $fillable = [
-        'name', 'image', 'content','url'
+        'name', 'image', 'content','url','share_id','enable'
     ];
 
     public function share()

@@ -40,14 +40,14 @@
         <div class="x_content">
 
           <?php echo $__env->make('admin.message-error', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-
+          <?php if (app('Illuminate\Contracts\Auth\Access\Gate')->check('edit-admin')): ?>
           <?php echo Form::open(['route' => ['admin.design.update', $design->id],'method' => 'PUT','class' => 'form-horizontal form-label-left input_mask','files' => true,'data-parsley-validate' => '']); ?>
 
-            
+
             <div class="form-group">
               <img src="<?php echo e(asset('design/'.$design->image)); ?>" alt="" class="img-responsive img-thumbnail center-block" height="150" width="300">
             </div>
-            
+
             <div class="form-group">
               <?php echo Form::label('name','Name Design:'); ?>
 
@@ -61,36 +61,36 @@
               <?php echo Form::textarea('content',$design->content,['class' => 'form-control', 'placeholder' => 'Content Design', 'required' => '','data-parsley-length' => '[10,1000]']); ?>
 
             </div>
-            
+
             <div class="form-group">
               <?php echo Form::label('url','URL Demo:'); ?>
 
               <?php echo Form::text('url',$design->url,['class' => 'form-control', 'placeholder' => 'URL Demo','required' => '']); ?>
 
             </div>
-            
+
             <div class="form-group">
               <?php echo Form::label('Image','Image Design:'); ?>
 
               <?php echo Form::file('image',['data-field-type' => 'bootstrap-file-filed','data-preview' => 'on','data-file-types' => 'image/jpeg,image/png,image/gif','data-btn-class' => 'btn-primary']); ?>
 
             </div>
-          
+
             <div class="form-group">
-              
+
                 <button type="submit" class="btn btn-success btn-block" data-toggle="tooltip" data-placement="bottom" title="Editar"><i class="fa fa-save"></i></button>
-              
+
             </div>
 
-         
+
           <?php echo Form::close(); ?>
 
-
+        <?php endif; ?>
         </div>
       </div>
 
        <a class="btn btn-success btn-block" href="<?php echo e(route('admin.design.index')); ?>" data-toggle="tooltip" data-placement="bottom" title="Regresar"><i class="fa fa-arrow-left"></i></a>
-      
+
     </div>
   </div>
 </div>

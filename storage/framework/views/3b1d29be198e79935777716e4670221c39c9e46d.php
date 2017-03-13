@@ -39,7 +39,7 @@
 				<div class="x_content">
 
 					<?php echo $__env->make('admin.message-error', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-
+							<?php if (app('Illuminate\Contracts\Auth\Access\Gate')->check('create-admin')): ?>
 		          <?php echo Form::open(['route' => 'admin.post.store','method' => 'POST','class' => 'form-horizontal form-label-left input_mask','files' => true,'data-parsley-validate' => '']); ?>
 
 
@@ -89,7 +89,7 @@
 
 		          <?php echo Form::close(); ?>
 
-
+						<?php endif; ?>
 				</div>
 			</div>
 

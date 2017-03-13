@@ -60,6 +60,7 @@
 				</div>
 			</div>
 
+			<a href="<?php echo e(route('admin-galeria-share-image-post', $post)); ?>" class="btn btn-primary btn-block" data-toggle="tooltip" data-placement="bottom" title="CEO - Redes Sociales"><i class="fa fa-facebook-square"></i></a>
 			<a href="<?php echo e(route('admin.post.index')); ?>" class="btn btn-primary btn-block" data-toggle="tooltip" data-placement="bottom" title="Regresar"><i class="fa fa-arrow-left"></i></a>
 
 		</div>

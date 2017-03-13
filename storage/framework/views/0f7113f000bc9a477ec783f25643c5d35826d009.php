@@ -11,7 +11,7 @@
         <div class="col-md-6 col-sm-6 col-xs-12">
 
             <a class="btn btn-success btn-block" href="<?php echo e(route('admin.design.create')); ?>" data-toggle="tooltip" data-placement="bottom" title="Crear Diseño"><i class="fa fa-plus-circle"></i></a>
-           
+
             <?php echo e($designs->links()); ?>
 
 
@@ -36,7 +36,7 @@
                     <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
-                    
+
                 <?php echo $__env->make('admin.message', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
                 <table class="table table-hover">
@@ -47,6 +47,7 @@
                             <th>NAME</th>
                             <th>URL</th>
                             <th>Editar</th>
+                            <th class="text-center">CEO / Redes Sociales</th>
                             <th>Eliminar</th>
                         </tr>
                     </thead>
@@ -62,10 +63,11 @@
                             <a href="<?php echo e($design->url); ?>" target="_blank">Ver Demo</a>
                             </td>
                             <td><a class="btn btn-warning" href="<?php echo e(route('admin.design.edit', $design)); ?>" data-toggle="tooltip" data-placement="bottom" title="Editar Diseño"><i class="fa fa-pencil"></i></a></td>
+                            <td class="text-center"><a class="btn btn-primary" href="<?php echo e(route('admin-galeria-share-image-design', $design)); ?>" data-toggle="tooltip" data-placement="bottom" title="CEO / Redes Sociales"><i class="fa fa-facebook-square"></i></a></td>
                             <td>
                             <?php echo Form::open(['route' => ['admin.design.destroy',$design],'method' => 'DELETE']); ?>
 
-                            
+
                             <button type="submit" class="btn btn-danger" data-toggle="tooltip" data-placement="bottom" title="Eliminar Diseño"><i class="fa fa-eraser"></i></button>
                             <?php echo Form::close(); ?>
 
@@ -80,7 +82,7 @@
 
             <?php echo e($designs->links()); ?>
 
-            
+
             <a class="btn btn-success btn-block" href="<?php echo e(route('admin.design.create')); ?>" data-toggle="tooltip" data-placement="bottom" title="Crear Diseño"><i class="fa fa-plus-circle"></i></a>
 
         </div>
@@ -88,7 +90,7 @@
 </div>
 
 
-        
+
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('script'); ?>

@@ -74,11 +74,21 @@ class WebController extends Controller
 
     }
 
+    /*
+    |==========================================================
+    |                    I  N   D   E   X
+    |==========================================================
+    */
+
+    //=========================
+    //         START
+    //=========================
+
     public function index_polo()
     {
       # code...
-      $designs = Design::orderBy('id','DESC')->take('8')->get();
-      $posts = Post::orderBy('id','DESC')->take('4')->get();
+      $designs = Design::where('enable', true)->orderBy('id','DESC')->take('8')->get();
+      $posts = Post::where('enable', true)->orderBy('id','DESC')->take('4')->get();
 
       return view('polo.page.index')
               ->with('designs',$designs)
@@ -86,11 +96,25 @@ class WebController extends Controller
               ->with('posts', $posts);
     }
 
+    //===========================
+    //           END
+    //===========================
+
+    /*
+    |==========================================================
+    |                    P   O   S   T
+    |==========================================================
+    */
+
+    //=========================
+    //         START
+    //=========================
+
     public function blog_polo()
     {
       # code...
 
-      $posts = Post::orderBy('id','DESC')->paginate(5);
+      $posts = Post::where('enable', true)->orderBy('id','DESC')->paginate(5);
       return view('polo.page.blog')->with('posts', $posts);
     }
 
@@ -101,6 +125,10 @@ class WebController extends Controller
       $this->notFound($post);
       return view('polo.page.blog_post')->with('post', $post);
     }
+
+    //===========================
+    //           END
+    //===========================
 
     public function cursos_polo()
     {
@@ -127,17 +155,21 @@ class WebController extends Controller
       return view('polo.page.course_video')->with('video',$video);
     }
 
+    /*
+    |==========================================================
+    |                D   E   S   I   G   N
+    |==========================================================
+    */
+
+    //=========================
+    //         START
+    //=========================
+
     public function designs_polo()
     {
       # code...
-      $designs = Design::orderBy('id','DESC')->paginate(7);
+      $designs = Design::where('enable', true)->orderBy('id','DESC')->paginate(7);
       return view('polo.page.designs')->with('designs',$designs);
-    }
-
-    public function services_polo()
-    {
-      # code...
-      return view('polo.page.services');
     }
 
     public function design_polo_details($id)
@@ -145,12 +177,33 @@ class WebController extends Controller
       # code...
       $design = Design::findBySlug($id);
       $this->notFound($design);
-      $designs = Design::all()->random(4);
+      $designs = Design::where('enable', true)->get()->random(4);
       return view('polo.page.design_details')->with('design', $design)
               ->with('designs', $designs)
               ->with('plans', $this->plans->all());
-
     }
+
+    //===========================
+    //           END
+    //===========================
+
+    /*
+    |==========================================================
+    |                  S   E   R   V   I   C   E
+    |==========================================================
+    */
+
+    //=========================
+    //         START
+    //=========================
+
+    public function services_polo()
+    {
+      # code...
+      return view('polo.page.services');
+    }
+
+
 
     public function service_show_polo($id)
     {
@@ -165,12 +218,16 @@ class WebController extends Controller
     {
       # code...
       $this->notFound($this->plans->findBySlug($id));
-      $designs = Design::orderBy('id','Desc')->get();
+      $designs = Design::where('enable', true)->orderBy('id','Desc')->get();
       return view('polo.page.servicio_hire')
               ->with('plan',$this->plans->findBySlug($id))
               ->with('plans',$this->plans->orderBy())
               ->with('designs', $designs);
     }
+
+    //===========================
+    //           END
+    //===========================
 
 
 }

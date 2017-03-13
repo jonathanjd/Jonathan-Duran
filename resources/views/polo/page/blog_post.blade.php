@@ -1,17 +1,15 @@
 @extends('polo.main.base')
-@section('title','Blog - '.$post->title)
+@section('title', $post->title)
 @section('meta')
-  <meta name="Author" content="BlogClon" />
-  <meta name="Subject" content="creamos sitios web económico" />
   <meta name="description" content="Blog - {{ $post->title }}" />
-  <meta name="Keywords" content="paginas web economicas, diseño web economico, diseño de pagina de internet, diseño de sitios web economicos, diseño web, paginas web, sitios web, paginas web en venezuela, diseño web profesional, diseño de pagina de internet economica, diseñadores web, posicionamiento, diseño de paginas web, desarrollo web, paginas de internet, diseño web profesional, posicionamiento web, diseño web venezuela, diseño web anzoategui, tiendas virtuales, blog, noticias de tecnología, cursos web" />
-
+  <meta name="Keywords" content="crear pagina web, como crear una pagina web, diseños web, paginas web, servicios web, noticias web" />
   <!-- sample fb meta -->
-  <meta property="og:title" content="Blog - {{ $post->share->title }}" />
+  <meta property="og:title" content="{{ $post->share->title }}" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="{{ route('blog_post', $post->slug) }}" />
   <meta property="og:image" content="{{ asset('share/'. $post->share->image) }}" />
   <meta property="og:description" content="{{ $post->share->description }}"/>
+  <meta property="fb:app_id" content="294735130942812" />
 
   <!-- sample twitter meta -->
   <meta name="twitter:card" content="summary_large_image">

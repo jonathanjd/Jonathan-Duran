@@ -68,8 +68,6 @@
 
                                     <li > <a href="<?php echo e(route('blog')); ?>"><i class="fa fa-reorder"></i> Blog</a>
 
-                                    <li > <a href="<?php echo e(route('cursos')); ?>"><i class="fa fa-book"></i> Cursos</a>
-
                                     </li>
 
                                 </ul>

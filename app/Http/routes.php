@@ -29,21 +29,26 @@ Route::get('blog', [
     'uses' => 'WebController@blog_polo'
 ]);
 
+/*
 Route::get('cursos', [
     'as' => 'cursos',
     'uses' => 'WebController@cursos_polo'
 ]);
+*/
 
+/*
 Route::get('curso/{id}', [
     'as' => 'curso_mostrar',
     'uses' => 'WebController@curso_mostrar_polo'
 ]);
+*/
 
+/*
 Route::get('video/{id}', [
     'as' => 'curso_video',
     'uses' => 'WebController@curso_video_polo'
 ]);
-
+*/
 
 Route::get('post/{id}', [
 	'uses' => 'WebController@post_polo',

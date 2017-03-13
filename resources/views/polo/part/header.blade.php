@@ -68,8 +68,6 @@
 
                                     <li > <a href="{{ route('blog') }}"><i class="fa fa-reorder"></i> Blog</a>
 
-                                    <li > <a href="{{ route('cursos') }}"><i class="fa fa-book"></i> Cursos</a>
-
                                     </li>
 
                                 </ul>
