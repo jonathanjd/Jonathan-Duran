@@ -39,7 +39,6 @@
     <script src="<?php echo e(asset('template-polo/vendor/plugins-compressed.js')); ?>"></script>
 
     <!--REDES SOCIALES-->
-    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('css/rrssb.scss')); ?>"/>
     <link rel="stylesheet" type="text/css" href="<?php echo e(asset('css/rrssb.css')); ?>"/>
 
     <!-- SLIDER REVOLUTION 5.x SCRIPTS  -->

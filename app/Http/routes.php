@@ -92,6 +92,8 @@ Route::get('servicio/{id}',[
 
 Route::get('/api/services','PresupuestoController@servicios_ajax');
 
+Route::get('sitemap','SiteMapsController@index');
+
 Route::group(['prefix' => 'presupuesto'], function() {
 
   Route::get('index',[
