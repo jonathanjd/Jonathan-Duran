@@ -21,7 +21,7 @@
 
 Route::get('/', [
     'as' => 'index',
-    'uses' => 'WebController@index_polo'
+    'uses' => 'WebController@index'
 ]);
 
 Route::get('blog', [

@@ -84,6 +84,13 @@ class WebController extends Controller
     //         START
     //=========================
 
+    public function index()
+    {
+      # code...
+      return view('front-end.index');
+    }
+
+
     public function index_polo()
     {
       # code...

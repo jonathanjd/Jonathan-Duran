@@ -3,16 +3,17 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title></title>
+        <title><?php echo $__env->yieldContent('title'); ?> | Blog Clon</title>
+        <?php echo $__env->yieldContent('meta'); ?>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
 
-        <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/main.css') }} ">
-        <script src="{{ asset('js/vendor/modernizr-2.8.3.min.js') }}  "></script>
+        <link rel="stylesheet" href="<?php echo e(asset('css/normalize.css')); ?>">
+        <link rel="stylesheet" href="<?php echo e(asset('css/main.css')); ?> ">
+        <script src="<?php echo e(asset('js/modernizr-2.8.3.min.js')); ?>  "></script>
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -20,12 +21,12 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
+        <?php echo $__env->yieldContent('content'); ?>
 
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-        <script>window.jQuery || document.write('<script src="{{ asset('js/jquery-1.12.0.min.js') }}"><\/script>')</script>
-        <script src="{{ asset('js/main.js') }}"></script>
-
+        <script>window.jQuery || document.write('<script src="<?php echo e(asset('js/jquery-1.12.0.min.js')); ?>"><\/script>')</script>
+        <script src="<?php echo e(asset('js/main.js')); ?>"></script>
+        <?php echo $__env->yieldContent('script'); ?>
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
