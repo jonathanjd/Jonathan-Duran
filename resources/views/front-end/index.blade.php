@@ -7,7 +7,7 @@
 	<nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse"> 
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
 					<span class="sr-only">Toggle navigation</span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
@@ -27,10 +27,22 @@
 					<li><a href="">Registrar</a></li>
 				</ul>
 			</div><!-- .collapse navbar-collapse -->
-		</div><!-- .container -->	
-	</nav><!-- .navbar navbar-default navbar-fixed-top -->	
+		</div><!-- .container -->
+	</nav><!-- .navbar navbar-default navbar-fixed-top -->
 </header>
 <!-- END HEADER -->
+
+<!-- TITLE & START -->
+<section id="title-start">
+	<div class="jumbotron" style="background: url('{{ asset('img/img-main.jpg') }}') 60% 40% no-repeat fixed; background-size: cover">
+		<div class="container-fluid text-center color-white">
+			<h1>CREAMOS PÁGINA WEB ATRACTIVOS</h1>
+		  <h2>ÚNICOS Y SEGUROS</h2>
+			<p><a class="btn btn-primary btn-lg" href="#" role="button">Comenzar</a></p>
+		</div><!-- .container-fluid -->
+	</div><!-- .jumbotron -->
+</section><!-- #title-video -->
+<!-- END TITLE & START -->
 
 <!-- PLANES -->
 <!-- END PLANES -->
@@ -50,4 +62,3 @@
 <!-- FOOTER -->
 <!-- END FOOTER -->
 @stop
-

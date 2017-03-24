@@ -95,19 +95,20 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-   h1{
-    font-family: font-family: 'Alfa Slab One', cursive;
-   }
+h1, h2 {
+    font-family: 'Merriweather', serif;
+}
 
-   h2{
-    font-family: font-family: 'Lobster', cursive;
-   }
+h3 {
+    font-family: 'Lobster', cursive;
+}
 
-   h3{
-    font-family: font-family: 'Lobster', cursive;
-   }
 
-    
+
+
+
+
+
 
 
 
@@ -126,6 +127,14 @@ textarea {
 /* ==========================================================================
    Helper classes
    ========================================================================== */
+
+/*
+ * Color White
+ */
+
+.color-white{
+  color: white;
+}
 
 /*
  * Hide visually and from screen readers
