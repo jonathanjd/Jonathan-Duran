@@ -44,6 +44,96 @@
 <!-- END TITLE & START -->
 
 <!-- PLANES -->
+<section id="planes" class="section">
+	<div class="heading heading-center">
+		<h1>Todo lo necesario Para Empezar una Página Web</h1>
+		<p>Nuestros Planes</p>
+	</div><!-- .heading heading-center -->
+	<div class="container">
+		<div class="row">
+			<div class="pricing-plans">
+				<div class="col-md-4 col-sm-12 col-xs-12">
+					<div class="plan">
+						<div class="plan-header">
+							<h3>PLAN UNO</h3>
+							<p class="plan-price">
+								<sup>Bsf</sup>
+								150.000
+								<span>*año</span>
+							</p><!-- .plan-price-->
+							<a href="#" class="btn btn-success">
+								<span>
+									Más Información
+								</span>
+							</a><!-- .btn btn-success -->
+						</div><!-- .plan-header -->
+						<div class="plan-list">
+							<ul>
+								<li><i class="fa fa-dot-circle-o"></i>AAA BBB CCC</li>
+								<li><i class="fa fa-dot-circle-o"></i>AAA BBB CCC</li>
+								<li><i class="fa fa-dot-circle-o"></i>AAA BBB CCC</li>
+								<li><i class="fa fa-dot-circle-o"></i>AAA BBB CCC</li>
+								<li><i class="fa fa-dot-circle-o"></i>AAA BBB CCC</li>
+							</ul>
+						</div><!-- .plan-list -->
+					</div><!-- .plan-->
+				</div><!-- .col-md-4 col-sm-12 col-xs-12 -->
+				<div class="col-md-4 col-sm-12 col-xs-12">
+					<div class="plan">
+						<div class="plan-header">
+							<h3>PLAN UNO</h3>
+							<p class="plan-price">
+								<sup>Bsf</sup>
+								150.000
+								<span>*año</span>
+							</p><!-- .plan-price-->
+							<a href="#" class="btn btn-success">
+								<span>
+									Más Información
+								</span>
+							</a><!-- .btn btn-success -->
+						</div><!-- .plan-header -->
+						<div class="plan-list">
+							<ul>
+								<li><i class="fa fa-dot-circle-o"></i>AAA BBB CCC</li>
+								<li><i class="fa fa-dot-circle-o"></i>AAA BBB CCC</li>
+								<li><i class="fa fa-dot-circle-o"></i>AAA BBB CCC</li>
+								<li><i class="fa fa-dot-circle-o"></i>AAA BBB CCC</li>
+								<li><i class="fa fa-dot-circle-o"></i>AAA BBB CCC</li>
+							</ul>
+						</div><!-- .plan-list -->
+					</div><!-- .plan-->
+				</div><!-- .col-md-4 col-sm-12 col-xs-12 -->
+				<div class="col-md-4 col-sm-12 col-xs-12">
+					<div class="plan">
+						<div class="plan-header">
+							<h3>PLAN UNO</h3>
+							<p class="plan-price">
+								<sup>Bsf</sup>
+								150.000
+								<span>*año</span>
+							</p><!-- .plan-price-->
+							<a href="#" class="btn btn-success">
+								<span>
+									Más Información
+								</span>
+							</a><!-- .btn btn-success -->
+						</div><!-- .plan-header -->
+						<div class="plan-list">
+							<ul>
+								<li><i class="fa fa-dot-circle-o"></i>AAA BBB CCC</li>
+								<li><i class="fa fa-dot-circle-o"></i>AAA BBB CCC</li>
+								<li><i class="fa fa-dot-circle-o"></i>AAA BBB CCC</li>
+								<li><i class="fa fa-dot-circle-o"></i>AAA BBB CCC</li>
+								<li><i class="fa fa-dot-circle-o"></i>AAA BBB CCC</li>
+							</ul>
+						</div><!-- .plan-list -->
+					</div><!-- .plan-->
+				</div><!-- .col-md-4 col-sm-12 col-xs-12 -->
+			</div><!-- .pricing-plan -->
+		</div><!-- row -->
+	</div><!-- .container -->
+</section><!-- #planes .section -->
 <!-- END PLANES -->
 
 <!-- CODIGO EXTRA -->

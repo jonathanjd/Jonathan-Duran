@@ -17,6 +17,7 @@
         <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
         <link href="https://fonts.googleapis.com/css?family=Lobster|Merriweather" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('css/main.css') }} ">
+        <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
         <script src="{{ asset('js/modernizr-2.8.3.min.js') }}  "></script>
     </head>
     <body>
