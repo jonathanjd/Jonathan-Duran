@@ -34,7 +34,7 @@
 <!-- TITLE & START -->
 <section id="title-start">
 	<div class="jumbotron" style="background: url('<?php echo e(asset('img/img-main.jpg')); ?>') 60% 40% no-repeat fixed; background-size: cover">
-		<div class="container-fluid text-center color-white">
+		<div class="container-fluid text-center text-white">
 			<h1>CREAMOS PÁGINA WEB ATRACTIVOS</h1>
 		  <h2>ÚNICOS Y SEGUROS</h2>
 			<p><a class="btn btn-primary btn-lg" href="#" role="button">Comenzar</a></p>
@@ -135,7 +135,68 @@
 	</div><!-- .container -->
 </section><!-- #planes .section -->
 <!-- END PLANES -->
-
+<section id="codigo-extra" class="section background-grey text-black">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<div class="text-center">
+					<div class="icon">
+						<i class="fa fa-3x fa-code"></i>
+					</div><!--.icon -->
+					<div class="text-counter counter">
+						<span>12345</span>
+					</div><!-- .text-counter counter -->
+					<br>
+					<p>
+						LINEAS DE CÓDIGOS
+					</p>
+				</div><!-- text-center -->
+			</div><!-- .col-md-3 -->
+			<div class="col-md-3">
+				<div class="text-center">
+					<div class="icon">
+						<i class="fa fa-3x fa-coffee"></i>
+					</div><!--.icon -->
+					<div class="text-counter counter">
+						<span>65</span>
+					</div><!-- .text-counter counter -->
+					<br>
+					<p>
+						TAZAS DE CAFÉ
+					</p>
+				</div><!-- text-center -->
+			</div><!-- .col-md-3 -->
+			<div class="col-md-3">
+				<div class="text-center">
+					<div class="icon">
+						<i class="fa fa-3x fa-rocket"></i>
+					</div><!--.icon -->
+					<div class="text-counter counter">
+						<span>12</span>
+					</div><!-- .text-counter counter -->
+					<br>
+					<p>
+						PROYECTOS
+					</p>
+				</div><!-- text-center -->
+			</div><!-- .col-md-3 -->
+			<div class="col-md-3">
+				<div class="text-center">
+					<div class="icon">
+						<i class="fa fa-3x fa-smile-o"></i>
+					</div><!--.icon -->
+					<div class="text-counter counter">
+						<span>19</span>
+					</div><!-- .text-counter counter -->
+					<br>
+					<p>
+						CLIENTES FELICES
+					</p>
+				</div><!-- text-center -->
+			</div><!-- .col-md-3 -->
+		</div><!-- .row -->
+	</div><!-- .container -->
+</section><!-- #codigo-extra .background-grey text-black -->
 <!-- CODIGO EXTRA -->
 <!-- END CODIGO EXTRA -->
 
@@ -150,6 +211,18 @@
 
 <!-- FOOTER -->
 <!-- END FOOTER -->
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('script'); ?>
+	<!-- COUNTERUP -->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+	<script src="<?php echo e(asset('js/jquery.counterup.min.js')); ?>"></script>
+	<script type="text/javascript">
+		$('.counter').counterUp({
+			delay: 10,
+			time: 1000
+		});
+	</script>
+	<!-- END COUNTERUP -->
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('front-end.base', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

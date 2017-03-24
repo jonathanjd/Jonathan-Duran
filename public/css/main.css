@@ -168,7 +168,10 @@ h3 {
   margin-right: 12px;
 }
 
-
+.text-counter {
+  font-size: 50px;
+  line-height: 40px;
+}
 
 
 
@@ -192,11 +195,19 @@ h3 {
    ========================================================================== */
 
 /*
- * Color White
+ * color White
  */
 
 .text-white{
   color: white;
+}
+
+/*
+ * color Black
+ */
+
+.text-black{
+  color: black;
 }
 
 /*
@@ -209,6 +220,13 @@ h3 {
   z-index: auto;
   width: 100%
   overflow:hidden;
+}
+
+/*
+ * background grey
+ */
+.background-grey {
+  background-color: #f6f6f6 !important;
 }
 
 /*
@@ -226,6 +244,20 @@ h3 {
    text-align: center;
    float: none;
  }
+
+ /*
+  * icon
+  */
+.icon {
+  margin-bottom: 16px;
+}
+
+/*
+ * counter
+ */
+.counter {
+ margin-bottom: 16px;
+}
 
 
 /*
