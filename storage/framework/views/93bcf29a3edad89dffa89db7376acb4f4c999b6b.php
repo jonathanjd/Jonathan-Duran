@@ -210,6 +210,15 @@
 <!-- NUESTRO BLOG -->
 <!-- END NUESTRO BLOG -->
 
+<!-- CALL ACTION -->
+<section id="call-action" class="section background-orange text-white">
+	<div class="container text-center">
+		<h2>LLEVA TU NEGOCIO AL SIGUIENTE NIVEL</h1>
+		<a href="#" class="btn btn-primary btn-lg">Comenzar</a>
+	</div><!-- .container text-center -->
+</section><!-- .call-action -->
+<!-- END CALL ACTION -->
+
 <!-- FORMULARIO DE CONTACTO -->
 <section id="formulario-contacto" class="section">
 	<div class="container">
@@ -236,7 +245,7 @@
 						<button class="btn btn-primary btn-lg btn-block" type="submit" name="button">Enviar</button>
 					</div>
 				</form><!-- .formulario-body -->
-			</div>
+			</div><!-- .formulario-body -->
 		</div><!-- .row -->
 	</div><!-- .container -->
 </section><!-- #formulario-contacto .section -->

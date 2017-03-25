@@ -173,6 +173,10 @@ h3 {
   line-height: 40px;
 }
 
+#call-action h2{
+  margin-bottom: 60px;
+}
+
 
 .formulario-header {
   margin-bottom: 60px;
@@ -181,9 +185,6 @@ h3 {
 #footer{
   clear: both;
   position: relative;
-}
-
-.container {
   padding: 40px 0;
 }
 
@@ -244,6 +245,13 @@ h3 {
  */
 .background-dark {
   background-color: #101010 !important;
+}
+
+/*
+ * background orange
+ */
+.background-orange {
+  background-color: rgb(230, 104, 28); !important;
 }
 
 /*
