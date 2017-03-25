@@ -210,11 +210,43 @@
 <!-- NUESTRO BLOG -->
 <!-- END NUESTRO BLOG -->
 
+<!-- FORMULARIO DE CONTACTO -->
+<section id="formulario-contacto" class="section">
+	<div class="container">
+		<div class="row">
+			<div class="formulario-header text-left text-center">
+				<h3>CONTÁCTANOS!</h3>
+				<p>¿Tienes alguna idea de negocio?, contáctanos y con gusto te asesoramos.</p>
+			</div><!-- .formulario-header -->
+			<div class="formulario-body">
+				<form>
+					<div class="form-group col-md-6">
+					  <input type="text" class="form-control" id="" placeholder="Ingrese su Nombre">
+					</div><!-- .form-group col-md-6 -->
+					<div class="form-group col-md-6">
+					  <input type="email" class="form-control" id="" placeholder="Ingrese su Correo">
+					</div><!-- .form-group col-md-6 -->
+					<div class="form-group col-md-12">
+					  <input type="text" class="form-control" id="" placeholder="Asunto">
+					</div><!-- .form-group col-md-6 -->
+					<div class="form-group col-md-12">
+					  <textarea class="form-control" rows="5" placeholder="Mensaje"></textarea>
+					</div><!-- .form-group col-md-6 -->
+					<div class="form-group col-md-12">
+						<button class="btn btn-primary btn-lg btn-block" type="submit" name="button">Enviar</button>
+					</div>
+				</form><!-- .formulario-body -->
+			</div>
+		</div><!-- .row -->
+	</div><!-- .container -->
+</section><!-- #formulario-contacto .section -->
+<!-- END FORMULARIO DE CONTACTO -->
+
 <!-- FOOTER -->
 <footer id="footer" class="background-dark text-white">
-        <div class="container-fluid text-center">
+        <div class="container text-center">
             <p>
-                 <i class="fa fa-copyright"></i>2016 BlogClon - Creamos Páginas Web Atractivos | Made with <i class="fa fa-heart"></i> by <a href="#">Jonathan Duran</a>
+                 <i class="fa fa-copyright"></i>2016 BlogClon Creamos Páginas Web Atractivos | Made with <i class="fa fa-heart"></i> by <a href="#">Jonathan Duran</a>
             </p>
         </div><!-- container-fluid .text-center -->
     </footer><!-- footer -->

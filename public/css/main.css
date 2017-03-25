@@ -174,12 +174,16 @@ h3 {
 }
 
 
+.formulario-header {
+  margin-bottom: 60px;
+}
+
 #footer{
   clear: both;
   position: relative;
 }
 
-.container-fluid {
+.container {
   padding: 40px 0;
 }
 
