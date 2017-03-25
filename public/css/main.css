@@ -174,8 +174,14 @@ h3 {
 }
 
 
+#footer{
+  clear: both;
+  position: relative;
+}
 
-
+.container-fluid {
+  padding: 40px 0;
+}
 
 
 
@@ -227,6 +233,13 @@ h3 {
  */
 .background-grey {
   background-color: #f6f6f6 !important;
+}
+
+/*
+ * background dark
+ */
+.background-dark {
+  background-color: #101010 !important;
 }
 
 /*

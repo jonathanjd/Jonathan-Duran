@@ -136,6 +136,8 @@
 	</div><!-- .container -->
 </section><!-- #planes .section -->
 <!-- END PLANES -->
+
+<!-- CODIGO EXTRA -->
 <section id="codigo-extra" class="section background-grey text-black">
 	<div class="container">
 		<div class="row">
@@ -145,7 +147,7 @@
 						<i class="fa fa-3x fa-code"></i>
 					</div><!--.icon -->
 					<div class="text-counter counter">
-						<span>12345</span>
+						<span>19525</span>
 					</div><!-- .text-counter counter -->
 					<br>
 					<p>
@@ -198,7 +200,6 @@
 		</div><!-- .row -->
 	</div><!-- .container -->
 </section><!-- #codigo-extra .background-grey text-black -->
-<!-- CODIGO EXTRA -->
 <!-- END CODIGO EXTRA -->
 
 <!-- DISEÑOS WEB -->
@@ -211,6 +212,13 @@
 <!-- END NUESTRO BLOG -->
 
 <!-- FOOTER -->
+<footer id="footer" class="background-dark text-white">
+        <div class="container-fluid text-center">
+            <p>
+                 <i class="fa fa-copyright"></i>2016 BlogClon - Creamos Páginas Web Atractivos | Made with <i class="fa fa-heart"></i> by <a href="#">Jonathan Duran</a>
+            </p>
+        </div><!-- container-fluid .text-center -->
+    </footer><!-- footer -->
 <!-- END FOOTER -->
 @stop
 @section('script')
