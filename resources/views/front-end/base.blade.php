@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <link rel="shortcut icon" href="{{ asset('img/favicon.png')}}">
-        <title>@yield('title') | Blog Clon</title>
+        <title>@yield('title') | BlogClon.com.ve</title>
         @yield('meta')
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
