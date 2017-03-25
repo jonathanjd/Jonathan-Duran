@@ -32,7 +32,7 @@
 <!-- END HEADER -->
 
 <!-- TITLE & START -->
-<section id="title-start">
+<section id="title-start" class="section">
 	<div class="jumbotron" style="background: url('<?php echo e(asset('img/img-main.jpg')); ?>') 60% 40% no-repeat fixed; background-size: cover">
 		<div class="container-fluid text-center text-white">
 			<h1>CREAMOS PÁGINA WEB ATRACTIVOS</h1>
@@ -46,7 +46,7 @@
 <!-- PLANES -->
 <section id="planes" class="section">
 	<div class="heading heading-center">
-		<h1>Todo lo necesario Para Empezar una Página Web</h1>
+		<h3>Todo lo necesario Para Empezar una Página Web</h1>
 		<p>Nuestros Planes</p>
 	</div><!-- .heading heading-center -->
 	<div class="container">
@@ -202,13 +202,57 @@
 <!-- END CODIGO EXTRA -->
 
 <!-- DISEÑOS WEB -->
+<section id="diseños-web" class="section">
+	<div class="container-fluid">
+		<div class="header-diseños-web text-center">
+			<h3>Nuestros Diseños Web</h1>
+			<p>Nos enfocamos en diseños de páginas web limpias, bien estructuradas y de fácil navegación</p>
+		</div><!-- .header-diseños-web -->
+		<div id="carousel-example-generic" class="body-diseños-web carousel slide" data-ride="carousel">
+		  <!-- Indicators -->
+		  <ol class="carousel-indicators">
+		    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+		    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+		    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+		  </ol><!-- .carousel-indicators -->
+		  <!-- Wrapper for slides -->
+		  <div class="carousel-inner" role="listbox">
+			  <div class="item active">
+			    <img class="img-responsive center-block" src="<?php echo e(asset('img/carrusel1.jpg')); ?>" alt="...">
+			    <div class="carousel-caption text-black">
+			        <h3>Diseño 1</h3>
+							<p>...</p>
+			    </div><!-- .carousel-caption -->
+			  </div><!-- .item active -->
+			  <div class="item">
+			    <img class="img-responsive center-block"src="<?php echo e(asset('img/carrusel2.jpg')); ?>" alt="...">
+			    <div class="carousel-caption text-black">
+			        <h3>Diseño 2</h3>
+							<p>...</p>
+			    </div><!-- .carousel-caption -->
+			  </div><!-- .item -->
+				<div class="item">
+			  	<img class="img-responsive center-block" src="<?php echo e(asset('img/carrusel3.jpg')); ?>" alt="...">
+			      <div class="carousel-caption text-black">
+			        <h3>Diseño 3</h3>
+							<p>...</p>
+			      </div><!-- .carousel-caption -->
+			  </div><!-- .item -->
+		  </div><!-- .carousel-inner -->
+
+		  <!-- Controls -->
+		  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+		    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+		    <span class="sr-only">Previous</span>
+		  </a><!-- .left carousel-control -->
+		  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+		    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+		    <span class="sr-only">Next</span>
+		  </a><!-- .right carousel-control -->
+		</div><!-- .carousel-example-generic #-->
+	</div><!-- .container #carousel slide -->
+</section><!-- #diseños-web .section -->
 <!-- END DISEÑOS WEB -->
-
-<!-- TE GUSTA -->
-<!-- END TE GUSTA -->
-
-<!-- NUESTRO BLOG -->
-<!-- END NUESTRO BLOG -->
 
 <!-- CALL ACTION -->
 <section id="call-action" class="section background-orange text-white">
@@ -224,8 +268,8 @@
 	<div class="container">
 		<div class="row">
 			<div class="formulario-header text-left text-center">
-				<h3>CONTÁCTANOS!</h3>
-				<p>¿Tienes alguna idea de negocio?, contáctanos y con gusto te asesoramos.</p>
+				<h3>Contáctanos!</h3>
+				<p>¿Tienes alguna idea de negocio?, contáctanos y con gusto te asesoramos</p>
 			</div><!-- .formulario-header -->
 			<div class="formulario-body">
 				<form>

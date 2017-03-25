@@ -173,6 +173,18 @@ h3 {
   line-height: 40px;
 }
 
+#diseños-web .container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.header-diseños-web {
+  margin-bottom: 60px;
+}
+.body-diseños-web {
+  margin-bottom: 60px;
+}
+
 #call-action h2{
   margin-bottom: 60px;
 }
@@ -283,7 +295,6 @@ h3 {
 .counter {
  margin-bottom: 16px;
 }
-
 
 /*
  * Hide visually and from screen readers
