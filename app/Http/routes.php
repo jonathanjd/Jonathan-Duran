@@ -24,6 +24,11 @@ Route::get('/', [
     'uses' => 'WebController@index'
 ]);
 
+Route::get('designs', [
+    'as' => 'designs',
+    'uses' => 'WebController@designs'
+]);
+
 Route::get('blog', [
     'as' => 'blog',
     'uses' => 'WebController@blog_polo'

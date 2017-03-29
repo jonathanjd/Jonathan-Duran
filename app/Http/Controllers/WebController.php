@@ -90,6 +90,12 @@ class WebController extends Controller
       return view('front-end.index');
     }
 
+    public function designs()
+    {
+      # code...
+      return view('front-end.designs');
+    }
+
 
     public function index_polo()
     {
